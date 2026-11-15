@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useInViewOnce } from "./use-in-view";
+import { useRevealOnView } from "./use-in-view";
 
 export type Tono = "ok" | "warn" | "alert";
 
@@ -18,7 +18,8 @@ const CELDAS = 10;
 
 /**
  * Medidor de hallazgo: barra segmentada de 10 celdas en semáforo + cifra en mono.
- * Las celdas se llenan una vez al entrar al viewport (respeta prefers-reduced-motion vía CSS).
+ * Se renderiza LLENO (SSR / sin JS). En cliente, si está fuera de pantalla y no hay
+ * prefers-reduced-motion, vuelve a 0 y se llena una vez al entrar al viewport.
  */
 export function FindingMeter({
   casos,
@@ -29,7 +30,7 @@ export function FindingMeter({
   base: number;
   className?: string;
 }) {
-  const { ref, visto } = useInViewOnce<HTMLDivElement>();
+  const { ref, mostrar } = useRevealOnView<HTMLDivElement>({ threshold: 0.3 });
   const tono = tonoFrecuencia(casos, base);
   // Escala a 10 celdas; un valor muy bajo (1/1000) muestra una astilla visible.
   const llenas = (casos / base) * CELDAS;
@@ -48,7 +49,7 @@ export function FindingMeter({
                   "absolute inset-y-0 left-0 transition-[width] duration-500 ease-out-soft",
                   fill[tono],
                 )}
-                style={{ width: `${(visto ? ancho : 0) * 100}%`, transitionDelay: `${i * 45}ms` }}
+                style={{ width: `${(mostrar ? ancho : 0) * 100}%`, transitionDelay: `${i * 45}ms` }}
               />
             </span>
           );

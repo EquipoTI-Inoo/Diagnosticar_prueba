@@ -33,3 +33,22 @@ export function prefiereMenosMovimiento(): boolean {
     typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
   );
 }
+
+/**
+ * Patrón «revelar al entrar»: el estado inicial (SSR / sin JS) es el FINAL (`mostrar = true`),
+ * para que nunca se vea un dato falso si falla JavaScript. Solo en cliente, si el elemento
+ * está fuera de pantalla y no hay prefers-reduced-motion, se «arma» (mostrar = false) y se
+ * revela una vez al entrar en el viewport.
+ */
+export function useRevealOnView<T extends Element>(options?: IntersectionObserverInit) {
+  const { ref, visto } = useInViewOnce<T>(options);
+  const [armado, setArmado] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || prefiereMenosMovimiento()) return;
+    const r = el.getBoundingClientRect();
+    if (r.top > window.innerHeight || r.bottom < 0) setArmado(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return { ref, armado, mostrar: !armado || visto };
+}
