@@ -1,0 +1,1391 @@
+{
+ "inoo": {
+  "url": "https://inoo.pe/",
+  "colors": [
+   [
+    "rgb(255, 255, 255)",
+    398
+   ],
+   [
+    "rgb(10, 10, 11)",
+    285
+   ],
+   [
+    "rgb(142, 142, 152)",
+    116
+   ],
+   [
+    "rgb(85, 85, 94)",
+    72
+   ],
+   [
+    "rgb(154, 154, 163)",
+    49
+   ],
+   [
+    "rgb(165, 230, 99)",
+    32
+   ],
+   [
+    "rgb(58, 58, 66)",
+    20
+   ],
+   [
+    "rgb(11, 18, 3)",
+    19
+   ],
+   [
+    "rgb(126, 69, 181)",
+    15
+   ],
+   [
+    "rgb(42, 42, 48)",
+    12
+   ],
+   [
+    "rgb(212, 212, 218)",
+    10
+   ],
+   [
+    "rgb(178, 115, 230)",
+    9
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    928
+   ],
+   [
+    "rgb(255, 255, 255)",
+    45
+   ],
+   [
+    "rgb(165, 230, 99)",
+    18
+   ],
+   [
+    "rgb(245, 245, 246)",
+    16
+   ],
+   [
+    "rgb(17, 17, 17)",
+    12
+   ],
+   [
+    "rgba(0, 0, 0, 0.65)",
+    12
+   ],
+   [
+    "rgb(10, 10, 11)",
+    9
+   ],
+   [
+    "rgb(11, 18, 3)",
+    4
+   ],
+   [
+    "rgb(14, 14, 16)",
+    3
+   ],
+   [
+    "rgba(255, 255, 255, 0.2)",
+    3
+   ],
+   [
+    "rgb(235, 235, 237)",
+    3
+   ],
+   [
+    "rgb(238, 238, 238)",
+    3
+   ]
+  ],
+  "fonts": [
+   [
+    "Poppins 400",
+    807
+   ],
+   [
+    "Poppins 500",
+    147
+   ],
+   [
+    "Poppins 600",
+    87
+   ],
+   [
+    "Poppins 700",
+    20
+   ],
+   [
+    "Poppins 300",
+    1
+   ]
+  ],
+  "headings": [
+   "H1 | Más ventas,\nmenos fugas. | Poppins 83.52px 600",
+   "H2 | Tres frentes. Un objetivo: vender más. | Poppins 58px 700",
+   "H3 | Implementación de CRM | Poppins 28px 600",
+   "H3 | Desarrollo web | Poppins 28px 600",
+   "H3 | Paid Media | Poppins 28px 600",
+   "H2 | Tu crecimiento tiene fugas. | Poppins 58px 700",
+   "H2 | Resultados que se miden. | Poppins 58px 700",
+   "H3 | Drone Solution Center | Poppins 20px 600",
+   "H3 | Secoya | Poppins 20px 600",
+   "H3 | Domein | Poppins 20px 600",
+   "H3 | Capilar 360 | Poppins 20px 600",
+   "H3 | BFT Internet Premium | Poppins 20px 600",
+   "H3 | NIHM | Poppins 20px 600",
+   "H3 | Medvida Salud | Poppins 20px 600",
+   "H3 | ICS | Poppins 20px 600",
+   "H3 | Infotec | Poppins 20px 600",
+   "H3 | KingTech | Poppins 20px 600",
+   "H3 | Salesians Travel | Poppins 20px 600",
+   "H3 | Ducasse Comercial | Poppins 20px 600",
+   "H2 | Primero entendemos. Después implementamos. | Poppins 58px 700",
+   "H3 | Diagnóstico | Poppins 36px 600",
+   "H3 | Estrategia | Poppins 36px 600",
+   "H3 | Implementación | Poppins 36px 600",
+   "H3 | Medición y mejora | Poppins 36px 600",
+   "H2 | Lo dicen ellos. | Poppins 58px 700",
+   "H2 | Descubre dónde estás perdiendo ventas. | Poppins 58px 700",
+   "H3 | Solicita tu diagnóstico | Poppins 26px 600",
+   "H3 | Recibimos tu solicitud | Poppins 28px 600",
+   "H2 | Antes de empezar. | Poppins 58px 700",
+   "H2 | Guías para decidir con criterio. | Poppins 58px 700",
+   "H3 | Mejor CRM para una empresa peruana: HubSpot, Pipedrive o Zoho | Poppins 18.5px 600",
+   "H3 | ¿Cuánto cuesta hacer una página web en Perú? Guía de precios por tipo de proyecto | Poppins 18.5px 600",
+   "H3 | Qué es el performance marketing y cómo elegir una agencia | Poppins 18.5px 600",
+   "H2 | Una agencia de marketing orientada a resultados. | Poppins 58px 700",
+   "H3 | Agencia de performance marketing | Poppins 20px 600",
+   "H3 | Agencia de posicionamiento SEO | Poppins 20px 600",
+   "H3 | Agencia de branding | Poppins 20px 600",
+   "H3 | Implementación de CRM | Poppins 20px 600",
+   "H2 | Más inversión no siempre significa más ventas. Un mejor sistema, sí. | Poppins 80px 700",
+   "H3 | ¡Listo, ! | Poppins 24px 600"
+  ],
+  "nav": [
+   "Casos",
+   "Industrias",
+   "Nosotros",
+   "Partners",
+   "Blog",
+   "Contacto",
+   "WhatsApp"
+  ],
+  "title": "Agencia de Marketing Digital, CRM y Desarrollo Web | INOO",
+  "meta": "Agencia de marketing digital para Latinoamérica y EE. UU.: implementación de CRM, diseño y desarrollo web, performance marketing y SEO. Agenda un diagnóstico.",
+  "sections": 12,
+  "height": 17589
+ },
+ "diagnosticar_actual": {
+  "url": "https://diagnosticarperu.com/",
+  "colors": [
+   [
+    "rgb(255, 255, 255)",
+    158
+   ],
+   [
+    "rgb(51, 65, 85)",
+    123
+   ],
+   [
+    "rgb(4, 107, 210)",
+    80
+   ],
+   [
+    "rgb(217, 217, 217)",
+    73
+   ],
+   [
+    "rgb(4, 173, 191)",
+    19
+   ],
+   [
+    "rgb(138, 143, 147)",
+    18
+   ],
+   [
+    "rgb(6, 33, 15)",
+    12
+   ],
+   [
+    "rgb(107, 112, 117)",
+    11
+   ],
+   [
+    "rgb(27, 221, 241)",
+    10
+   ],
+   [
+    "rgb(154, 167, 181)",
+    7
+   ],
+   [
+    "rgb(171, 171, 171)",
+    5
+   ],
+   [
+    "rgb(229, 232, 235)",
+    4
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    425
+   ],
+   [
+    "rgb(20, 20, 20)",
+    20
+   ],
+   [
+    "rgb(26, 26, 26)",
+    14
+   ],
+   [
+    "rgba(10, 10, 10, 0.28)",
+    11
+   ],
+   [
+    "rgb(13, 13, 13)",
+    9
+   ],
+   [
+    "rgb(4, 173, 191)",
+    9
+   ],
+   [
+    "rgb(255, 255, 255)",
+    9
+   ],
+   [
+    "rgb(37, 211, 102)",
+    7
+   ],
+   [
+    "rgb(38, 38, 38)",
+    7
+   ],
+   [
+    "rgb(10, 10, 10)",
+    6
+   ],
+   [
+    "rgb(6, 39, 48)",
+    5
+   ],
+   [
+    "rgb(168, 85, 247)",
+    3
+   ]
+  ],
+  "fonts": [
+   [
+    "-apple-system 400",
+    223
+   ],
+   [
+    "Barlow 400",
+    162
+   ],
+   [
+    "Barlow 700",
+    41
+   ],
+   [
+    "Barlow 800",
+    39
+   ],
+   [
+    "Barlow 600",
+    29
+   ],
+   [
+    "JetBrains Mono 400",
+    17
+   ],
+   [
+    "Inter 400",
+    10
+   ],
+   [
+    "-apple-system 700",
+    7
+   ],
+   [
+    "Inter 600",
+    5
+   ],
+   [
+    "-apple-system 600",
+    4
+   ],
+   [
+    "JetBrains Mono 600",
+    3
+   ],
+   [
+    "Barlow 500",
+    1
+   ]
+  ],
+  "headings": [
+   "H1 | Revisa antes de decidir. | Barlow 46px 800",
+   "H2 | Los problemas más comunes que encontramos | Barlow 34px 800",
+   "H2 | Confianza técnica, no promesas vacías. | Barlow 34px 800",
+   "H3 | Técnicos certificados | Barlow 16px 700",
+   "H3 | Equipos profesionales | Barlow 16px 700",
+   "H3 | Informes claros | Barlow 16px 700",
+   "H3 | Atención rápida | Barlow 16px 700",
+   "H2 | Elige cuánto quieres saber antes de comprar. | Barlow 34px 800",
+   "H3 | Antecedentes Básico | Barlow 16px 700",
+   "H3 | Antecedentes Completo | Barlow 16px 700",
+   "H3 | Diagnóstico Básico | Barlow 16px 700",
+   "H3 | DiagnostiCAR | Barlow 16px 700",
+   "H3 | DiagnostiCAR Plus | Barlow 16px 700",
+   "H2 | De la duda al veredicto, en 4 pasos. | Barlow 34px 800",
+   "H3 | Chatea con nosotros | Barlow 16px 700",
+   "H3 | Programa tu cita | Barlow 16px 700",
+   "H3 | Diagnóstico | Barlow 16px 700",
+   "H3 | Recibes el reporte | Barlow 16px 700",
+   "H2 | ¿En qué etapa estás? | Barlow 32px 800",
+   "H2 | ¡Un solo escáner no puede detectarlo todo! | Barlow 32px 800",
+   "H3 | ALIADOS QUE NOS RESPALDAN | \"JetBrains Mono\" 11.5px 600",
+   "H3 | ESTAMOS EN LOS MEDIOS | \"JetBrains Mono\" 11.5px 600",
+   "H3 | APOYAMOS EL AUTOMOVILISMO | \"JetBrains Mono\" 11.5px 600",
+   "H2 | Tips antes de comprar | Barlow 34px 800",
+   "H2 | Lo que dicen nuestros clientes | Barlow 30px 800",
+   "H2 | ¿Listo para tomar la mejor decisión? Estamos para ayudarte. | Barlow 36px 800"
+  ],
+  "nav": [
+   "INICIO",
+   "ÍNDICE",
+   "SERVICIOS ▾",
+   "Ver todos los servicios",
+   "DiagnostiCAR",
+   "Diagnostico Basico",
+   "DiagnostiCAR Plus",
+   "Antecedentes Basico",
+   "Antecedentes Completo",
+   "Asesoria Precompra Online",
+   "Certifica tu Auto",
+   "NOSOTROS",
+   "GUIA",
+   "BLOG",
+   "INFORME",
+   "CONTACTO",
+   "CENTRO DE AYUDA",
+   "MIS REPORTES",
+   "AGENDAR DIAGNÓSTICO",
+   "Inicio",
+   "Servicios",
+   "Nosotros",
+   "Guía",
+   "Blog",
+   "Contacto",
+   "Agendar diagnóstico"
+  ],
+  "title": "Home",
+  "meta": "Con +400 reseñas ⭐⭐⭐⭐⭐, DiagnostiCAR es la mejor y más grande empresa de diagnoóstico vehicular en Perú. Atención de Lunes a Domingo.",
+  "sections": 11,
+  "height": 6882
+ },
+ "autofact_cl": {
+  "url": "https://www.autofact.cl/",
+  "colors": [
+   [
+    "rgb(38, 38, 38)",
+    358
+   ],
+   [
+    "rgb(255, 255, 255)",
+    258
+   ],
+   [
+    "rgb(0, 0, 0)",
+    37
+   ],
+   [
+    "rgb(0, 76, 198)",
+    35
+   ],
+   [
+    "rgba(0, 0, 0, 0)",
+    28
+   ],
+   [
+    "rgb(21, 37, 122)",
+    24
+   ],
+   [
+    "rgb(68, 81, 149)",
+    10
+   ],
+   [
+    "rgb(255, 78, 4)",
+    6
+   ],
+   [
+    "rgb(51, 112, 209)",
+    5
+   ],
+   [
+    "rgb(185, 190, 215)",
+    3
+   ],
+   [
+    "rgb(20, 37, 122)",
+    3
+   ],
+   [
+    "rgb(140, 140, 140)",
+    2
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    672
+   ],
+   [
+    "rgb(255, 255, 255)",
+    53
+   ],
+   [
+    "rgb(21, 37, 122)",
+    7
+   ],
+   [
+    "rgb(245, 245, 245)",
+    6
+   ],
+   [
+    "rgb(0, 76, 198)",
+    5
+   ],
+   [
+    "rgb(229, 237, 249)",
+    5
+   ],
+   [
+    "rgb(128, 165, 226)",
+    5
+   ],
+   [
+    "rgb(204, 219, 244)",
+    4
+   ],
+   [
+    "rgb(217, 247, 190)",
+    3
+   ],
+   [
+    "rgb(255, 236, 229)",
+    3
+   ],
+   [
+    "rgb(231, 246, 252)",
+    3
+   ],
+   [
+    "rgb(241, 232, 242)",
+    2
+   ]
+  ],
+  "fonts": [
+   [
+    "Source Sans 3 400",
+    624
+   ],
+   [
+    "Source Sans 3 600",
+    105
+   ],
+   [
+    "Source Sans 3 700",
+    30
+   ],
+   [
+    "Arial 400",
+    12
+   ],
+   [
+    "Source Sans 3 900",
+    1
+   ]
+  ],
+  "headings": [
+   "H1 | Hacemos simple y seguro\ncomprar o vender un vehículo usado | \"Source Sans 3\" 38px 400",
+   "H2 |  | \"Source Sans 3\" 28px 700",
+   "H2 | Tag a domicilio, más fácil y seguro a solo $19.990 | \"Source Sans 3\" 18px 700",
+   "H2 | Descubre lo último en tendencias y noticias en el portal más importante del mundo automotr | \"Source Sans 3\" 20px 400",
+   "H3 | Lo que dicen nuestros clientes | \"Source Sans 3\" 28px 700",
+   "H2 | Súbete al asiento del copiloto y descubre el lado B del mundo automotriz. Escucha nuestro  | \"Source Sans 3\" 18px 700",
+   "H3 | Autofact | \"Source Sans 3\" 18px 700",
+   "H3 | Productos | \"Source Sans 3\" 18px 700",
+   "H3 | Utilidades | \"Source Sans 3\" 18px 700",
+   "H3 | Servicio al cliente | \"Source Sans 3\" 18px 700",
+   "H3 | Opiniones de clientes | \"Source Sans 3\" 18px 700",
+   "H3 | Síguenos | \"Source Sans 3\" 18px 700"
+  ],
+  "nav": [],
+  "title": "Autofact: Compra y Vende Autos Usados con Seguridad",
+  "meta": "Revisa el historial de cualquier auto usado antes de comprar. Obtén tu Informe Autofact, haz transferencias digitales y compra seguro. ¡Ingresa ya!",
+  "sections": 17,
+  "height": 4112
+ },
+ "carfax": {
+  "url": "https://www.carfax.com/",
+  "colors": [
+   [
+    "rgb(0, 0, 0)",
+    4
+   ],
+   [
+    "rgb(128, 128, 128)",
+    2
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    4
+   ],
+   [
+    "rgb(128, 128, 128)",
+    2
+   ]
+  ],
+  "fonts": [
+   [
+    "Times New Roman 400",
+    3
+   ],
+   [
+    "Times New Roman 700",
+    2
+   ],
+   [
+    "monospace 400",
+    1
+   ]
+  ],
+  "headings": [
+   "H1 | 403 ERROR | \"Times New Roman\" 32px 700",
+   "H2 | The request could not be satisfied. | \"Times New Roman\" 24px 700"
+  ],
+  "nav": [],
+  "title": "ERROR: The request could not be satisfied",
+  "meta": null,
+  "sections": 0,
+  "height": 202
+ },
+ "lemonsquad": {
+  "url": "https://www.lemonsquad.com/",
+  "colors": [
+   [
+    "rgb(0, 0, 0)",
+    521
+   ],
+   [
+    "rgb(255, 255, 255)",
+    76
+   ],
+   [
+    "rgb(213, 175, 47)",
+    55
+   ],
+   [
+    "rgb(45, 48, 58)",
+    43
+   ],
+   [
+    "rgb(60, 63, 72)",
+    8
+   ],
+   [
+    "rgb(217, 237, 247)",
+    4
+   ],
+   [
+    "rgb(51, 51, 51)",
+    2
+   ],
+   [
+    "rgb(248, 204, 55)",
+    1
+   ],
+   [
+    "rgb(127, 127, 127)",
+    1
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    577
+   ],
+   [
+    "rgb(45, 48, 58)",
+    37
+   ],
+   [
+    "rgba(255, 255, 255, 0.07)",
+    18
+   ],
+   [
+    "rgb(143, 143, 143)",
+    18
+   ],
+   [
+    "rgb(255, 255, 255)",
+    17
+   ],
+   [
+    "rgb(248, 204, 55)",
+    15
+   ],
+   [
+    "rgb(204, 204, 204)",
+    14
+   ],
+   [
+    "rgb(227, 188, 56)",
+    4
+   ],
+   [
+    "rgb(136, 137, 141)",
+    3
+   ],
+   [
+    "rgb(46, 48, 58)",
+    2
+   ],
+   [
+    "rgb(218, 218, 218)",
+    1
+   ],
+   [
+    "rgb(168, 168, 168)",
+    1
+   ]
+  ],
+  "fonts": [
+   [
+    "Oxygen 400",
+    556
+   ],
+   [
+    "Montserrat 700",
+    96
+   ],
+   [
+    "Oxygen 300",
+    32
+   ],
+   [
+    "Oxygen 700",
+    15
+   ],
+   [
+    "Montserrat 600",
+    4
+   ],
+   [
+    "sans-serif 400",
+    3
+   ],
+   [
+    "arial 400",
+    3
+   ],
+   [
+    "Oxygen 800",
+    1
+   ],
+   [
+    "arial 700",
+    1
+   ]
+  ],
+  "headings": [
+   "H2 | INSTANT INSPECTIONS, BUILT FOR THE MOMENT YOU NEED THEM. | Montserrat 20px 700",
+   "H2 | WE COVER THE ENTIRE USA | Montserrat 20px 700",
+   "H2 | EVS ARE DIFFERENT. INSPECT THEM DIFFERENTLY | Montserrat 20px 700",
+   "H1 | WHAT IS THE INSPECTION PROCESS? | Montserrat 48px 700",
+   "H2 | ORDER INSPECTION | Montserrat 20px 700",
+   "H2 | OUR INSPECTOR INSPECTS | Montserrat 20px 700",
+   "H2 | RECEIVE YOUR REPORT | Montserrat 20px 700",
+   "H1 | MOBILE PRE-PURCHASE USED CAR INSPECTIONS | Montserrat 48px 700",
+   "H2 | CLASSIC | Montserrat 30px 700",
+   "H2 | COMMERCIAL | Montserrat 30px 700",
+   "H2 | MOTORCYCLE | Montserrat 30px 700",
+   "H2 | RV\nMotorhomes Towables | Montserrat 30px 700",
+   "H2 | EXOTIC | Montserrat 30px 700",
+   "H2 | STANDARD | Montserrat 30px 700",
+   "H2 | CLASSIC | Montserrat 30px 700",
+   "H2 | COMMERCIAL | Montserrat 30px 700",
+   "H2 | MOTORCYCLE | Montserrat 30px 700",
+   "H2 | RV\nMotorhomes Towables | Montserrat 30px 700",
+   "H2 | EXOTIC | Montserrat 30px 700",
+   "H2 | STANDARD | Montserrat 30px 700",
+   "H2 | CLASSIC | Montserrat 30px 700",
+   "H2 | COMMERCIAL | Montserrat 30px 700",
+   "H1 | ADD-ONS TO YOUR VEHICLE INSPECTION | Montserrat 48px 700",
+   "H2 | CARFAX VEHICLE HISTORY REPORT | Montserrat 20px 700",
+   "H2 | VERBAL VEHICLE ASSESSMENT REPORT | Montserrat 20px 700",
+   "H3 | CUSTOMER REVIEWS\nPREVIOUSNEXT | Montserrat 24px 700",
+   "H1 | FREQUENTLY ASKED QUESTIONS | Montserrat 30px 700",
+   "H2 | 2018 GMC Sierra1500 | arial 14px 700"
+  ],
+  "nav": [
+   "BECOME AN INSPECTOR",
+   "ORDER AN INSPECTION",
+   "LOGIN",
+   "(888) 231-7965",
+   "HOME",
+   "INSPECTIONS",
+   "Compare",
+   "Standard",
+   "Electric",
+   "Vintage &\n                                    Classic",
+   "Exotic",
+   "Live",
+   "RV",
+   "Commercial",
+   "Motorcycle",
+   "Popular\n                                        Inspections",
+   "BMW",
+   "Mercedes",
+   "Porsche",
+   "Determining Car Value",
+   "Add-Ons",
+   "ORDER",
+   "FAQS",
+   "CORPORATE",
+   "Auction\n                                        Inspection",
+   "Marketplace\n                                        Inspection",
+   "Mechanical\n                                        Inspection",
+   "Pre-Warranty\n                                        Inspection"
+  ],
+  "title": "Pre-Purchase Car Inspection | Vehicle Inspection",
+  "meta": "Lemon Squad™ offers pre-purchase used car inspections. Mobile mechanics are on-site for all types of vehicles from cars, trucks, and motorcycles to RVs, commercial vehicles, vintage and classic cars. Call (888) 231-7965 to speak with an expert today.",
+  "sections": 10,
+  "height": 5460
+ },
+ "kavak": {
+  "url": "https://www.kavak.com/mx",
+  "colors": [
+   [
+    "rgb(62, 74, 91)",
+    1113
+   ],
+   [
+    "rgb(19, 81, 236)",
+    271
+   ],
+   [
+    "rgb(27, 37, 50)",
+    123
+   ],
+   [
+    "rgba(0, 0, 0, 0)",
+    94
+   ],
+   [
+    "rgb(91, 101, 122)",
+    80
+   ],
+   [
+    "rgb(0, 0, 0)",
+    71
+   ],
+   [
+    "rgb(255, 255, 255)",
+    57
+   ],
+   [
+    "rgb(0, 0, 238)",
+    53
+   ],
+   [
+    "rgb(66, 72, 85)",
+    50
+   ],
+   [
+    "rgb(51, 51, 51)",
+    20
+   ],
+   [
+    "rgb(85, 85, 85)",
+    8
+   ],
+   [
+    "rgb(141, 152, 170)",
+    3
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    1746
+   ],
+   [
+    "rgb(255, 255, 255)",
+    111
+   ],
+   [
+    "rgb(245, 245, 245)",
+    54
+   ],
+   [
+    "rgb(235, 241, 255)",
+    9
+   ],
+   [
+    "rgb(249, 250, 251)",
+    8
+   ],
+   [
+    "rgb(239, 241, 245)",
+    7
+   ],
+   [
+    "rgba(255, 255, 255, 0.85)",
+    3
+   ],
+   [
+    "rgb(19, 81, 236)",
+    2
+   ],
+   [
+    "rgb(0, 0, 0)",
+    2
+   ],
+   [
+    "rgb(52, 110, 74)",
+    2
+   ],
+   [
+    "rgba(255, 255, 255, 0.8)",
+    1
+   ],
+   [
+    "rgb(118, 56, 232)",
+    1
+   ]
+  ],
+  "fonts": [
+   [
+    "helvetica 400",
+    1726
+   ],
+   [
+    "helvetica 700",
+    100
+   ],
+   [
+    "Arial 400",
+    84
+   ],
+   [
+    "helvetica 500",
+    18
+   ],
+   [
+    "helvetica 600",
+    18
+   ],
+   [
+    "Arial 500",
+    2
+   ]
+  ],
+  "headings": [
+   "H2 | Transforma tu camino | helvetica 40px 700",
+   "H1 | Compra y venta de autos. Financiamiento a tu medida | helvetica 16px 400",
+   "H2 | Expertos Kavak | helvetica 28px 700",
+   "H3 | Libro Azul 2026: guía para saber cuánto vale tu auto | helvetica 24px 600",
+   "H3 | Consulta y trámite vehícular de placas por estado: qué revisar antes de avanzar | helvetica 24px 600",
+   "H3 | Carros de 50 mil pesos de enganche en Kavak México | helvetica 24px 600",
+   "H3 | ¿Qué pasa cuando un carro se desviela? Causas y consecuencias | helvetica 24px 600",
+   "H3 | Cambio de propietario Jalisco 2026: requisitos, costos y pasos | helvetica 24px 600",
+   "H3 | ¿Por qué cascabelea un carro? Descubre soluciones aquí | helvetica 24px 600",
+   "H2 | Paga tu próximo auto a meses | helvetica 28px 600",
+   "H2 | Descubre por qué más de 300,000 clientes ya confiaron en Kavak | helvetica 28px 700",
+   "H3 | Financia el auto que quieres | helvetica 24px 700",
+   "H3 | Maneja y decide | helvetica 24px 700",
+   "H3 | Más ofertas, más libertad | helvetica 24px 700",
+   "H2 | ¡Hola! Soy Kopi Beta | helvetica 28px 600",
+   "H2 | Los más vendidos | helvetica 28px 700",
+   "H3 | Mg Zs 1.5 EXCITE AUTO | helvetica 14px 400",
+   "H3 | Chirey Tiggo 7 Pro 1.5 LUXURY CVT | helvetica 14px 400",
+   "H3 | Chirey Tiggo 2 Pro 1.0 LUXURY CVT | helvetica 14px 400",
+   "H3 | Chevrolet Aveo 1.5 LS A | helvetica 14px 400",
+   "H3 | Chevrolet Onix 1.2 PREMIER G AUTO | helvetica 14px 400",
+   "H3 | Mg MG5 1.5 EXCITE CVT | helvetica 14px 400",
+   "H3 | Mg MG5 1.5 ELEGANCE CVT | helvetica 14px 400",
+   "H3 | Chevrolet Aveo 1.5 LS A | helvetica 14px 400",
+   "H3 | Mazda 3 2.5 I SPORT AUTO | helvetica 14px 400",
+   "H3 | Chirey Tiggo 4 Pro 1.5 PREMIUM CVT | helvetica 14px 400",
+   "H3 | Nissan March 1.6 SENSE | helvetica 14px 400",
+   "H3 | Mazda CX-30 2.5 I GRAND TOURING AUTO | helvetica 14px 400",
+   "H3 | Mg MG5 1.5 ELEGANCE CVT | helvetica 14px 400",
+   "H3 | Mg Hs 2.0 TROPHY DCT AWD | helvetica 14px 400",
+   "H3 | Mg Hs 1.5 EXCITE DCT | helvetica 14px 400",
+   "H3 | Ford Territory 1.8 ECOBOOST TITANIUM AUTO | helvetica 14px 400",
+   "H3 | Mazda CX-5 2.5 I GRAND TOURING AUTO | helvetica 14px 400",
+   "H3 | Mg MG5 1.5 EXCITE | helvetica 14px 400",
+   "H3 | Kia Sorento 2.4 EX AUTO | helvetica 14px 400",
+   "H3 | Chevrolet Onix 1.0 PREMIER REDLINE E AUTO | helvetica 14px 400",
+   "H2 | Destacados del Catálogo | helvetica 28px 700",
+   "H3 | Kia • FORTE | helvetica 14px 400",
+   "H3 | Kia • Soul | helvetica 14px 400",
+   "H3 | Dodge • Durango | helvetica 14px 400"
+  ],
+  "nav": [
+   "aquí",
+   "Obtén un crédito",
+   "Compra un auto",
+   "Vende tu auto",
+   "Cuida tu auto",
+   "Sedes",
+   "Testimoniales",
+   "Blog",
+   "Contacto",
+   "Quiénes somos",
+   "Ingresar"
+  ],
+  "title": "Compra y Venta de Autos Usados | Transforma tu Camino",
+  "meta": "Compra con Financiación a medida. ✅ 7 dias con devolución gratis. ✅ Descubre el valor de tu auto en 2 minutos. ✅ Cambia tu auto con beneficios exclusivos",
+  "sections": 19,
+  "height": 6366
+ },
+ "koopa_inspecciona": {
+  "url": "https://koopa.pe/inspecciona/",
+  "colors": [
+   [
+    "rgb(34, 39, 50)",
+    424
+   ],
+   [
+    "rgb(255, 255, 255)",
+    68
+   ],
+   [
+    "rgb(9, 235, 151)",
+    39
+   ],
+   [
+    "rgb(86, 97, 113)",
+    38
+   ],
+   [
+    "rgb(0, 93, 98)",
+    32
+   ],
+   [
+    "rgb(105, 114, 125)",
+    32
+   ],
+   [
+    "rgb(35, 35, 35)",
+    14
+   ],
+   [
+    "rgb(56, 56, 56)",
+    3
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    536
+   ],
+   [
+    "rgba(255, 255, 255, 0)",
+    83
+   ],
+   [
+    "rgb(255, 255, 255)",
+    15
+   ],
+   [
+    "rgb(9, 235, 151)",
+    8
+   ],
+   [
+    "rgb(0, 93, 98)",
+    2
+   ],
+   [
+    "rgb(247, 249, 252)",
+    2
+   ],
+   [
+    "rgb(0, 94, 99)",
+    1
+   ],
+   [
+    "rgb(248, 249, 253)",
+    1
+   ],
+   [
+    "rgb(2, 68, 71)",
+    1
+   ],
+   [
+    "rgb(81, 179, 112)",
+    1
+   ]
+  ],
+  "fonts": [
+   [
+    "Lexend 400",
+    506
+   ],
+   [
+    "Lexend 300",
+    41
+   ],
+   [
+    "Font Awesome 5 Free 400",
+    27
+   ],
+   [
+    "Lexend 500",
+    26
+   ],
+   [
+    "Font Awesome 5 Free 900",
+    17
+   ],
+   [
+    "Lexend 700",
+    16
+   ],
+   [
+    "Lexend 600",
+    9
+   ],
+   [
+    "Font Awesome 5 Brands 400",
+    8
+   ]
+  ],
+  "headings": [
+   "H2 | x | Lexend 16px 400",
+   "H2 | ¡No compres a ciegas! | Lexend 51px 700",
+   "H2 | Inspecciona el seminuevo que estás por comprar | Lexend 45px 700",
+   "H2 | Te brindamos un detallado informe mecánico y legal sobre el estado del vehículo. | Lexend 20px 400",
+   "H2 | ¡Compra tu próximo auto con Seguridad y Confianza! | Lexend 42px 700",
+   "H2 | Cuéntanos qué vehículo quieres comprar y donde se encuentra. | Lexend 20px 400",
+   "H2 | Nosotros\nlo revisamos, | Lexend 65px 700",
+   "H2 | tú lo disfrutas | Lexend 60px 400",
+   "H2 | No compres a Ciegas | Lexend 20px 400",
+   "H2 | ¡Compra tu próximo auto con Seguridad y Confianza! | Lexend 42px 700",
+   "H2 | Cuéntanos qué vehículo quieres comprar y donde se encuentra. | Lexend 20px 400",
+   "H2 | ¿Cómo lo hacemos? | Lexend 32px 700",
+   "H3 | 1 | Lexend 25px 700",
+   "H3 | 2 | Lexend 25px 700",
+   "H3 | 3 | Lexend 25px 700",
+   "H3 | 4 | Lexend 25px 700",
+   "H2 | ¿Por qué inspeccionar un auto? | Lexend 32px 700",
+   "H2 | ¿Qué incluye la inspeccion Koopa? | Lexend 32px 700",
+   "H3 | S/ 250 | Lexend 22px 600",
+   "H3 | S/ 300 | Lexend 22px 600",
+   "H3 | S/ 400 | Lexend 22px 600",
+   "H3 | S/ 750 | Lexend 22px 600",
+   "H2 | Áreas de inspección | Lexend 32px 700",
+   "H2 | Mecánica | Lexend 24px 500",
+   "H2 | Legal | Lexend 24px 500",
+   "H2 | Asesoría personalizada | Lexend 24px 500",
+   "H2 | Preguntas frecuentes | Lexend 30px 600",
+   "H2 | SOBRE KOOPA | Lexend 16px 500",
+   "H2 | ¿QUÉ HACEMOS? | Lexend 16px 500",
+   "H2 | CONTÁCTANOS | Lexend 16px 500",
+   "H2 | SÍGUENOS | Lexend 16px 500"
+  ],
+  "nav": [
+   "x",
+   "Comprar",
+   "Vende",
+   "SOAT",
+   "Imperdibles",
+   "Alianzas",
+   "Transferir",
+   "Contacto y soporte",
+   "Facebook",
+   "Instagram",
+   "Youtube"
+  ],
+  "title": "Inspecciona un Auto - Koopa.pe",
+  "meta": "Si lo que buscabas no está en Koopa. ¡No te preocupes!. Nosotros inspeccionamos el auto que quieras comprar a domicilio.",
+  "sections": 2,
+  "height": 7630
+ },
+ "carfish": {
+  "url": "https://carfishperu.com/",
+  "colors": [
+   [
+    "rgb(92, 91, 87)",
+    560
+   ],
+   [
+    "rgb(254, 196, 45)",
+    195
+   ],
+   [
+    "rgb(33, 40, 68)",
+    100
+   ],
+   [
+    "rgb(255, 255, 255)",
+    34
+   ],
+   [
+    "rgb(105, 114, 125)",
+    10
+   ],
+   [
+    "rgb(204, 51, 102)",
+    7
+   ],
+   [
+    "rgb(206, 205, 202)",
+    5
+   ],
+   [
+    "rgb(242, 184, 0)",
+    2
+   ],
+   [
+    "rgb(255, 210, 13)",
+    2
+   ],
+   [
+    "rgb(193, 192, 189)",
+    1
+   ],
+   [
+    "rgb(242, 242, 242)",
+    1
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    869
+   ],
+   [
+    "rgb(255, 255, 255)",
+    17
+   ],
+   [
+    "rgb(33, 40, 68)",
+    11
+   ],
+   [
+    "rgb(255, 210, 13)",
+    8
+   ],
+   [
+    "rgba(2, 1, 1, 0)",
+    5
+   ],
+   [
+    "rgb(206, 205, 202)",
+    4
+   ],
+   [
+    "rgb(253, 253, 253)",
+    1
+   ],
+   [
+    "rgb(242, 242, 242)",
+    1
+   ],
+   [
+    "rgb(37, 211, 102)",
+    1
+   ]
+  ],
+  "fonts": [
+   [
+    "Inter 400",
+    816
+   ],
+   [
+    "Inter 700",
+    67
+   ],
+   [
+    "Inter 500",
+    20
+   ],
+   [
+    "Saira 700",
+    9
+   ],
+   [
+    "Inter 600",
+    5
+   ]
+  ],
+  "headings": [
+   "H2 | NO COMPRES UN VEHÍCULO USADO SIN ANTES DIAGNOSTICARLO | Saira 68px 700",
+   "H2 | EXPERTOS EN DIAGNÓSTICO VEHICULAR | Saira 50px 700",
+   "H2 | EVALUAMOS TU VEHÍCULO CON TOTAL TRANSPARENCIA | Saira 50px 700",
+   "H2 | RECOMENDACIONES DE NUESTROS CLIENTES | Saira 50px 700",
+   "H2 | SOLICITA TU DIAGNÓSTICO VEHICULAR | Saira 50px 700"
+  ],
+  "nav": [
+   "Inicio",
+   "Nosotros",
+   "Servicios",
+   "Contacto",
+   "Agendar cita"
+  ],
+  "title": "Carfishperu.com – | Diagnóstico vehicular a domicilio",
+  "meta": null,
+  "sections": 0,
+  "height": 8234
+ },
+ "autocheck_pe": {
+  "url": "https://autocheck.com.pe/",
+  "colors": [
+   [
+    "rgb(51, 51, 51)",
+    118
+   ],
+   [
+    "rgb(255, 255, 255)",
+    42
+   ],
+   [
+    "rgb(102, 102, 102)",
+    36
+   ],
+   [
+    "rgb(51, 122, 183)",
+    21
+   ],
+   [
+    "rgb(38, 38, 38)",
+    7
+   ],
+   [
+    "rgb(153, 153, 153)",
+    5
+   ],
+   [
+    "rgb(237, 161, 33)",
+    2
+   ],
+   [
+    "rgb(179, 179, 179)",
+    2
+   ],
+   [
+    "rgb(128, 128, 128)",
+    2
+   ]
+  ],
+  "bgs": [
+   [
+    "rgba(0, 0, 0, 0)",
+    218
+   ],
+   [
+    "rgb(3, 94, 114)",
+    8
+   ],
+   [
+    "rgb(52, 52, 52)",
+    4
+   ],
+   [
+    "rgb(255, 255, 255)",
+    2
+   ],
+   [
+    "rgb(51, 51, 51)",
+    1
+   ],
+   [
+    "rgb(245, 245, 245)",
+    1
+   ],
+   [
+    "rgb(38, 38, 38)",
+    1
+   ]
+  ],
+  "fonts": [
+   [
+    "Rajdhani 400",
+    146
+   ],
+   [
+    "Open Sans 400",
+    39
+   ],
+   [
+    "Montserrat 700",
+    17
+   ],
+   [
+    "Rajdhani 700",
+    12
+   ],
+   [
+    "Rajdhani 500",
+    11
+   ],
+   [
+    "FontAwesome 400",
+    6
+   ],
+   [
+    "Montserrat 400",
+    4
+   ]
+  ],
+  "headings": [
+   "H1 | +51 997 832 120 | Rajdhani 36px 500",
+   "H1 | COMODIDAD Y SEGURIDAD AL COMPRAR UN AUTO USADO. | Rajdhani 60px 700",
+   "H1 | REVISION PRE COMPRA A DOMICILIO DE AUTOS USADOS | Rajdhani 60px 700",
+   "H1 | NO MÁS SORPRESAS. ¡REVISA Y LUEGO COMPRA! | Rajdhani 60px 700",
+   "H1 | COMODIDAD Y SEGURIDAD AL COMPRAR UN AUTO USADO. | Rajdhani 60px 700",
+   "H1 | REVISION PRE COMPRA A DOMICILIO DE AUTOS USADOS | Rajdhani 60px 700",
+   "H3 | Revisión Full | Rajdhani 24px 500",
+   "H3 | Diagnóstico\nEstándar | Rajdhani 24px 500",
+   "H3 | Revisión B2B\nPartner | Rajdhani 24px 500",
+   "H1 | DIAGNOSTICO AUTOMOTRIZ CONFIABLE PARA TU AUTO | Rajdhani 36px 700",
+   "H3 | INSPECCIÓN DETALLADA | Rajdhani 24px 500",
+   "H3 | ESTABLECEMOS LAZOS DE CONFIANZA | Rajdhani 24px 500",
+   "H1 | OPINIONES DE NUESTROS USUARIOS | Rajdhani 36px 500",
+   "H3 | CLIENTES | Rajdhani 24px 500",
+   "H3 | CONTACTENOS | Rajdhani 24px 400",
+   "H3 | ENLACES | Rajdhani 24px 400",
+   "H3 | NUESTRA EMPRESA | Rajdhani 24px 400"
+  ],
+  "nav": [
+   "ESCRIBENOS AL\n+51 997 832 120",
+   "OFICINA ADMINISTRATIVA\nAVENIDA LAS ARTES SUR 640 - OF. 301, SAN BORJA",
+   "CONTACTANOS",
+   "INICIO",
+   "NOSOTROS",
+   "SERVICIOS",
+   "FAQ",
+   "BLOG",
+   "CONTACTENOS"
+  ],
+  "title": "Autocheck",
+  "meta": "Autocheck",
+  "sections": 0,
+  "height": 3241
+ }
+}

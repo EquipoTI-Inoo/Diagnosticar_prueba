@@ -1,0 +1,402 @@
+[
+ {
+  "url": "https://diagnosticarperu.com/",
+  "status": 200,
+  "file": "raw/home.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/precios/",
+  "status": 200,
+  "file": "raw/precios.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicio-diagnosticar/",
+  "status": 200,
+  "file": "raw/servicio-diagnosticar.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicio-diagnostico-basico/",
+  "status": 200,
+  "file": "raw/servicio-diagnostico-basico.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicio-diagnosticar-plus/",
+  "status": 200,
+  "file": "raw/servicio-diagnosticar-plus.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicio-antecedentes-basico/",
+  "status": 200,
+  "file": "raw/servicio-antecedentes-basico.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicio-antecedentes-completo/",
+  "status": 200,
+  "file": "raw/servicio-antecedentes-completo.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicio-asesoria-precompra/",
+  "status": 200,
+  "file": "raw/servicio-asesoria-precompra.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicio-certifica-tu-auto/",
+  "status": 200,
+  "file": "raw/servicio-certifica-tu-auto.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/nosotros/",
+  "status": 200,
+  "file": "raw/nosotros.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/guia-2/",
+  "status": 200,
+  "file": "raw/guia-2.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/blog/",
+  "status": 200,
+  "file": "raw/blog.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/informe-ejemplo/",
+  "status": 200,
+  "file": "raw/informe-ejemplo.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/contact/",
+  "status": 200,
+  "file": "raw/contact.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/centro-de-ayuda/",
+  "status": 200,
+  "file": "raw/centro-de-ayuda.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/mis-reportes/",
+  "status": 200,
+  "file": "raw/mis-reportes.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicios",
+  "status": 200,
+  "file": "raw/servicios.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/nosotros",
+  "status": 200,
+  "file": "raw/nosotros.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/guia",
+  "status": 200,
+  "file": "raw/guia.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/blog",
+  "status": 200,
+  "file": "raw/blog.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/contacto",
+  "status": 200,
+  "file": "raw/contacto.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/checklist-precompra/",
+  "status": 200,
+  "file": "raw/checklist-precompra.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/top-5-problemas/",
+  "status": 200,
+  "file": "raw/top-5-problemas.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/puntos-importantes/",
+  "status": 200,
+  "file": "raw/puntos-importantes.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-legales/",
+  "status": 200,
+  "file": "raw/preview-legales.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/home-2/",
+  "status": 200,
+  "file": "raw/home-2.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/nosotros-legacy/",
+  "status": 200,
+  "file": "raw/nosotros-legacy.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/contact-legacy/",
+  "status": 200,
+  "file": "raw/contact-legacy.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/guia-2-legacy/",
+  "status": 200,
+  "file": "raw/guia-2-legacy.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/blog-legacy/",
+  "status": 200,
+  "file": "raw/blog-legacy.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/category/diagnosticos/",
+  "status": 200,
+  "file": "raw/category__diagnosticos.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/category/tip-mecanicos/",
+  "status": 200,
+  "file": "raw/category__tip-mecanicos.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/category/novedades/",
+  "status": 200,
+  "file": "raw/category__novedades.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/category/entrevistas/",
+  "status": 200,
+  "file": "raw/category__entrevistas.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/category/experiencias/",
+  "status": 200,
+  "file": "raw/category__experiencias.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/guia/",
+  "status": 200,
+  "file": "raw/guia.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/terminos-y-condiciones/",
+  "status": 200,
+  "file": "raw/terminos-y-condiciones.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/libro-de-reclamaciones/",
+  "status": 200,
+  "file": "raw/libro-de-reclamaciones.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/14/las-herramientas-y-tecnologias-que-utilizamos-en-diagnosticar-peru-para-un-diagnostico-preciso-de-vehiculos-usados/",
+  "status": 200,
+  "file": "raw/2025__02__14__las-herramientas-y-tecnologias-que-utilizamos-en-diagnosticar-peru-para-un-diagnostico-preciso-de-vehiculos-usados.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/14/mi-primer-coche-usado-como-evitar-los-errores-comunes-con-la-ayuda-de-un-diagnostico-profesional/",
+  "status": 200,
+  "file": "raw/2025__02__14__mi-primer-coche-usado-como-evitar-los-errores-comunes-con-la-ayuda-de-un-diagnostico-profesional.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/01/31/entrada-1/",
+  "status": 200,
+  "file": "raw/2025__01__31__entrada-1.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/servicios-1/",
+  "status": 200,
+  "file": "raw/servicios-1.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-home/",
+  "status": 200,
+  "file": "raw/preview-home.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-servicios/",
+  "status": 404,
+  "file": "raw/preview-servicios.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-servicio-diagnosticar/",
+  "status": 404,
+  "file": "raw/preview-servicio-diagnosticar.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-diagnostico-basico/",
+  "status": 404,
+  "file": "raw/preview-diagnostico-basico.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-diagnosticar-plus/",
+  "status": 404,
+  "file": "raw/preview-diagnosticar-plus.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-antecedentes-basico/",
+  "status": 404,
+  "file": "raw/preview-antecedentes-basico.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-antecedentes-completo/",
+  "status": 404,
+  "file": "raw/preview-antecedentes-completo.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-asesoria-precompra/",
+  "status": 404,
+  "file": "raw/preview-asesoria-precompra.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-certifica-tu-auto/",
+  "status": 404,
+  "file": "raw/preview-certifica-tu-auto.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-nosotros/",
+  "status": 404,
+  "file": "raw/preview-nosotros.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-guia/",
+  "status": 404,
+  "file": "raw/preview-guia.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-blog/",
+  "status": 404,
+  "file": "raw/preview-blog.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-contacto/",
+  "status": 404,
+  "file": "raw/preview-contacto.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/preview-mis-reportes/",
+  "status": 200,
+  "file": "raw/preview-mis-reportes.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/01/31/no-cometas-errores-la-asesoria-virtual-que-todo-comprador-primerizo-necesita/",
+  "status": 200,
+  "file": "raw/2025__01__31__no-cometas-errores-la-asesoria-virtual-que-todo-comprador-primerizo-necesita.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/01/31/",
+  "status": 200,
+  "file": "raw/2025__01__31.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/14/como-revisar-la-presion-de-los-neumaticos-y-por-que-es-importante/",
+  "status": 200,
+  "file": "raw/2025__02__14__como-revisar-la-presion-de-los-neumaticos-y-por-que-es-importante.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/14/el-futuro-del-mercado-de-coches-usados-por-que-las-consultas-virtuales-y-los-diagnosticos-avanzados-seran-clave/",
+  "status": 200,
+  "file": "raw/2025__02__14__el-futuro-del-mercado-de-coches-usados-por-que-las-consultas-virtuales-y-los-diagnosticos-avanzados-seran-clave.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/author/matias/",
+  "status": 200,
+  "file": "raw/author__matias.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/13/por-que-tu-auto-pierde-potencia-claves-para-un-diagnostico-eficiente/",
+  "status": 200,
+  "file": "raw/2025__02__13__por-que-tu-auto-pierde-potencia-claves-para-un-diagnostico-eficiente.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/13/como-detectar-problemas-de-alineacion-y-balanceo-del-vehiculo/",
+  "status": 200,
+  "file": "raw/2025__02__13__como-detectar-problemas-de-alineacion-y-balanceo-del-vehiculo.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/12/diferencias-entre-un-diagnostico-visual-y-uno-computarizado/",
+  "status": 200,
+  "file": "raw/2025__02__12__diferencias-entre-un-diagnostico-visual-y-uno-computarizado.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/12/por-que-un-informe-de-diagnostico-es-clave-para-evitar-estafas-al-comprar-un-vehiculo/",
+  "status": 200,
+  "file": "raw/2025__02__12__por-que-un-informe-de-diagnostico-es-clave-para-evitar-estafas-al-comprar-un-vehiculo.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/12/cuidado-lo-que-suelen-esconder-los-autos-usados-%f0%9f%9a%a8/",
+  "status": 200,
+  "file": "raw/2025__02__12__cuidado-lo-que-suelen-esconder-los-autos-usados-%f0%9f%9a%a8.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/01/no-compres-sin-probarlo-la-importancia-de-la-prueba-de-manejo/",
+  "status": 200,
+  "file": "raw/2025__02__01__no-compres-sin-probarlo-la-importancia-de-la-prueba-de-manejo.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/01/cuidado-con-el-kilometraje-aprende-a-comprobarlo/",
+  "status": 200,
+  "file": "raw/2025__02__01__cuidado-con-el-kilometraje-aprende-a-comprobarlo.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/13/diagnostico-del-sistema-de-aire-acondicionado-tips-para-mantenerlo-en-buen-estado/",
+  "status": 200,
+  "file": "raw/2025__02__13__diagnostico-del-sistema-de-aire-acondicionado-tips-para-mantenerlo-en-buen-estado.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/12/preguntas-esenciales-que-debes-hacer-al-vendedor-de-un-auto-usado/",
+  "status": 200,
+  "file": "raw/2025__02__12__preguntas-esenciales-que-debes-hacer-al-vendedor-de-un-auto-usado.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/12/%e2%9c%85-checklist-de-diagnostico-antes-de-comprar-un-auto-usado/",
+  "status": 200,
+  "file": "raw/2025__02__12__%e2%9c%85-checklist-de-diagnostico-antes-de-comprar-un-auto-usado.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/14/las-marcas-de-coches-usados-mas-confiables-para-comprar-este-ano/",
+  "status": 200,
+  "file": "raw/2025__02__14__las-marcas-de-coches-usados-mas-confiables-para-comprar-este-ano.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/12/elige-bien-5-tendencias-clave-para-el-futuro-del-diagnostico-vehicular-%f0%9f%9a%80/",
+  "status": 200,
+  "file": "raw/2025__02__12__elige-bien-5-tendencias-clave-para-el-futuro-del-diagnostico-vehicular-%f0%9f%9a%80.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/02/01/es-el-mejor-momento-para-comprar-un-coche-usado/",
+  "status": 200,
+  "file": "raw/2025__02__01__es-el-mejor-momento-para-comprar-un-coche-usado.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/2025/01/31/ia-y-diagnostico-automotriz-el-futuro-de-los-diagnosticos-de-coche/",
+  "status": 200,
+  "file": "raw/2025__01__31__ia-y-diagnostico-automotriz-el-futuro-de-los-diagnosticos-de-coche.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/antecedentes-3/",
+  "status": 200,
+  "file": "raw/antecedentes-3.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/asesoria-virtual/",
+  "status": 200,
+  "file": "raw/asesoria-virtual.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/register/",
+  "status": 200,
+  "file": "raw/register.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/password-reset/",
+  "status": 200,
+  "file": "raw/password-reset.html"
+ },
+ {
+  "url": "https://diagnosticarperu.com/login/",
+  "status": 200,
+  "file": "raw/login.html"
+ }
+]
