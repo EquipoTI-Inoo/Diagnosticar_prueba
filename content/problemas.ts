@@ -21,7 +21,12 @@ export const problemas: Problema[] = z.array(problemaSchema).parse([
       alt: "Fuga de aceite real detectada en diagnóstico de DiagnostiCAR",
       ancho: 960,
       alto: 600,
+      pie: {
+        tipo: "Hallazgo real",
+        texto: "Fuga de aceite señalada",
+      },
     },
+    muestraHallazgo: true,
   },
   {
     slug: "problemas-documentarios",
@@ -31,10 +36,16 @@ export const problemas: Problema[] = z.array(problemaSchema).parse([
     base: 10,
     imagen: {
       src: "/img/clave/problemas-documentarios.jpg",
-      alt: "Técnico de DiagnostiCAR explicando antecedentes documentarios del vehículo",
+      alt: "Técnico de DiagnostiCAR hablando a cámara junto a un auto rojo (fotograma de video)",
       ancho: 960,
       alto: 600,
+      pie: {
+        tipo: "Fotograma de video",
+        texto: "Equipo DiagnostiCAR",
+      },
+      posicion: "50% 15%",
     },
+    muestraHallazgo: false,
   },
   {
     slug: "choques-ocultos",
@@ -43,10 +54,16 @@ export const problemas: Problema[] = z.array(problemaSchema).parse([
     base: 10,
     imagen: {
       src: "/img/clave/choques-ocultos.jpg",
-      alt: "Técnicos de DiagnostiCAR detectando daño estructural oculto",
+      alt: "Dos técnicos de DiagnostiCAR sentados conversando en una oficina (fotograma de video)",
       ancho: 960,
       alto: 600,
+      pie: {
+        tipo: "Fotograma de video",
+        texto: "Equipo DiagnostiCAR",
+      },
+      posicion: "50% 30%",
     },
+    muestraHallazgo: false,
   },
   {
     slug: "kilometraje-bajado",
@@ -55,10 +72,16 @@ export const problemas: Problema[] = z.array(problemaSchema).parse([
     base: 10,
     imagen: {
       src: "/img/clave/kilometraje200k.jpg",
-      alt: "Kilometraje real distinto al mostrado en el odómetro",
+      alt: "Primer plano de una llanta durante una revisión, con el subtítulo «le habían borrado el número VIN» (fotograma de video)",
       ancho: 360,
       alto: 640,
+      pie: {
+        tipo: "Fotograma de video",
+        texto: "Revisión de una llanta",
+      },
+      posicion: "50% 20%",
     },
+    muestraHallazgo: false,
   },
   {
     slug: "airbags-reventados",
@@ -67,10 +90,16 @@ export const problemas: Problema[] = z.array(problemaSchema).parse([
     base: 10,
     imagen: {
       src: "/img/clave/airbag.jpg",
-      alt: "Airbag detonado no informado por el vendedor",
+      alt: "Interior de un auto durante una inspección, con el subtítulo «el problema» (fotograma de video)",
       ancho: 360,
       alto: 640,
+      pie: {
+        tipo: "Fotograma de video",
+        texto: "Inspección del habitáculo",
+      },
+      posicion: "50% 20%",
     },
+    muestraHallazgo: false,
   },
   {
     slug: "motor-o-caja-reparados",
@@ -82,7 +111,13 @@ export const problemas: Problema[] = z.array(problemaSchema).parse([
       alt: "Inspección con videoscopio detecta intervención previa en motor",
       ancho: 960,
       alto: 600,
+      pie: {
+        tipo: "Hallazgo real",
+        texto: "Inspección con videoscopio",
+      },
+      posicion: "50% 0%",
     },
+    muestraHallazgo: true,
   },
   {
     slug: "carros-clonados",
@@ -94,6 +129,12 @@ export const problemas: Problema[] = z.array(problemaSchema).parse([
       alt: "Comparación de placas idénticas en caso real de vehículo clonado",
       ancho: 960,
       alto: 600,
+      pie: {
+        tipo: "Fotograma de video",
+        texto: "Dos autos con la misma placa",
+      },
+      posicion: "50% 0%",
     },
+    muestraHallazgo: true,
   },
 ]);

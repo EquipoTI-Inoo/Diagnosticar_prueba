@@ -23,6 +23,13 @@ export const imagenSchema = z.object({
   alto: z.number().int().positive(),
   /** Fondo que necesita el archivo (p. ej. un logo blanco con transparencia → "oscuro"). */
   fondo: z.enum(["claro", "oscuro"]).optional(),
+  /**
+   * Pie de foto honesto: `tipo` dice qué es la imagen (p. ej. «Fotograma de video»),
+   * `texto` qué muestra. Sin fechas ni datos que no estén en la fuente.
+   */
+  pie: z.object({ tipo: z.string().min(1), texto: z.string().optional() }).optional(),
+  /** `object-position` para recortar (p. ej. ocultar subtítulos quemados abajo). */
+  posicion: z.string().optional(),
 });
 export type Imagen = z.infer<typeof imagenSchema>;
 
@@ -163,6 +170,8 @@ export const problemaSchema = z.object({
   casos: z.number().int().positive(),
   base: z.number().int().positive(),
   imagen: imagenSchema,
+  /** La foto muestra el hallazgo en sí (no solo al equipo). */
+  muestraHallazgo: z.boolean(),
 });
 export type Problema = z.infer<typeof problemaSchema>;
 

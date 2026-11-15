@@ -4,20 +4,17 @@ import { cn } from "@/lib/utils";
 
 /**
  * Foto real con tratamiento editorial (recorte, leve desaturación) y pie en mono.
- * Ej.: «Hallazgo real · Fugas de aceite».
+ * El pie sale de `imagen.pie` (definido en /content): nunca se afirma «hallazgo real»
+ * por defecto. Sin pie en el contenido, no se muestra pie.
  */
 export function PhotoFigure({
   imagen,
-  pie,
-  tipo = "Hallazgo real",
   aspect = "aspect-[4/3]",
   sizes = "(min-width: 1024px) 33vw, 100vw",
   priority = false,
   className,
 }: {
   imagen: Imagen;
-  pie?: string;
-  tipo?: string;
   aspect?: string;
   sizes?: string;
   priority?: boolean;
@@ -33,12 +30,13 @@ export function PhotoFigure({
           sizes={sizes}
           priority={priority}
           className="foto-real object-cover"
+          style={imagen.posicion ? { objectPosition: imagen.posicion } : undefined}
         />
       </div>
-      {(pie || tipo) && (
+      {imagen.pie && (
         <figcaption className="font-mono text-xs tracking-wide text-fg-muted uppercase">
-          {tipo}
-          {pie && <> · {pie}</>}
+          {imagen.pie.tipo}
+          {imagen.pie.texto && <> · {imagen.pie.texto}</>}
         </figcaption>
       )}
     </figure>

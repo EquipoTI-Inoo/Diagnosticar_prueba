@@ -23,7 +23,7 @@ for (const archivo of readdirSync("content").filter(
   const lineas = readFileSync(join("content", archivo), "utf8").split("\n");
   const numeros = new Set<string>();
   for (const l of lineas) {
-    if (/^\s*(ancho|alto):/.test(l) || /^\s*(\/\/|\*|\/\*)/.test(l)) continue;
+    if (/^\s*(ancho|alto|posicion):/.test(l) || /^\s*(\/\/|\*|\/\*)/.test(l)) continue;
     for (const s of l.match(/"(?:[^"\\]|\\.)*"/g) ?? []) {
       if (s.startsWith('"/')) continue;
       for (const n of s.match(/\d[\d.,]*\d|\d/g) ?? []) numeros.add(n.replace(/[.,]$/, ""));

@@ -250,9 +250,11 @@ function construirNegocio() {
         url: PENDIENTE,
       },
     ],
+    // El emblema del Rally es un círculo blanco sobre cuadrado negro: placa oscura para que
+    // el cuadrado se funda con el fondo.
     automovilismo: n.automovilismo.map((nombre) => ({
       nombre,
-      logo: logo("caminos-del-inca-logo.png"),
+      logo: { ...logo("caminos-del-inca-logo.png"), fondo: "oscuro" },
     })),
     tecnologia: n.tecnologia,
     reserva: {
@@ -483,17 +485,77 @@ function construirTestimonios() {
   });
 }
 
-const FOTOS_PROBLEMAS: Record<string, { slug: string; archivo: string }> = {
-  "Fugas de aceite": { slug: "fugas-de-aceite", archivo: "fugas-aceite.jpg" },
+/**
+ * Fotos de problemas. Todas son fotogramas de video del sitio (varias con subtítulos quemados).
+ * El pie dice lo que la imagen MUESTRA, no lo que el sitio afirma. Cuando el `alt` original
+ * no describe la imagen (p. ej. «kilometraje» sobre una foto de una llanta), se reemplaza por
+ * una descripción literal y se anota en PENDIENTES.
+ */
+type FotoProblema = {
+  slug: string;
+  archivo: string;
+  pie: { tipo: string; texto?: string };
+  /** Muestra el hallazgo de verdad (apta para «hallazgo real»). */
+  muestraHallazgo: boolean;
+  alt?: string;
+  posicion?: string;
+};
+
+const FOTOGRAMA = "Fotograma de video";
+
+const FOTOS_PROBLEMAS: Record<string, FotoProblema> = {
+  "Fugas de aceite": {
+    slug: "fugas-de-aceite",
+    archivo: "fugas-aceite.jpg",
+    pie: { tipo: "Hallazgo real", texto: "Fuga de aceite señalada" },
+    muestraHallazgo: true,
+  },
   "Problemas documentarios (garantías, papeletas, robo, pérdida total)": {
     slug: "problemas-documentarios",
     archivo: "problemas-documentarios.jpg",
+    pie: { tipo: FOTOGRAMA, texto: "Equipo DiagnostiCAR" },
+    muestraHallazgo: false,
+    alt: "Técnico de DiagnostiCAR hablando a cámara junto a un auto rojo (fotograma de video)",
+    posicion: "50% 15%",
   },
-  "Choques ocultos": { slug: "choques-ocultos", archivo: "choques-ocultos.jpg" },
-  "Kilometraje bajado": { slug: "kilometraje-bajado", archivo: "kilometraje200k.jpg" },
-  "Airbags reventados": { slug: "airbags-reventados", archivo: "airbag.jpg" },
-  "Motor o caja reparados": { slug: "motor-o-caja-reparados", archivo: "motor-reparado.jpg" },
-  "Carros clonados": { slug: "carros-clonados", archivo: "carros-clonados.jpg" },
+  "Choques ocultos": {
+    slug: "choques-ocultos",
+    archivo: "choques-ocultos.jpg",
+    pie: { tipo: FOTOGRAMA, texto: "Equipo DiagnostiCAR" },
+    muestraHallazgo: false,
+    alt: "Dos técnicos de DiagnostiCAR sentados conversando en una oficina (fotograma de video)",
+    posicion: "50% 30%",
+  },
+  "Kilometraje bajado": {
+    slug: "kilometraje-bajado",
+    archivo: "kilometraje200k.jpg",
+    pie: { tipo: FOTOGRAMA, texto: "Revisión de una llanta" },
+    muestraHallazgo: false,
+    alt: "Primer plano de una llanta durante una revisión, con el subtítulo «le habían borrado el número VIN» (fotograma de video)",
+    posicion: "50% 20%",
+  },
+  "Airbags reventados": {
+    slug: "airbags-reventados",
+    archivo: "airbag.jpg",
+    pie: { tipo: FOTOGRAMA, texto: "Inspección del habitáculo" },
+    muestraHallazgo: false,
+    alt: "Interior de un auto durante una inspección, con el subtítulo «el problema» (fotograma de video)",
+    posicion: "50% 20%",
+  },
+  "Motor o caja reparados": {
+    slug: "motor-o-caja-reparados",
+    archivo: "motor-reparado.jpg",
+    pie: { tipo: "Hallazgo real", texto: "Inspección con videoscopio" },
+    muestraHallazgo: true,
+    posicion: "50% 0%",
+  },
+  "Carros clonados": {
+    slug: "carros-clonados",
+    archivo: "carros-clonados.jpg",
+    pie: { tipo: FOTOGRAMA, texto: "Dos autos con la misma placa" },
+    muestraHallazgo: true,
+    posicion: "50% 0%",
+  },
 };
 
 function construirProblemas() {
@@ -507,7 +569,12 @@ function construirProblemas() {
       ...(detalle ? { detalle: detalle.charAt(0).toUpperCase() + detalle.slice(1) } : {}),
       casos: Number(casos),
       base: Number(base),
-      imagen: imagen(`/img/clave/${meta.archivo}`),
+      imagen: {
+        ...imagen(`/img/clave/${meta.archivo}`, meta.alt),
+        pie: meta.pie,
+        ...(meta.posicion ? { posicion: meta.posicion } : {}),
+      },
+      muestraHallazgo: meta.muestraHallazgo,
     });
   });
 }
@@ -629,6 +696,8 @@ ${fuente.inconsistencias_detectadas.map((p) => `- [ ] ${p}`).join("\n")}
 - [ ] Sello «Vehículo verificado»: el QR del prototipo es ilustrativo. Falta la URL real de verificación.
 - [ ] Gestión: URL de la nota de prensa. Ficha de Google Business (URL para «Ver reseñas en Google»).
 - [ ] IDs de Meta Pixel, TikTok Pixel y GTM.
+- [ ] Fotos de hallazgos sin subtítulos quemados, en especial choque oculto y problemas documentarios.
+- [ ] Fotos que muestren el hallazgo: hoy «kilometraje bajado» (${FOTOS_PROBLEMAS["Kilometraje bajado"]!.archivo}) muestra una llanta y «airbags reventados» (${FOTOS_PROBLEMAS["Airbags reventados"]!.archivo}) no muestra un airbag; sus \`alt\` originales no describen la imagen y se reemplazaron por descripciones literales.
 `;
 writeFileSync(join(ROOT, "docs/PENDIENTES.md"), pendientes);
 console.log("✓ docs/PENDIENTES.md");

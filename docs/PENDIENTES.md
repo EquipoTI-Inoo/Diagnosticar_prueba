@@ -48,3 +48,5 @@
 - [ ] Sello «Vehículo verificado»: el QR del prototipo es ilustrativo. Falta la URL real de verificación.
 - [ ] Gestión: URL de la nota de prensa. Ficha de Google Business (URL para «Ver reseñas en Google»).
 - [ ] IDs de Meta Pixel, TikTok Pixel y GTM.
+- [ ] Fotos de hallazgos sin subtítulos quemados, en especial choque oculto y problemas documentarios.
+- [ ] Fotos que muestren el hallazgo: hoy «kilometraje bajado» (kilometraje200k.jpg) muestra una llanta y «airbags reventados» (airbag.jpg) no muestra un airbag; sus `alt` originales no describen la imagen y se reemplazaron por descripciones literales.

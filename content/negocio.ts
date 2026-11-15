@@ -162,6 +162,7 @@ export const negocio: Negocio = negocioSchema.parse({
         alt: "Rally Caminos del Inca",
         ancho: 520,
         alto: 520,
+        fondo: "oscuro",
       },
     },
   ],
