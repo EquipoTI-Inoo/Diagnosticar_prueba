@@ -9,43 +9,129 @@ export type Par = {
   bg: keyof typeof tokens;
   uso: string;
   minimo: 3 | 4.5;
+  /**
+   * Cómo se representa la muestra en /design-system. Solo `texto` se pinta como texto;
+   * el resto son muestras gráficas (aria-hidden) para no presentar como texto un color
+   * que solo se usa en gráficos o bordes.
+   */
+  muestra: Muestra;
 };
+
+export type Muestra = "texto" | "foco" | "borde" | "celda";
 
 export const PARES: Par[] = [
   // Texto sobre claro
-  { fg: "ink", bg: "paper", uso: "Texto principal sobre claro", minimo: 4.5 },
-  { fg: "muted", bg: "paper", uso: "Texto secundario sobre claro", minimo: 4.5 },
-  { fg: "brand-deep", bg: "paper", uso: "Enlaces y palabras clave sobre claro", minimo: 4.5 },
-  { fg: "alert-deep", bg: "paper", uso: "Mensajes de error sobre claro", minimo: 4.5 },
-  { fg: "ink", bg: "white", uso: "Texto en tarjetas blancas", minimo: 4.5 },
-  { fg: "muted", bg: "white", uso: "Texto secundario en tarjetas blancas", minimo: 4.5 },
+  { fg: "ink", bg: "paper", uso: "Texto principal sobre claro", minimo: 4.5, muestra: "texto" },
+  { fg: "muted", bg: "paper", uso: "Texto secundario sobre claro", minimo: 4.5, muestra: "texto" },
+  {
+    fg: "brand-deep",
+    bg: "paper",
+    uso: "Enlaces y palabras clave sobre claro",
+    minimo: 4.5,
+    muestra: "texto",
+  },
+  {
+    fg: "alert-deep",
+    bg: "paper",
+    uso: "Mensajes de error sobre claro",
+    minimo: 4.5,
+    muestra: "texto",
+  },
+  { fg: "ink", bg: "white", uso: "Texto en tarjetas blancas", minimo: 4.5, muestra: "texto" },
+  {
+    fg: "muted",
+    bg: "white",
+    uso: "Texto secundario en tarjetas blancas",
+    minimo: 4.5,
+    muestra: "texto",
+  },
   // Texto sobre oscuro
-  { fg: "paper", bg: "ink", uso: "Texto principal sobre oscuro", minimo: 4.5 },
-  { fg: "paper", bg: "ink-2", uso: "Texto sobre superficie oscura secundaria", minimo: 4.5 },
-  { fg: "ink-muted", bg: "ink", uso: "Texto secundario sobre oscuro", minimo: 4.5 },
-  { fg: "ink-muted", bg: "ink-2", uso: "Texto secundario sobre ink-2", minimo: 4.5 },
-  { fg: "brand", bg: "ink", uso: "Acento / palabra clave sobre oscuro", minimo: 4.5 },
-  { fg: "brand", bg: "ink-2", uso: "Acento sobre ink-2", minimo: 4.5 },
-  { fg: "alert-soft", bg: "ink", uso: "Mensajes de error sobre oscuro", minimo: 4.5 },
+  { fg: "paper", bg: "ink", uso: "Texto principal sobre oscuro", minimo: 4.5, muestra: "texto" },
+  {
+    fg: "paper",
+    bg: "ink-2",
+    uso: "Texto sobre superficie oscura secundaria",
+    minimo: 4.5,
+    muestra: "texto",
+  },
+  {
+    fg: "ink-muted",
+    bg: "ink",
+    uso: "Texto secundario sobre oscuro",
+    minimo: 4.5,
+    muestra: "texto",
+  },
+  {
+    fg: "ink-muted",
+    bg: "ink-2",
+    uso: "Texto secundario sobre ink-2",
+    minimo: 4.5,
+    muestra: "texto",
+  },
+  {
+    fg: "brand",
+    bg: "ink",
+    uso: "Acento / palabra clave sobre oscuro",
+    minimo: 4.5,
+    muestra: "texto",
+  },
+  { fg: "brand", bg: "ink-2", uso: "Acento sobre ink-2", minimo: 4.5, muestra: "texto" },
+  {
+    fg: "alert-soft",
+    bg: "ink",
+    uso: "Mensajes de error sobre oscuro",
+    minimo: 4.5,
+    muestra: "texto",
+  },
   // Botones
-  { fg: "ink", bg: "brand", uso: "Botón primario (texto ink sobre brand)", minimo: 4.5 },
-  { fg: "ink", bg: "whatsapp", uso: "Botón WhatsApp (texto ink)", minimo: 4.5 },
-  { fg: "paper", bg: "brand-deep", uso: "Badge «Más elegido» sobre claro", minimo: 4.5 },
-  { fg: "ink", bg: "warn", uso: "Etiqueta de semáforo ámbar", minimo: 4.5 },
+  {
+    fg: "ink",
+    bg: "brand",
+    uso: "Botón primario (texto ink sobre brand)",
+    minimo: 4.5,
+    muestra: "texto",
+  },
+  { fg: "ink", bg: "whatsapp", uso: "Botón WhatsApp (texto ink)", minimo: 4.5, muestra: "texto" },
+  {
+    fg: "paper",
+    bg: "brand-deep",
+    uso: "Badge «Más elegido» sobre claro",
+    minimo: 4.5,
+    muestra: "texto",
+  },
+  { fg: "ink", bg: "warn", uso: "Etiqueta de semáforo ámbar", minimo: 4.5, muestra: "texto" },
   // No texto (WCAG 1.4.11: 3:1)
-  { fg: "brand-deep", bg: "paper", uso: "Anillo de foco sobre claro", minimo: 3 },
-  { fg: "brand", bg: "ink", uso: "Anillo de foco sobre oscuro", minimo: 3 },
-  { fg: "muted", bg: "paper", uso: "Borde de inputs sobre claro", minimo: 3 },
-  { fg: "ink-muted", bg: "ink", uso: "Borde de inputs sobre oscuro", minimo: 3 },
-  { fg: "ok", bg: "paper", uso: "Celda de medidor verde sobre claro", minimo: 3 },
-  { fg: "warn", bg: "ink", uso: "Celda de medidor ámbar sobre oscuro", minimo: 3 },
-  { fg: "alert", bg: "paper", uso: "Celda de medidor rojo sobre claro", minimo: 3 },
-  { fg: "alert", bg: "ink", uso: "Celda de medidor rojo sobre oscuro", minimo: 3 },
-  { fg: "ok", bg: "ink", uso: "Celda de medidor verde sobre oscuro", minimo: 3 },
+  { fg: "brand-deep", bg: "paper", uso: "Anillo de foco sobre claro", minimo: 3, muestra: "foco" },
+  { fg: "brand", bg: "ink", uso: "Anillo de foco sobre oscuro", minimo: 3, muestra: "foco" },
+  { fg: "muted", bg: "paper", uso: "Borde de inputs sobre claro", minimo: 3, muestra: "borde" },
+  { fg: "ink-muted", bg: "ink", uso: "Borde de inputs sobre oscuro", minimo: 3, muestra: "borde" },
+  { fg: "ok", bg: "paper", uso: "Celda de medidor verde sobre claro", minimo: 3, muestra: "celda" },
+  {
+    fg: "warn",
+    bg: "ink",
+    uso: "Celda de medidor ámbar sobre oscuro",
+    minimo: 3,
+    muestra: "celda",
+  },
+  {
+    fg: "alert",
+    bg: "paper",
+    uso: "Celda de medidor rojo sobre claro",
+    minimo: 3,
+    muestra: "celda",
+  },
+  {
+    fg: "alert",
+    bg: "ink",
+    uso: "Celda de medidor rojo sobre oscuro",
+    minimo: 3,
+    muestra: "celda",
+  },
+  { fg: "ok", bg: "ink", uso: "Celda de medidor verde sobre oscuro", minimo: 3, muestra: "celda" },
 ];
 
 /** Pares que NO se usan para texto (se documentan como prohibidos). */
-export const PROHIBIDOS: Omit<Par, "minimo">[] = [
+export const PROHIBIDOS: Omit<Par, "minimo" | "muestra">[] = [
   { fg: "brand", bg: "paper", uso: "Brand como texto sobre claro → usar brand-deep" },
   { fg: "white", bg: "whatsapp", uso: "Texto blanco sobre verde WhatsApp → usar ink" },
   { fg: "white", bg: "brand", uso: "Texto blanco sobre brand → usar ink" },

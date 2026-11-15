@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContrastSample } from "@/components/design-system/contrast-sample";
 import { DsSection, Specimen } from "@/components/design-system/specimen";
 import {
   Badge,
@@ -95,10 +96,10 @@ const GRUPOS_COLOR: { titulo: string; tokens: { t: Token; uso: string }[] }[] = 
   },
 ];
 
-const oscuro = (t: Token) => ["ink", "ink-2", "brand-deep", "muted", "alert-deep"].includes(t);
-
 export default function DesignSystemPage() {
   const diagnosticar = getServicio("diagnosticar");
+  // Solo fotos que muestran el hallazgo (fuga, videoscopio, placas clonadas).
+  const fotosHallazgo = problemas.filter((p) => p.muestraHallazgo);
   const m = negocio.metricas;
   return (
     <div className="surface-light min-h-dvh">
@@ -111,7 +112,7 @@ export default function DesignSystemPage() {
           <h1 className="mt-3 text-h1">
             Sistema de diseño.
             <br />
-            <Highlight italic>Informe técnico.</Highlight>
+            <Highlight>Informe técnico.</Highlight>
           </h1>
           <p className="mt-6 max-w-[60ch] text-fg-muted">
             Tokens, tipografías y componentes del nuevo sitio. Cada componente se muestra sobre
@@ -129,12 +130,12 @@ export default function DesignSystemPage() {
           className="py-10 lg:sticky lg:top-0 lg:max-h-dvh lg:overflow-auto"
         >
           <p className="font-mono text-eyebrow tracking-[0.12em] text-muted uppercase">Índice</p>
-          <ol className="mt-4 grid grid-cols-2 gap-x-4 gap-y-1 text-sm sm:grid-cols-3 lg:grid-cols-1">
+          <ol className="mt-4 grid grid-cols-2 gap-x-4 text-sm sm:grid-cols-3 lg:grid-cols-1">
             {SECCIONES.map(([id, label], i) => (
               <li key={id}>
                 <a
                   href={`#${id}`}
-                  className="flex min-h-8 items-center gap-2 text-ink hover:text-brand-deep"
+                  className="flex min-h-11 items-center gap-2 text-ink hover:text-brand-deep"
                 >
                   <span className="font-mono text-xs text-muted">
                     {String(i + 1).padStart(2, "0")}
@@ -145,7 +146,10 @@ export default function DesignSystemPage() {
             ))}
           </ol>
           <p className="mt-6 text-sm">
-            <Link href="/" className="text-brand-deep underline underline-offset-4">
+            <Link
+              href="/"
+              className="inline-flex min-h-11 items-center text-brand-deep underline underline-offset-4"
+            >
               ← Volver al inicio
             </Link>
           </p>
@@ -177,17 +181,12 @@ export default function DesignSystemPage() {
                       key={t}
                       className="overflow-hidden rounded-card border border-line bg-white"
                     >
-                      <div
-                        className="flex h-20 items-end p-3 font-mono text-xs"
-                        style={{
-                          background: tokens[t],
-                          color: oscuro(t) ? tokens.paper : tokens.ink,
-                        }}
-                      >
-                        {tokens[t]}
-                      </div>
-                      <div className="p-3">
-                        <p className="font-mono text-sm font-medium">{t}</p>
+                      <div aria-hidden className="h-20" style={{ background: tokens[t] }} />
+                      <div className="border-t border-line p-3">
+                        <p className="flex items-baseline justify-between gap-2 font-mono text-sm">
+                          <span className="font-medium">{t}</span>
+                          <span className="text-xs text-muted">{tokens[t]}</span>
+                        </p>
                         <p className="text-sm text-muted">{uso}</p>
                       </div>
                     </li>
@@ -210,13 +209,18 @@ export default function DesignSystemPage() {
               </>
             }
           >
-            <div className="overflow-x-auto rounded-card border border-line bg-white">
+            <div
+              tabIndex={0}
+              role="region"
+              aria-label="Tabla de contraste (desplazable en horizontal)"
+              className="overflow-x-auto rounded-card border border-line bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-deep"
+            >
               <table className="w-full min-w-[640px] text-left text-sm">
                 <caption className="sr-only">Combinaciones de color y su contraste</caption>
                 <thead className="border-b border-line font-mono text-xs text-muted uppercase">
                   <tr>
                     <th scope="col" className="p-3 font-medium">
-                      Muestra
+                      Muestra (uso real)
                     </th>
                     <th scope="col" className="p-3 font-medium">
                       Uso
@@ -238,16 +242,7 @@ export default function DesignSystemPage() {
                     return (
                       <tr key={`${p.fg}-${p.bg}-${p.uso}`}>
                         <td className="p-3">
-                          <span
-                            className="inline-flex min-w-28 justify-center rounded-sm px-2 py-1 font-mono text-xs"
-                            style={{
-                              background: tokens[p.bg],
-                              color: tokens[p.fg],
-                              border: `1px solid ${tokens.line}`,
-                            }}
-                          >
-                            {p.fg} / {p.bg}
-                          </span>
+                          <ContrastSample fg={p.fg} bg={p.bg} muestra={p.muestra} />
                         </td>
                         <td className="p-3">{p.uso}</td>
                         <td className="p-3 font-mono">{r.toFixed(2)}:1</td>
@@ -268,16 +263,7 @@ export default function DesignSystemPage() {
               <ul className="mt-3 space-y-2 text-sm">
                 {PROHIBIDOS.map((p) => (
                   <li key={`${p.fg}-${p.bg}`} className="flex flex-wrap items-center gap-3">
-                    <span
-                      className="inline-flex min-w-28 justify-center rounded-sm px-2 py-1 font-mono text-xs"
-                      style={{
-                        background: tokens[p.bg],
-                        color: tokens[p.fg],
-                        border: `1px solid ${tokens.line}`,
-                      }}
-                    >
-                      {p.fg} / {p.bg}
-                    </span>
+                    <ContrastSample fg={p.fg} bg={p.bg} muestra="franja" />
                     <span className="font-mono">
                       {ratio(tokens[p.fg], tokens[p.bg]).toFixed(2)}:1
                     </span>
@@ -305,7 +291,8 @@ export default function DesignSystemPage() {
                     className="font-display text-h1 font-extrabold [font-stretch:87.5%]"
                     aria-hidden
                   >
-                    Revisa antes de decidir. <Highlight italic>Las máquinas no mienten.</Highlight>
+                    Revisa antes de decidir. <br />
+                    <Highlight>Las máquinas no mienten.</Highlight>
                   </p>
                 </div>
                 <div>
@@ -457,9 +444,14 @@ export default function DesignSystemPage() {
             </Specimen>
             <div className="surface-light rounded-card border border-line p-6">
               <ul role="list" className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
-                {escalera.map((s) => (
+                {escalera.map((s, i) => (
                   <li key={s.slug}>
-                    <PlanCard servicio={s} ubicacion="design-system" />
+                    <PlanCard
+                      servicio={s}
+                      indice={i + 1}
+                      total={escalera.length}
+                      ubicacion="design-system"
+                    />
                   </li>
                 ))}
               </ul>
@@ -663,15 +655,15 @@ export default function DesignSystemPage() {
             id="fotos"
             numero="18"
             titulo="Fotos reales"
-            descripcion="Solo fotos reales del sitio (nunca las del blog). Recorte editorial, leve desaturación y pie en mono."
+            descripcion="Solo fotos reales del sitio (nunca las del blog). Recorte editorial 2:1 con object-position para esconder subtítulos quemados, leve desaturación y pie en mono que viene de /content: dice lo que la foto muestra («Hallazgo real» solo si se ve el hallazgo; si no, «Fotograma de video»)."
           >
             <Specimen stack>
               <div className="grid gap-6 sm:grid-cols-3">
-                {problemas.slice(0, 3).map((p) => (
+                {fotosHallazgo.map((p) => (
                   <PhotoFigure
                     key={p.slug}
                     imagen={p.imagen}
-                    pie={p.titulo}
+                    aspect="aspect-[2/1]"
                     sizes="(min-width: 640px) 30vw, 100vw"
                   />
                 ))}
