@@ -55,9 +55,26 @@
 | S14 | Analítica: `track()` solo envía a `dataLayer` si hay consentimiento analítico guardado (`localStorage dc-consent`). En desarrollo lo registra en la consola. | El §3 pide respetar el consentimiento. El banner que lo guarda llega en la Fase 2. |
 | S15 | `/design-system` está fuera del grupo `(site)` y lleva `noindex`. | Es una herramienta interna; no debe heredar el header ni el footer del sitio. |
 
+## Ronda de corrección 1 (revisión UX, 15/11/2026)
+
+| # | Decisión | Por qué |
+|---|---|---|
+| R1 | Cada combinación de `lib/contrast.ts` declara cómo se muestra (`muestra: texto · foco · borde · celda`). En `/design-system` solo las de `texto` se pintan como texto («Aa»); el foco se muestra como anillo, el borde como input y la celda como medidor. Las 5 prohibidas son swatches sin texto. Las muestras gráficas llevan `aria-hidden`, y al lado va el rótulo `fg / bg` en `ink` sobre blanco. | Pintar como texto un color que solo se usa en gráficos daba falsos fallos de axe y comunicaba mal el uso real. |
+| R2 | El hex de cada swatch de color se muestra en el pie blanco de la tarjeta (`muted` sobre blanco, 5.58:1) y no encima del color. | `ink` sobre `alert` da 4.27:1 a 12 px. |
+| R3 | La tabla de contraste va en un contenedor desplazable con `tabIndex=0`, `role="region"`, `aria-label` y foco visible. | Requisito `scrollable-region-focusable` de axe a 390 px. |
+| R4 | **Sin cursiva.** `Highlight` ya no acepta `italic`: el acento es solo color. | Archivo se carga sin estilo italic y el navegador la falseaba. El §5.1 pide solo color de acento. |
+| R5 | Pies de foto desde `/content`: `imagen.pie = { tipo, texto }`, generado por el script. Se pone «Hallazgo real» solo cuando la foto muestra el hallazgo (fuga de aceite, videoscopio). El resto se rotula «Fotograma de video» con lo que se ve. `PhotoFigure` ya no pone un pie por defecto. | Varias fotos son fotogramas del equipo con subtítulos quemados, y afirmar «hallazgo real» era falso. |
+| R6 | Los `alt` originales que no describen la imagen se reemplazan por descripciones literales (choques ocultos, problemas documentarios, kilometraje200k = una llanta, airbag = interior). Queda anotado en PENDIENTES. | El `alt` debe describir lo que se ve, no lo que el sitio viejo afirmaba. |
+| R7 | `imagen.posicion` (object-position) más recorte 2:1 en el specimen de fotos, para dejar fuera los subtítulos quemados. `problema.muestraHallazgo` filtra qué fotos se usan como evidencia. | Reduce el ruido visual sin editar los archivos. |
+| R8 | Patrón «revelar al entrar» (`useRevealOnView`): el estado SSR / sin JS es el final (medidor lleno). Solo en cliente, si está fuera de pantalla y no hay reduced-motion, vuelve a 0 y se llena al entrar. | Si falla JS no se muestra un dato falso (barras vacías). |
+| R9 | Táctiles: los enlaces del índice y «Volver al inicio» miden `min-h-11` (44 px). | §9. |
+| R10 | `PlanCard` como ficha de inspección: código «PLAN 03 / 05» en mono (por orden en la escalera; lector: «Plan 03 de 05»), cabecera con cuadrícula sutil y regla fina, precio vigente de 44 px en mono con «S/» alineado arriba, tachado de 15 px en `muted` con «Antes» en sr-only, y la línea del tachado reservada para alinear tarjetas sin precio anterior. Los ítems van como renglones numerados (01, 02…) con separadores finos y un check al final. | Que no parezca un pricing SaaS genérico. No se añadió ningún dato. |
+| R11 | `LogoWall` en grilla con subgrid (columnas y filas): placas 5:3 idénticas y cabeceras alineadas. Los logotipos apaisados ocupan un área óptica de 68 % × 40 % y los emblemas, de 68 % × 76 %, centrados. El emblema del Rally (círculo blanco sobre cuadrado negro) va sobre placa oscura. | Tamaño óptico parejo; antes LAUNCH/Autel quedaban apilados y el Rally se veía diminuto. |
+| R12 | axe-core se usa **fuera del repo** (carpeta temporal) para verificar, sin añadir dependencias. La suite e2e con `@axe-core/playwright` sigue siendo de la Fase 6. | La revisión pide no instalar dependencias nuevas de runtime. |
+
 ## Contraste (WCAG 2.2 AA)
 
-Generado con `npm run check:contrast -- --md` a partir de `lib/contrast.ts`. El script falla si alguna combinación en uso no llega a su mínimo o si `globals.css` deja de coincidir con `lib/tokens.ts`.
+Generado con `npm run check:contrast -- --md` a partir de `lib/contrast.ts`. Los ratios no cambiaron en la ronda 1; lo que cambió es cómo se muestran en /design-system (R1). El script falla si alguna combinación en uso no llega a su mínimo o si `globals.css` deja de coincidir con `lib/tokens.ts`.
 
 | Uso | Primer plano | Fondo | Ratio | Mínimo | Resultado |
 |---|---|---|---|---|---|
