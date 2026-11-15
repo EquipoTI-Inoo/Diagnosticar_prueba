@@ -12,7 +12,7 @@ export default function Home() {
         <h1 className="mt-4 text-h1">
           Revisa antes de decidir.
           <br />
-          <Highlight italic>{negocio.lema}.</Highlight>
+          <Highlight>{negocio.lema}.</Highlight>
         </h1>
         <p className="mt-6 max-w-[56ch] text-fg-muted">
           Fundaciones listas: tokens, tipografías, componentes y contenido importado. La Home

@@ -1,16 +1,15 @@
 import { cn } from "@/lib/utils";
 
-/** Palabra clave en color de acento dentro de un titular (estilo «Las máquinas no mienten.»). */
+/**
+ * Palabra o línea clave en color de acento dentro de un titular.
+ * Sin cursiva: Archivo se carga sin estilo italic y el navegador la falsearía.
+ */
 export function Highlight({
   children,
-  italic = false,
   className,
 }: {
   children: React.ReactNode;
-  italic?: boolean;
   className?: string;
 }) {
-  return (
-    <em className={cn("text-accent", italic ? "italic" : "not-italic", className)}>{children}</em>
-  );
+  return <span className={cn("text-accent", className)}>{children}</span>;
 }
