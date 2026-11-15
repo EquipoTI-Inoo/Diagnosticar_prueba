@@ -2,14 +2,21 @@ import type { Precio } from "@/content/schema";
 import { cn, formatPEN } from "@/lib/utils";
 import { Pendiente } from "./pendiente";
 
-/** Precio en mono: anterior tachado + vigente. Si no hay precio, muestra el pendiente. */
+/**
+ * Precio en JetBrains Mono: anterior tachado legible (≥ 15 px, muted) encima y vigente grande
+ * con «S/» alineado arriba. Para lectores de pantalla se lee «Antes S/ 400. Ahora S/ 239».
+ * Sin precio en el contenido → `[PENDIENTE CLIENTE]`.
+ */
 export function Price({
   precio,
   size = "md",
+  reservarAntes = false,
   className,
 }: {
   precio: Precio;
   size?: "md" | "lg";
+  /** Reserva la línea del precio tachado aunque no exista (alinea tarjetas en una fila). */
+  reservarAntes?: boolean;
   className?: string;
 }) {
   if (precio.actual === null) {
@@ -21,23 +28,28 @@ export function Price({
     );
   }
   return (
-    <p className={cn("flex items-baseline gap-2.5 font-mono font-medium", className)}>
+    <div className={cn("font-mono font-medium", className)}>
       {precio.antes !== null && (
-        <s className="text-sm text-fg-muted decoration-1">
+        <p className="text-[0.9375rem] leading-none text-fg-muted">
           <span className="sr-only">Antes </span>
-          {formatPEN(precio.antes)}
-        </s>
+          <s className="decoration-1">{formatPEN(precio.antes)}</s>
+        </p>
       )}
-      <span
+      {precio.antes === null && reservarAntes && (
+        <p aria-hidden className="text-[0.9375rem] leading-none">
+          &nbsp;
+        </p>
+      )}
+      <p
         className={cn(
-          "tracking-tight text-fg",
-          size === "lg" ? "text-5xl" : "text-[2.25rem] leading-none",
+          "mt-1.5 flex items-start leading-none tracking-tight text-fg tabular-nums",
+          size === "lg" ? "text-6xl" : "text-[2.75rem]",
         )}
       >
-        {precio.antes !== null && <span className="sr-only">Ahora </span>}
-        <span className="mr-1.5 text-[0.55em] text-fg-muted">S/</span>
-        {precio.actual.toLocaleString("en-US")}
-      </span>
-    </p>
+        <span className="sr-only">{precio.antes !== null ? "Ahora " : "Precio "}</span>
+        <span className="mt-[0.12em] mr-1 text-[0.42em] leading-none text-fg-muted">S/</span>
+        <span>{precio.actual.toLocaleString("en-US")}</span>
+      </p>
+    </div>
   );
 }
