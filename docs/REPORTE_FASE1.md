@@ -80,3 +80,49 @@ Las 14 dudas detalladas están en `docs/ENTENDIMIENTO.md`. Las que más afectan 
 5. **Horario exacto y email oficial** (salen en el footer y en contacto).
 6. ¿Te parece bien el umbral del semáforo de hallazgos (≥ 5/10 rojo, ≥ 2/10 ámbar, menos verde)?
 7. ¿Validas el copy que redacté (taglines, pasos, etapas y comparador)?
+
+---
+
+## Ronda de corrección 1 (revisión UX)
+
+Fecha: 15/11/2026. Sigo en la Fase 1: no empecé la Fase 2, no hice push ni añadí remotos, no desplegué y no instalé dependencias nuevas en el proyecto. No toqué `docs/capturas/`.
+
+### Qué cambió
+
+| # | Pedido | Cambio | Resultado |
+|---|---|---|---|
+| 1a | `color-contrast` (9 nodos) | Cada combinación de `lib/contrast.ts` declara su tipo de muestra (`texto`, `foco`, `borde`, `celda`). Solo las de texto se pintan como «Aa»; el resto se muestra como anillo de foco, borde de input o celdas de medidor (todo `aria-hidden`), con el rótulo `fg / bg` en `ink` sobre blanco. Las 5 prohibidas son swatches sin texto. El hex de los swatches de color pasó al pie blanco de la tarjeta. Componente nuevo: `components/design-system/contrast-sample.tsx`. | ✅ 0 nodos |
+| 1b | `scrollable-region-focusable` | El contenedor de la tabla lleva `tabIndex=0`, `role="region"`, `aria-label` y foco visible (`brand-deep`). | ✅ |
+| 2 | Cursiva sintética | `Highlight` ya no tiene la opción `italic` y el acento es solo color. Lo quité en `app/page.tsx` y en `/design-system` (el titular de ejemplo pone la segunda línea en color de acento, como pide el §5.1). | ✅ |
+| 3 | Pies de foto honestos | Campo `imagen.pie {tipo, texto}` y `imagen.posicion` en `/content`, generados por el script. «Hallazgo real» solo para la fuga de aceite y el videoscopio; el resto dice «Fotograma de video · …». Los `alt` originales que no describían la imagen (choques ocultos, problemas documentarios, kilometraje = una llanta, airbag) se cambiaron por descripciones literales. El specimen de fotos usa solo `muestraHallazgo` (fuga, videoscopio, placas clonadas) con recorte 2:1 y `object-position` para esconder subtítulos. En la sección C de PENDIENTES se añadieron: «Fotos de hallazgos sin subtítulos quemados…» y otro pendiente sobre las fotos que no muestran su hallazgo. | ✅ |
+| 4 | FindingMeter sin JS | Nuevo hook `useRevealOnView`: en SSR / sin JS el medidor sale **lleno**. En cliente vuelve a 0 solo si está fuera de pantalla y no hay reduced-motion, y se llena al entrar. Lo comprobé con Playwright: sin JS, celdas al 100 %; con JS fuera de pantalla, 0 %; tras hacer scroll, 100 %. | ✅ |
+| 5 | Táctiles ≥ 44 px | Los enlaces del índice y «← Volver al inicio» miden `min-h-11` (44 px). | ✅ |
+| 6a | PlanCard | Tarjeta tipo ficha: «PLAN 03 / 05» en mono (el lector lee «Plan 03 de 05»), cabecera con cuadrícula sutil y regla fina, precio vigente de 44 px en JetBrains Mono con «S/» alineado arriba, tachado de 15 px en `muted` con «Antes» en sr-only, línea del tachado reservada para alinear tarjetas, e ítems como renglones numerados 01…06 con separadores finos. La destacada sigue en oscuro con «Más elegido». No añadí ningún dato. | ✅ |
+| 6b | LogoWall | Grilla con subgrid en columnas y filas: placas 5:3 idénticas y cabeceras alineadas aunque una ocupe 2 líneas. Área óptica: 68 % × 40 % para logotipos apaisados y 68 % × 76 % para emblemas, centrados. El emblema del Rally va sobre placa oscura para que se funda su cuadrado negro. LAUNCH y Autel quedan lado a lado. | ✅ |
+
+### Verificación
+
+- **axe-core 4.14** con las etiquetas `wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa, best-practice` en `/design-system` a **390 y 1280 px**: **0 violaciones**, con `prefers-reduced-motion` y sin él. También dio 0 en `/`. axe se ejecutó desde una carpeta temporal fuera del repo, así que no añadí dependencias.
+- `npm run check` (contraste + datos + `tsc` + ESLint): ✅ sin errores ni advertencias.
+- `npm run build`: ✅ sin errores.
+- Interacciones (máscara de placa, error accesible, comparador con teclado, FAQ con Enter y URL de WhatsApp): siguen funcionando igual.
+- La tabla de contraste de `DECISIONES.md` no cambió de valores (los ratios son los mismos). Se añadieron las decisiones R1–R12.
+
+### Commits de esta ronda
+
+```
+561b4c9 docs: decisiones de la ronda de corrección 1
+edb2ba6 fix(a11y): /design-system sin violaciones axe
+4da637d feat(ui): PlanCard como ficha de inspección y LogoWall con placas uniformes
+e4d1474 fix(ui): quita la cursiva sintética del acento en titulares
+4652bee fix(ui): FindingMeter se renderiza lleno sin JS y solo anima fuera de pantalla
+e14ec67 fix(content): pies de foto honestos desde /content y alt literales
+e0bcda0 chore: ignora salidas del orquestador y no formatea docs ni README
+```
+
+Más el commit de esta sección. Nota: verifiqué el build y los checks en el último commit (HEAD). Algunos commits intermedios no compilan por sí solos, porque `/design-system` se actualiza en `edb2ba6`.
+
+### Pendientes o dudas nuevas
+
+- Las fotos de «kilometraje bajado» y «airbags reventados» no muestran su hallazgo. Se piden fotos reales al cliente (ya está en PENDIENTES).
+- El emblema del Rally Caminos del Inca es un PNG cuadrado con fondo negro. Si el cliente tiene una versión con transparencia o en SVG, se vería mejor sobre cualquier placa.
