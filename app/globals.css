@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/*
+ * Sistema de diseño DiagnostiCAR — concepto «Informe técnico».
+ * Los hex de --color-* deben coincidir con lib/tokens.ts (lo verifica `npm run check:contrast`).
+ */
+
+@theme {
+  /* Se elimina la paleta por defecto de Tailwind: solo existen los tokens de marca. */
+  --color-*: initial;
+
+  --color-ink: #0b1214;
+  --color-ink-2: #16211f;
+  --color-ink-muted: #8e9c9a;
+  --color-paper: #f5f6f3;
+  --color-white: #ffffff;
+  --color-line: #dde2de;
+  --color-muted: #5c6b6a;
+  --color-brand: #04adbf;
+  --color-brand-deep: #00727e;
+  --color-ok: #2e9e5b;
+  --color-warn: #e0a100;
+  --color-alert: #d6452f;
+  --color-alert-deep: #b8392a;
+  --color-alert-soft: #f08a78;
+  --color-whatsapp: #25d366;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* Tipografías (variables que inyecta next/font en app/layout.tsx) */
+  --font-display: var(--font-archivo), "Arial Narrow", system-ui, sans-serif;
+  --font-sans: var(--font-inter-tight), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Escala fluida (360 → 1280 px) */
+  --text-h1: clamp(2.75rem, 1.68rem + 4.78vw, 5.5rem);
+  --text-h1--line-height: 0.98;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: clamp(2rem, 1.41rem + 2.61vw, 3.5rem);
+  --text-h2--line-height: 1.04;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: clamp(1.25rem, 1.1rem + 0.65vw, 1.625rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+  --text-body: clamp(1.0625rem, 1.03rem + 0.14vw, 1.125rem);
+  --text-body--line-height: 1.6;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--letter-spacing: 0.12em;
+
+  /* Radios */
+  --radius-sm: 6px;
+  --radius-card: 14px;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --container-site: 1200px;
+  --spacing-section: clamp(64px, 10vw, 128px);
+  --spacing-gutter: 24px;
+
+  /* Animaciones */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*
+ * Superficies semánticas: los componentes usan bg-bg, text-fg, text-accent, border-border…
+ * y se adaptan solos al estar dentro de .surface-light o .surface-dark.
+ */
+:root,
+.surface-light {
+  --s-bg: var(--color-paper);
+  --s-card: var(--color-white);
+  --s-fg: var(--color-ink);
+  --s-fg-muted: var(--color-muted);
+  --s-accent: var(--color-brand-deep);
+  --s-border: var(--color-line);
+  --s-border-strong: var(--color-muted);
+  --s-ring: var(--color-brand-deep);
+  --s-error: var(--color-alert-deep);
+  --s-grid: rgb(11 18 20 / 0.05);
+  --s-meter-empty: var(--color-line);
+  color-scheme: light;
+}
+
+.surface-dark {
+  --s-bg: var(--color-ink);
+  --s-card: var(--color-ink-2);
+  --s-fg: var(--color-paper);
+  --s-fg-muted: var(--color-ink-muted);
+  --s-accent: var(--color-brand);
+  --s-border: rgb(245 246 243 / 0.14);
+  --s-border-strong: var(--color-ink-muted);
+  --s-ring: var(--color-brand);
+  --s-error: var(--color-alert-soft);
+  --s-grid: rgb(245 246 243 / 0.05);
+  --s-meter-empty: rgb(245 246 243 / 0.14);
+  color-scheme: dark;
+}
+
+.surface-light,
+.surface-dark {
+  background-color: var(--s-bg);
+  color: var(--s-fg);
+}
+
+@theme inline {
+  --color-bg: var(--s-bg);
+  --color-card: var(--s-card);
+  --color-fg: var(--s-fg);
+  --color-fg-muted: var(--s-fg-muted);
+  --color-accent: var(--s-accent);
+  --color-border: var(--s-border);
+  --color-border-strong: var(--s-border-strong);
+  --color-ring: var(--s-ring);
+  --color-error: var(--s-error);
+  --color-meter-empty: var(--s-meter-empty);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-stretch: 87.5%;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid var(--s-ring);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-brand);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* Contenedor de 12 columnas, máx. 1200 px, gutter 24 px */
+  .container-site {
+    width: 100%;
+    max-width: calc(var(--container-site) + 2 * var(--spacing-gutter));
+    margin-inline: auto;
+    padding-inline: var(--spacing-gutter);
+  }
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--spacing-gutter);
+  }
+
+  /* Cuadrícula sutil de «hoja de inspección» */
+  .bg-inspeccion {
+    background-image:
+      linear-gradient(var(--s-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--s-grid) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Tratamiento de foto real: leve desaturación consistente */
+  .foto-real {
+    filter: saturate(0.82) contrast(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
