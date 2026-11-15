@@ -1,0 +1,240 @@
+/**
+ * Servicios y precios (orden de la escalera de planes).
+ *
+ * ARCHIVO GENERADO por scripts/import-content.ts desde docs/fuente/contenido.json
+ * (generado el 2026-11-15). No lo edites a mano: cambia la fuente o el script
+ * y ejecuta `npm run import:content`.
+ */
+import { z } from "zod";
+import { servicioSchema, type Servicio, type ServicioSlug } from "./schema";
+
+export const servicios: Servicio[] = z.array(servicioSchema).parse([
+  {
+    slug: "antecedentes-basico",
+    nombre: "Antecedentes Básico",
+    nombreWhatsapp: "Antecedentes Básico",
+    href: "/servicios/antecedentes-basico",
+    tipo: "antecedentes",
+    tagline: "Lo esencial para empezar.",
+    destacado: false,
+    enEscalera: true,
+    precio: {
+      actual: 19,
+      antes: null,
+      moneda: "PEN",
+      porConfirmar: false,
+    },
+    resumen: [
+      "+20 páginas",
+      "Cambios registrales",
+      "Papeletas Lima y Callao",
+      "Accidentes y choques",
+      "Garantías y deudas",
+      "Mucho más",
+    ],
+    detalle: ["Propietarios", "Gravámenes", "Papeletas", "Información registral"],
+    urlActual: ["/servicio-antecedentes-basico/"],
+  },
+  {
+    slug: "antecedentes-completo",
+    nombre: "Antecedentes Completo",
+    nombreWhatsapp: "Antecedentes Completo",
+    href: "/servicios/antecedentes-completo",
+    tipo: "antecedentes",
+    tagline: "Conoce toda su historia.",
+    destacado: false,
+    enEscalera: true,
+    precio: {
+      actual: 49,
+      antes: null,
+      moneda: "PEN",
+      porConfirmar: true,
+      nota: "landings antiguas: S/ 59; 'antes S/ 100'; una landing dice + IGV",
+    },
+    resumen: [
+      "Todo lo del Antecedentes Básico",
+      "Asientos registrales",
+      "Análisis y comentarios de un especialista",
+      "Papeletas a nivel nacional",
+      "Boleta informativa SUNARP",
+      "Informe de +25 páginas",
+    ],
+    detalle: [
+      "Cantidad e historial de propietarios (empresas de taxi, minería, aseguradoras – pérdida total)",
+      "Precio que pagó el último propietario",
+      "Cambios registrales (motor, color, características, GLP/GNV, anotación de robo)",
+      "Gravámenes, títulos o garantías mobiliarias pendientes",
+      "Multas en todo el Perú, SUTRAN y ATU",
+      "Pago del impuesto vehicular",
+      "Orden de captura o inscripción de robo",
+      "Revisiones técnicas desaprobadas o renovadas antes de vigencia",
+      "SOAT particular o taxi / siniestralidad SOAT y pérdida total",
+      "Número de partida y Boleta Informativa SUNARP",
+    ],
+    nota: "Descontable del DiagnostiCAR o Plus.",
+    urlActual: ["/servicio-antecedentes-completo/"],
+  },
+  {
+    slug: "diagnostico-basico",
+    nombre: "Diagnóstico Básico",
+    nombreWhatsapp: "Diagnóstico Básico",
+    href: "/servicios/diagnostico-basico",
+    tipo: "inspeccion",
+    tagline: "Conoce su estado general.",
+    destacado: false,
+    enEscalera: true,
+    precio: {
+      actual: 239,
+      antes: 400,
+      moneda: "PEN",
+      porConfirmar: false,
+    },
+    resumen: [
+      "Revisión vehicular completa (+200 puntos)",
+      "Escaneo profesional (motor, caja, airbags, ABS)",
+      "Escaneo electromagnético (choques)",
+      "Asesoría profesional",
+      "Reporte de escáner y reporte verbal",
+    ],
+    detalle: [
+      "Revisión vehicular completa (+200 puntos)",
+      "Escaneo profesional (motor, caja, airbags, ABS)",
+      "Escaneo electromagnético (choques)",
+      "Asesoría profesional",
+      "Reporte de escáner y reporte verbal",
+    ],
+    urlActual: ["/servicio-diagnostico-basico/"],
+  },
+  {
+    slug: "diagnosticar",
+    nombre: "DiagnostiCAR",
+    nombreWhatsapp: "DiagnostiCAR",
+    href: "/servicios/diagnosticar",
+    tipo: "inspeccion",
+    tagline: "Conócelo a fondo.",
+    badge: "Más elegido",
+    destacado: true,
+    enEscalera: true,
+    precio: {
+      actual: 349,
+      antes: 650,
+      moneda: "PEN",
+      porConfirmar: false,
+    },
+    resumen: [
+      "Todo lo del Básico",
+      "Confirmación del kilometraje real",
+      "Videoscopía completa",
+      "Revisión N.° VIN y motor",
+      "Reportes de antecedentes, de especialista (con fotos) y de escáner",
+      "Prueba de manejo (sujeta a T&C)",
+    ],
+    detalle: [
+      "Todo lo del Básico",
+      "Confirmación del kilometraje real",
+      "Videoscopía completa",
+      "Revisión N.° VIN y motor",
+      "Reportes de antecedentes, de especialista (con fotos) y de escáner",
+      "Prueba de manejo (sujeta a T&C)",
+    ],
+    urlActual: ["/servicio-diagnosticar/"],
+  },
+  {
+    slug: "diagnosticar-plus",
+    nombre: "DiagnostiCAR Plus",
+    nombreWhatsapp: "DiagnostiCAR Plus",
+    href: "/servicios/diagnosticar-plus",
+    tipo: "inspeccion",
+    tagline: "La revisión más completa.",
+    destacado: false,
+    enEscalera: true,
+    precio: {
+      actual: 549,
+      antes: 800,
+      moneda: "PEN",
+      porConfirmar: true,
+      nota: "/precios/ legacy dice S/ 559 → CONFIRMAR",
+    },
+    resumen: [
+      "Todo lo de DiagnostiCAR",
+      "Escaneo láser de frenos y llantas",
+      "Protección anticlonación",
+      "PaintSCAN Pro + TintSCAN Pro",
+      "4 reportes escritos",
+    ],
+    detalle: [
+      "Todo lo de DiagnostiCAR",
+      "Escaneo láser de frenos y llantas",
+      "Protección anticlonación",
+      "PaintSCAN Pro + TintSCAN Pro",
+      "4 reportes escritos",
+    ],
+    urlActual: ["/servicio-diagnosticar-plus/"],
+  },
+  {
+    slug: "asesoria-precompra-online",
+    nombre: "Asesoría precompra online",
+    nombreWhatsapp: "Asesoría precompra online",
+    href: "/servicios/asesoria-precompra-online",
+    tipo: "asesoria",
+    tagline: "Para quien está lejos o no tiene tiempo.",
+    destacado: false,
+    enEscalera: false,
+    precio: {
+      actual: null,
+      antes: null,
+      moneda: "PEN",
+      porConfirmar: true,
+      nota: "Precio a confirmar (página legacy /asesoria-virtual/: S/ 99, 40 min, analiza 3 autos de marketplace)",
+    },
+    resumen: [
+      "Videollamada de unos 45 minutos con un técnico",
+      "Resolvemos tus dudas e interpretamos informes, incluso de terceros",
+      "Análisis de tu caso específico",
+    ],
+    detalle: [
+      "Videollamada de unos 45 minutos con un técnico",
+      "Resolvemos tus dudas e interpretamos informes, incluso de terceros",
+      "Análisis de tu caso específico",
+    ],
+    urlActual: ["/servicio-asesoria-precompra/"],
+  },
+  {
+    slug: "certifica-tu-auto",
+    nombre: "Certifica tu auto",
+    nombreWhatsapp: "Certifica tu auto",
+    href: "/vende-tu-auto",
+    tipo: "certificacion",
+    tagline: "Vehículo verificado por DiagnostiCAR.",
+    destacado: false,
+    enEscalera: false,
+    precio: {
+      actual: null,
+      antes: null,
+      moneda: "PEN",
+      porConfirmar: true,
+      nota: "Precio a confirmar",
+    },
+    resumen: [
+      "Inspección completa: chequeo documentario, visual y escaneo OBD certificado",
+      "Sello digital «Vehículo verificado por DiagnostiCAR» con QR único",
+      "Informes de estado mecánico, escaneo y documentación registral",
+      "Conexión con compradores, sin comisión ni exclusividad (300–400 leads diarios [CONFIRMAR CLIENTE])",
+    ],
+    detalle: [
+      "Inspección completa: chequeo documentario, visual y escaneo OBD certificado",
+      "Sello digital «Vehículo verificado por DiagnostiCAR» con QR único",
+      "Informes de estado mecánico, escaneo y documentación registral",
+      "Conexión con compradores, sin comisión ni exclusividad (300–400 leads diarios [CONFIRMAR CLIENTE])",
+    ],
+    urlActual: ["/servicio-certifica-tu-auto/", "/venta-sin-consignar/"],
+  },
+]);
+
+export const escalera = servicios.filter((s) => s.enEscalera);
+
+export function getServicio(slug: ServicioSlug): Servicio {
+  const s = servicios.find((x) => x.slug === slug);
+  if (!s) throw new Error(`Servicio no encontrado: ${slug}`);
+  return s;
+}
