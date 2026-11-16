@@ -21,7 +21,7 @@ const POS: Record<string, [number, number]> = {
 /** Posición de cada etiqueta respecto de su punto (solo tipografía; evita solapes). */
 const ETIQUETA: Record<string, { dx: number; dy: number; anchor: "start" | "middle" | "end" }> = {
   "San Miguel": { dx: -14, dy: 5, anchor: "end" },
-  "Pueblo Libre": { dx: 0, dy: 26, anchor: "middle" },
+  "Pueblo Libre": { dx: 0, dy: 30, anchor: "middle" },
   Magdalena: { dx: 14, dy: 5, anchor: "start" },
   "Jesús María": { dx: 14, dy: 5, anchor: "start" },
   Lince: { dx: 14, dy: 5, anchor: "start" },
@@ -124,14 +124,14 @@ export function MapaLima({
               textAnchor={e.anchor}
               fill="#F5F6F3"
               fontFamily="var(--font-inter-tight), sans-serif"
-              fontSize="16"
+              fontSize="20"
             >
               {d}
             </text>
             {esOficina && (
               <text
                 x={x + e.dx}
-                y={y + e.dy + 17}
+                y={y + e.dy + 19}
                 textAnchor={e.anchor}
                 fill="#8E9C9A"
                 fontFamily="var(--font-jetbrains), monospace"
