@@ -24,7 +24,7 @@
 | 3 | Precio de Asesoría online (legacy S/ 99) y de Certificación. | `null` + `[PENDIENTE CLIENTE]`; no se muestra S/ 99. |
 | 4 | Email: `info@diagnosticar.com` sale en T&C pero es de otro dominio. | No se publica; `[PENDIENTE CLIENTE]`. Se guarda solo como referencia interna. |
 | 5 | Horario exacto (solo sabemos «lunes a domingo»). | «Lunes a domingo» + horas `[PENDIENTE CLIENTE]`. |
-| 6 | El logo PNG tiene «CAR» en blanco (solo funciona sobre fondo oscuro) y no hay SVG. | Sobre oscuro uso el PNG; sobre claro, un logotipo tipográfico provisional «DiagnostiCAR». Logo SVG en pendientes. |
+| 6 | El logo PNG tiene «CAR» en blanco (solo funciona sobre fondo oscuro) y no hay SVG. | ~~Sobre oscuro uso el PNG; sobre claro, un logotipo tipográfico provisional.~~ **Reemplazado en la Fase 2 (ronda 1):** solo se usa el logo real (variantes dark, light e isotipo derivadas del PNG original; ver DECISIONES F21). Logo SVG en pendientes. |
 | 7 | Número de cuenta BCP/CCI del sitio legacy. | **No** se importan a `/content` (regla: no publicar números de cuenta sin confirmar). |
 | 8 | Los testimonios del sitio legacy no tienen nombre. ¿Se pueden usar? | Se importan con `autor: null`; en la home solo se usarán los que tienen nombre (Google). Permiso de uso en pendientes. |
 | 9 | Puntos de revisión: +200 / 300 / 320. Duración: 40–70 vs otras cifras. Reseñas +575 vs +400/450. Diagnósticos +6,000 vs 5,000. | Uso la cifra de la home 2026 (+200, 40–70 min, +575, +6,000) y listo las discrepancias en `PENDIENTES.md`. |

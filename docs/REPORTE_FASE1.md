@@ -75,7 +75,7 @@ Las 14 dudas detalladas están en `docs/ENTENDIMIENTO.md`. Las que más afectan 
 
 1. **¿Seguimos en Next 15 o subimos a 16?** (hoy la 16 es la estable).
 2. **Precios definitivos:** Plus S/ 549 o 559, Antecedentes Completo S/ 49 o 59, y si incluyen IGV.
-3. **Logo SVG** (versiones para fondo claro y oscuro). Mientras no llegue, sobre claro se usa un logotipo tipográfico provisional.
+3. **Logo SVG** (versiones para fondo claro y oscuro). ~~Mientras no llegue, sobre claro se usa un logotipo tipográfico provisional.~~ *Nota posterior (Fase 2, ronda 1): el logotipo tipográfico fue reemplazado; solo se usa el logo real (DECISIONES F21).*
 4. **URL de la ficha de Google** para «Ver reseñas en Google», y permiso para usar las reseñas con nombre.
 5. **Horario exacto y email oficial** (salen en el footer y en contacto).
 6. ¿Te parece bien el umbral del semáforo de hallazgos (≥ 5/10 rojo, ≥ 2/10 ámbar, menos verde)?
