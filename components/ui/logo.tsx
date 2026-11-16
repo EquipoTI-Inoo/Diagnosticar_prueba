@@ -3,11 +3,20 @@ import { cn } from "@/lib/utils";
 
 /**
  * Logo DiagnostiCAR.
- * - `dark`: PNG original (su «CAR» es blanco, solo funciona sobre fondo oscuro).
- * - `light`: logotipo tipográfico provisional hasta recibir el SVG ([PENDIENTE CLIENTE]).
+ * - `on="dark"` sin `wordmark`: PNG original (su «CAR» es blanco, solo sirve sobre oscuro).
+ * - `wordmark`: logotipo tipográfico provisional (Archivo) para tamaños chicos —header, footer—
+ *   y para fondos claros, hasta recibir el SVG ([PENDIENTE CLIENTE]).
  */
-export function Logo({ on = "light", className }: { on?: "light" | "dark"; className?: string }) {
-  if (on === "dark") {
+export function Logo({
+  on = "light",
+  wordmark = false,
+  className,
+}: {
+  on?: "light" | "dark";
+  wordmark?: boolean;
+  className?: string;
+}) {
+  if (on === "dark" && !wordmark) {
     return (
       <Image
         src="/logos/logosaaa-02-2.webp"
@@ -26,8 +35,8 @@ export function Logo({ on = "light", className }: { on?: "light" | "dark"; class
         className,
       )}
     >
-      <span className="text-ink">Diagnosti</span>
-      <span className="text-brand-deep">CAR</span>
+      <span className={on === "dark" ? "text-paper" : "text-ink"}>Diagnosti</span>
+      <span className={on === "dark" ? "text-brand" : "text-brand-deep"}>CAR</span>
     </span>
   );
 }

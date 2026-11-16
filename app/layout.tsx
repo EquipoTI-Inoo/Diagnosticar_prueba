@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { negocio } from "@/content/negocio";
+import { indexable } from "@/lib/site";
 import { archivo, interTight, jetbrains } from "./fonts";
 import "./globals.css";
 
@@ -11,8 +12,8 @@ export const metadata: Metadata = {
   },
   description:
     "Revisamos la historia legal y el estado real del auto usado que quieres comprar, a domicilio en Lima, con equipos profesionales.",
-  // Prototipo: nada se indexa hasta la Fase 5 (robots.ts por entorno).
-  robots: { index: false, follow: false },
+  // Solo se indexa con SITE_ENV=production (ver lib/site.ts). La Fase 5 añade robots.ts.
+  robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
 };
 
 export const viewport: Viewport = {

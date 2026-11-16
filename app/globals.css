@@ -96,10 +96,13 @@
   color-scheme: dark;
 }
 
-.surface-light,
-.surface-dark {
-  background-color: var(--s-bg);
-  color: var(--s-fg);
+/* En la capa components para que las utilidades (bg-*, text-*) puedan sobrescribirlo. */
+@layer components {
+  .surface-light,
+  .surface-dark {
+    background-color: var(--s-bg);
+    color: var(--s-fg);
+  }
 }
 
 @theme inline {
