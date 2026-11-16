@@ -29,7 +29,7 @@ export default async function EnConstruccion({ params }: { params: Promise<{ rut
   const r = buscar((await params).ruta);
   if (!r) notFound();
   return (
-    <section className="surface-dark bg-inspeccion pt-32 pb-24 lg:pt-40">
+    <section className="surface-dark bg-inspeccion pt-32 pb-24 lg:pt-48">
       <div className="container-site max-w-3xl">
         <Eyebrow>Prototipo · en construcción · Fase {r.fase}</Eyebrow>
         <h1 className="mt-5 text-h2">{r.titulo}</h1>

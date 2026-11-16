@@ -26,7 +26,7 @@ export function HomeHero() {
     <>
       <section
         aria-labelledby="hero-titulo"
-        className="surface-dark bg-inspeccion relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24"
+        className="surface-dark bg-inspeccion relative overflow-hidden pt-28 pb-16 lg:pt-44 lg:pb-24"
       >
         <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-6">
           <div className="lg:col-span-7">

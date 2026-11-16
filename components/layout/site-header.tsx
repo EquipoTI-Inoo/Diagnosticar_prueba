@@ -132,7 +132,8 @@ export function SiteHeader({
       <div
         className={cn(
           "container-site flex items-center justify-between gap-6 transition-[height] duration-300",
-          compacto ? "h-16" : "h-16 lg:h-20",
+          // Escritorio: 112 px arriba (logo de 96 px → «DIAGNOSTICAR» ≈ 14 px de alto) y 64 px compacto.
+          compacto ? "h-16" : "h-16 lg:h-28",
         )}
       >
         <Link
@@ -143,10 +144,10 @@ export function SiteHeader({
           <Logo
             on="dark"
             eager
-            sizes="(min-width: 1024px) 106px, 91px"
+            sizes="(min-width: 1024px) 182px, 91px"
             className={cn(
               "w-auto transition-[height] duration-300",
-              compacto ? "h-12" : "h-12 lg:h-14",
+              compacto ? "h-12" : "h-12 lg:h-24",
             )}
           />
         </Link>
