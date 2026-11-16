@@ -16,7 +16,9 @@
     "check:datos": "tsx scripts/check-datos.ts",
     "check:paginas": "tsx scripts/check-paginas.ts",
     "check": "npm run check:contrast && npm run check:datos && npm run typecheck && npm run lint",
-    "check:build": "npm run build && npm run check:paginas"
+    "check:build": "npm run build && npm run check:paginas",
+    "check:redirecciones": "tsx scripts/check-redirecciones.ts",
+    "docs:redirects": "tsx scripts/build-redirects-md.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
