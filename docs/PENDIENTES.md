@@ -66,3 +66,12 @@
 - [ ] Fase 4 · `/tecnologia`: el sitio dice «+200 puntos» en 4 lugares y «320 puntos» en 3; se usó «+200 puntos». Confirmar.
 - [ ] Fase 4 · Fotos reales de hallazgos por problema (airbag detonado, kilometraje, choque con masilla); hoy hay fotogramas recortados que no muestran el hallazgo.
 - [ ] Fase 4 · Fechas de los artículos: son de febrero de 2025; validar si se republican o actualizan.
+- [ ] Fase 5 · Horario de atención: falta y por eso no hay `openingHours` en el schema (el footer muestra «Lunes a domingo, [PENDIENTE CLIENTE]»).
+- [ ] Fase 5 · `sameAs` de TikTok usa el enlace corto `vt.tiktok.com/ZSPVKqXRd/`; reemplazar por `https://www.tiktok.com/@usuario` cuando se confirme.
+- [ ] Fase 5 · Área de usuario del sitio antiguo (login, register, password-reset, members, mis-reportes, panel-tecnico) responde **410**: confirmar que ya no se usa (si tiene clientes activos, cambiar a 301).
+- [ ] Fase 5 · Landings de campaña y boost redirigen con 301 a `/servicios` o a la ficha: confirmar si hay anuncios activos que necesiten una landing propia.
+- [ ] Fase 5 · `/gracias-revision-antecedentes/` → ficha Antecedentes Completo: definir la página de gracias y la medición de conversiones (GTM/Pixel) del nuevo sitio.
+- [ ] Fase 5 · Política de bots de IA: el robots de producción los **permite** (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot…). Confirmar con el cliente.
+- [ ] Fase 5 · Validar en Google Rich Results Test y Search Console cuando haya una URL pública (staging con contraseña no sirve). Enviar `sitemap.xml` tras el lanzamiento.
+- [ ] Fase 5 · IGV: los `Offer` publican precio en PEN sin indicar si incluye IGV; confirmar.
+- [ ] Fase 5 · Antes de publicar, construir con `SITE_ENV=production` (si no, el sitio sale con `noindex`).

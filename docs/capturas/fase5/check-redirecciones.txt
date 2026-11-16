@@ -1,0 +1,119 @@
+
+> diagnosticar-web@0.1.0 check:redirecciones
+> tsx scripts/check-redirecciones.ts
+
+✓ 200 /
+✓ 301 /2025/01/31/ → /blog
+✓ 301 /2025/01/31/entrada-1/ → /blog/no-compres-sin-saber-el-valor-del-diagnostico-de-antecedentes
+✓ 301 /2025/01/31/ia-y-diagnostico-automotriz-el-futuro-de-los-diagnosticos-de-coche/ → /blog/ia-y-diagnostico-automotriz-el-futuro-de-los-diagnosticos-de-coche
+✓ 301 /2025/01/31/no-cometas-errores-la-asesoria-virtual-que-todo-comprador-primerizo-necesita/ → /blog/no-cometas-errores-la-asesoria-virtual-que-todo-comprador-primerizo-necesita
+✓ 301 /2025/02/01/cuidado-con-el-kilometraje-aprende-a-comprobarlo/ → /blog/cuidado-con-el-kilometraje-aprende-a-comprobarlo
+✓ 301 /2025/02/01/es-el-mejor-momento-para-comprar-un-coche-usado/ → /blog/es-el-mejor-momento-para-comprar-un-coche-usado
+✓ 301 /2025/02/01/no-compres-sin-probarlo-la-importancia-de-la-prueba-de-manejo/ → /blog/no-compres-sin-probarlo-la-importancia-de-la-prueba-de-manejo
+✓ 301 /2025/02/12/cuidado-lo-que-suelen-esconder-los-autos-usados-🚨/ → /blog/cuidado-lo-que-suelen-esconder-los-autos-usados
+✓ 301 /2025/02/12/diferencias-entre-un-diagnostico-visual-y-uno-computarizado/ → /blog/diferencias-entre-un-diagnostico-visual-y-uno-computarizado
+✓ 301 /2025/02/12/elige-bien-5-tendencias-clave-para-el-futuro-del-diagnostico-vehicular-🚀/ → /blog/elige-bien-5-tendencias-clave-para-el-futuro-del-diagnostico-vehicular
+✓ 301 /2025/02/12/por-que-un-informe-de-diagnostico-es-clave-para-evitar-estafas-al-comprar-un-vehiculo/ → /blog/por-que-un-informe-de-diagnostico-es-clave-para-evitar-estafas-al-comprar-un-vehiculo
+✓ 301 /2025/02/12/preguntas-esenciales-que-debes-hacer-al-vendedor-de-un-auto-usado/ → /blog/preguntas-esenciales-que-debes-hacer-al-vendedor-de-un-auto-usado
+✓ 301 /2025/02/12/que-componentes-electricos-pueden-fallar-en-un-auto-y-como-diferenciarlos/ → /blog/que-componentes-electricos-pueden-fallar-en-un-auto-y-como-diferenciarlos
+✓ 301 /2025/02/12/✅-checklist-de-diagnostico-antes-de-comprar-un-auto-usado/ → /blog/checklist-de-diagnostico-antes-de-comprar-un-auto-usado
+✓ 301 /2025/02/13/como-detectar-problemas-de-alineacion-y-balanceo-del-vehiculo/ → /blog/como-detectar-problemas-de-alineacion-y-balanceo-del-vehiculo
+✓ 301 /2025/02/13/diagnostico-del-sistema-de-aire-acondicionado-tips-para-mantenerlo-en-buen-estado/ → /blog/diagnostico-del-sistema-de-aire-acondicionado-tips-para-mantenerlo-en-buen-estado
+✓ 301 /2025/02/13/por-que-tu-auto-pierde-potencia-claves-para-un-diagnostico-eficiente/ → /blog/por-que-tu-auto-pierde-potencia-claves-para-un-diagnostico-eficiente
+✓ 301 /2025/02/14/como-revisar-la-presion-de-los-neumaticos-y-por-que-es-importante/ → /blog/como-revisar-la-presion-de-los-neumaticos-y-por-que-es-importante
+✓ 301 /2025/02/14/el-futuro-del-mercado-de-coches-usados-por-que-las-consultas-virtuales-y-los-diagnosticos-avanzados-seran-clave/ → /blog/el-futuro-del-mercado-de-coches-usados-por-que-las-consultas-virtuales-y-los-diagnosticos-avanzados-seran-clave
+✓ 301 /2025/02/14/las-herramientas-y-tecnologias-que-utilizamos-en-diagnosticar-peru-para-un-diagnostico-preciso-de-vehiculos-usados/ → /blog/las-herramientas-y-tecnologias-que-utilizamos-en-diagnosticar-peru-para-un-diagnostico-preciso-de-vehiculos-usados
+✓ 301 /2025/02/14/las-marcas-de-coches-usados-mas-confiables-para-comprar-este-ano/ → /blog/las-marcas-de-coches-usados-mas-confiables-para-comprar-este-ano
+✓ 301 /2025/02/14/mi-primer-coche-usado-como-evitar-los-errores-comunes-con-la-ayuda-de-un-diagnostico-profesional/ → /blog/mi-primer-coche-usado-como-evitar-los-errores-comunes-con-la-ayuda-de-un-diagnostico-profesional
+✓ 301 /about/ → /nosotros
+✓ 301 /antecedentes-3/ → /servicios/antecedentes-completo
+✓ 301 /antecedentes/ → /servicios/antecedentes-completo
+✓ 301 /asesora-pre-compra-online/ → /servicios/asesoria-precompra-online
+✓ 301 /asesoria-pre-compra-online-boost/ → /servicios/asesoria-precompra-online
+✓ 301 /asesoria-pre-compra-online/ → /servicios/asesoria-precompra-online
+✓ 301 /asesoria-virtual/ → /servicios/asesoria-precompra-online
+✓ 410 /blog-legacy/
+✓ 301 /blog/ → /blog
+✓ 410 /borrador/
+✓ 301 /campana/ → /servicios
+✓ 301 /category/diagnosticos/ → /blog#diagnosticos
+✓ 301 /category/entrevistas/ → /blog
+✓ 301 /category/experiencias/ → /blog
+✓ 301 /category/novedades/ → /blog#novedades
+✓ 301 /category/tip-mecanicos/ → /blog#tips-mecanicos
+✓ 301 /centro-de-ayuda/ → /guia/consulta-placa-gratis
+✓ 301 /checklist-precompra/ → /guia/checklist
+✓ 301 /cobertura/ → /cobertura
+✓ 301 /como-comprar/ → /como-funciona
+✓ 410 /contact-legacy/
+✓ 301 /contact/ → /contacto
+✓ 301 /detector-de-choques/ → /tecnologia
+✓ 301 /diagnosticar/ → /servicios/diagnosticar
+✓ 301 /diagnostico/ → /servicios
+✓ 301 /escaneo/ → /tecnologia
+✓ 301 /escrito/ → /tecnologia
+✓ 301 /gracias-revision-antecedentes/ → /servicios/antecedentes-completo
+✓ 301 /gratis/ → /guia
+✓ 410 /guia-2-legacy/
+✓ 301 /guia-2/ → /guia
+✓ 301 /guia/ → /guia
+✓ 410 /home-2/
+✓ 301 /informe-ejemplo/ → /informe-de-ejemplo
+✓ 301 /landing-campana/ → /servicios
+✓ 301 /landing-pre-compra/ → /servicios
+✓ 301 /libro-de-reclamaciones/ → /libro-de-reclamaciones
+✓ 410 /login/
+✓ 301 /manejo/ → /tecnologia
+✓ 410 /members/
+✓ 410 /mis-reportes/
+✓ 410 /nosotros-legacy/
+✓ 301 /nosotros/ → /nosotros
+✓ 301 /otros-servicios/ → /servicios
+✓ 410 /panel-tecnico/
+✓ 410 /password-reset/
+✓ 301 /precios/ → /servicios
+✓ 410 /preview-antecedentes-basico/
+✓ 410 /preview-antecedentes-completo/
+✓ 410 /preview-asesoria-precompra/
+✓ 410 /preview-blog/
+✓ 410 /preview-certifica-tu-auto/
+✓ 410 /preview-contacto/
+✓ 410 /preview-diagnosticar-plus/
+✓ 410 /preview-diagnostico-basico/
+✓ 410 /preview-guia/
+✓ 410 /preview-legales/
+✓ 410 /preview-mis-reportes/
+✓ 410 /preview-nosotros/
+✓ 410 /preview-servicio-diagnosticar/
+✓ 410 /preview-servicios/
+✓ 301 /puntos-importantes/ → /guia/problemas-comunes
+✓ 410 /register/
+✓ 301 /reporte-basico/ → /servicios/diagnostico-basico
+✓ 301 /reporte-diagnosticar-2/ → /servicios/diagnosticar
+✓ 301 /reporte-diagnosticar-plus/ → /servicios/diagnosticar-plus
+✓ 301 /reporteverbal/ → /servicios/diagnostico-basico
+✓ 410 /revision-antecedes-boost-duplicado-1505/
+✓ 301 /revision-antecedes-boost/ → /servicios/antecedentes-completo
+✓ 410 /revision-pre-compra-boost-duplicado-1573/
+✓ 301 /revision-pre-compra-boost/ → /servicios
+✓ 301 /revision-vehicular/ → /tecnologia
+✓ 410 /sample-page/
+✓ 301 /service/ → /servicios
+✓ 301 /servicio-antecedentes-basico/ → /servicios/antecedentes-basico
+✓ 301 /servicio-antecedentes-completo/ → /servicios/antecedentes-completo
+✓ 301 /servicio-asesoria-precompra/ → /servicios/asesoria-precompra-online
+✓ 301 /servicio-certifica-tu-auto/ → /vende-tu-auto
+✓ 301 /servicio-diagnosticar-plus/ → /servicios/diagnosticar-plus
+✓ 301 /servicio-diagnosticar/ → /servicios/diagnosticar
+✓ 301 /servicio-diagnostico-basico/ → /servicios/diagnostico-basico
+✓ 410 /servicios-1-legacy/
+✓ 301 /terminos-y-condiciones/ → /legal/terminos-y-condiciones
+✓ 301 /tienda/ → /servicios
+✓ 301 /top-5-problemas/ → /guia/problemas-comunes
+✓ 301 /unico-dueno-2/ → /guia/consulta-placa-gratis
+✓ 301 /venta-sin-consignar/ → /vende-tu-auto
+✓ 301 /verbal-gratis/ → /guia/consulta-placa-gratis
+✓ 301 /verbal/ → /tecnologia
+✓ 301 /videoscopo/ → /tecnologia
+
+113/113 URLs antiguas únicas del JSON correctas · 301: 82 · 410: 30 · 200: 1 · 42 destinos con 200 · 3 entradas extra de la tabla probadas

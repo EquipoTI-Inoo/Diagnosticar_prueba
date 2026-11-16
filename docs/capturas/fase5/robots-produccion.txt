@@ -1,0 +1,23 @@
+# robots.txt — build SITE_ENV=production
+User-Agent: *
+Allow: /
+Disallow: /design-system
+Disallow: /api/
+
+User-Agent: GPTBot
+User-Agent: OAI-SearchBot
+User-Agent: ChatGPT-User
+User-Agent: ClaudeBot
+User-Agent: PerplexityBot
+User-Agent: Google-Extended
+User-Agent: Applebot-Extended
+User-Agent: CCBot
+Allow: /
+Disallow: /design-system
+
+Host: https://diagnosticarperu.com
+Sitemap: https://diagnosticarperu.com/sitemap.xml
+
+# meta robots /: <meta name="robots" content="index, follow"
+# meta robots /servicios/diagnosticar: <meta name="robots" content="index, follow"
+# meta robots /guia: <meta name="robots" content="index, follow"

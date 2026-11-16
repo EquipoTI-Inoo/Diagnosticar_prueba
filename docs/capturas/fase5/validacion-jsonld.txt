@@ -1,0 +1,54 @@
+# Validador oficial Schema.org (validator.schema.org, POST del HTML servido por next start :3921) — 2026-11-16 13:59 hora Lima
+/: tipos raíz ['WebSite'] · errores=0 · avisos=0 []
+/servicios/diagnosticar: tipos raíz ['BreadcrumbList', 'WebSite', 'Service', 'FAQPage'] · errores=0 · avisos=0 []
+/preguntas-frecuentes: tipos raíz ['BreadcrumbList', 'WebSite', 'FAQPage'] · errores=0 · avisos=0 []
+/blog/cuidado-con-el-kilometraje-aprende-a-comprobarlo: tipos raíz ['BreadcrumbList', 'WebSite', 'BlogPosting'] · errores=0 · avisos=0 []
+/como-funciona: tipos raíz ['HowTo', 'BreadcrumbList', 'WebSite'] · errores=0 · avisos=0 []
+/guia/checklist: tipos raíz ['HowTo', 'BreadcrumbList', 'WebSite'] · errores=0 · avisos=0 []
+
+# structured-data-testing-tool@4 (npm, preset Google)
+=== /
+    ✕  schema in jsonld [AutomotiveBusiness,Organization[0]]
+    ✓  schema in jsonld
+    Passed: 1 	(50%)
+    Failed: 1 	(50%)
+  ✕ 1 of 2 tests failed with 0 warnings.
+=== /servicios/diagnosticar
+    ✓  schema in jsonld
+    ✓  schema in jsonld
+    ✓  schema in jsonld
+    ✕  schema in jsonld [AutomotiveBusiness,Organization[0]]
+    ✓  schema in jsonld
+    Passed: 4 	(80%)
+    Failed: 1 	(20%)
+  ✕ 1 of 5 tests failed with 0 warnings.
+=== /preguntas-frecuentes
+    ✓  schema in jsonld
+    ✓  schema in jsonld
+    ✕  schema in jsonld [AutomotiveBusiness,Organization[0]]
+    ✓  schema in jsonld
+    Passed: 3 	(75%)
+    Failed: 1 	(25%)
+  ✕ 1 of 4 tests failed with 0 warnings.
+=== /blog/cuidado-con-el-kilometraje-aprende-a-comprobarlo
+    ✓  schema in jsonld
+    ✓  schema in jsonld
+    ✕  schema in jsonld [AutomotiveBusiness,Organization[0]]
+    ✓  schema in jsonld
+    ✓  BlogPosting
+    ✓  @type
+    ✓  author
+    ✓  datePublished
+    ✓  headline
+    ✓  image
+    ✓  publisher.@type
+    ✓  publisher.name
+    ✓  publisher.logo
+    ✓  publisher.logo.url
+    ✓  dateModified
+    ✓  mainEntityOfPage
+    Passed: 15 	(93%)
+    Failed: 1 	(6%)
+  ✕ 1 of 16 tests failed with 0 warnings.
+
+Nota: el único ✕ de sdtt es una limitación de la herramienta (no reconoce @type múltiple ["AutomotiveBusiness","Organization"], que es JSON-LD válido); el validador oficial de Schema.org lo reconoce con 0 errores. El preset Google de BlogPosting pasa completo (image, publisher, author, fechas).

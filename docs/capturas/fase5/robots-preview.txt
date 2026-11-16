@@ -1,0 +1,6 @@
+# robots.txt — build preview (sin SITE_ENV=production)
+User-Agent: *
+Disallow: /
+
+
+# meta robots /: <meta name="robots" content="noindex, nofollow"

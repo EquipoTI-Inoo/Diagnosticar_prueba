@@ -1,0 +1,62 @@
+   T ·   D · ruta — title
+✓ 49 · 125 · /blog — Blog de diagnóstico vehicular | DiagnostiCAR Lima
+✓ 58 · 105 · /blog/checklist-de-diagnostico-antes-de-comprar-un-auto-usado — Checklist de diagnóstico de auto usado | DiagnostiCAR Lima
+✓ 54 · 125 · /blog/como-detectar-problemas-de-alineacion-y-balanceo-del-vehiculo — Problemas de alineación y balanceo | DiagnostiCAR Lima
+✓ 57 · 128 · /blog/como-revisar-la-presion-de-los-neumaticos-y-por-que-es-importante — Cómo revisar la presión de neumáticos | DiagnostiCAR Lima
+✓ 54 · 113 · /blog/cuidado-con-el-kilometraje-aprende-a-comprobarlo — Cómo comprobar el kilometraje real | DiagnostiCAR Lima
+✓ 59 ·  95 · /blog/cuidado-lo-que-suelen-esconder-los-autos-usados — Lo que suelen esconder los autos usados | DiagnostiCAR Lima
+✓ 54 · 101 · /blog/diagnostico-del-sistema-de-aire-acondicionado-tips-para-mantenerlo-en-buen-estado — Diagnóstico del aire acondicionado | DiagnostiCAR Lima
+✓ 56 ·  77 · /blog/diferencias-entre-un-diagnostico-visual-y-uno-computarizado — Diagnóstico visual vs. computarizado | DiagnostiCAR Lima
+✓ 57 · 152 · /blog/el-futuro-del-mercado-de-coches-usados-por-que-las-consultas-virtuales-y-los-diagnosticos-avanzados-seran-clave — El futuro del mercado de autos usados | DiagnostiCAR Lima
+✓ 58 · 136 · /blog/elige-bien-5-tendencias-clave-para-el-futuro-del-diagnostico-vehicular — 5 tendencias del diagnóstico vehicular | DiagnostiCAR Lima
+✓ 56 · 104 · /blog/es-el-mejor-momento-para-comprar-un-coche-usado — ¿Es buen momento para comprar usado? | DiagnostiCAR Lima
+✓ 47 · 100 · /blog/ia-y-diagnostico-automotriz-el-futuro-de-los-diagnosticos-de-coche — IA y diagnóstico automotriz | DiagnostiCAR Lima
+✓ 57 · 144 · /blog/las-herramientas-y-tecnologias-que-utilizamos-en-diagnosticar-peru-para-un-diagnostico-preciso-de-vehiculos-usados — Herramientas y tecnologías que usamos | DiagnostiCAR Lima
+✓ 57 · 105 · /blog/las-marcas-de-coches-usados-mas-confiables-para-comprar-este-ano — Marcas de autos usados más confiables | DiagnostiCAR Lima
+✓ 57 · 142 · /blog/mi-primer-coche-usado-como-evitar-los-errores-comunes-con-la-ayuda-de-un-diagnostico-profesional — Mi primer auto usado: errores comunes | DiagnostiCAR Lima
+✓ 53 · 107 · /blog/no-cometas-errores-la-asesoria-virtual-que-todo-comprador-primerizo-necesita — Asesoría virtual para compradores | DiagnostiCAR Lima
+✓ 54 · 108 · /blog/no-compres-sin-probarlo-la-importancia-de-la-prueba-de-manejo — Importancia de la prueba de manejo | DiagnostiCAR Lima
+✓ 56 ·  98 · /blog/no-compres-sin-saber-el-valor-del-diagnostico-de-antecedentes — El valor del informe de antecedentes | DiagnostiCAR Lima
+✓ 53 ·  90 · /blog/por-que-tu-auto-pierde-potencia-claves-para-un-diagnostico-eficiente — ¿Por qué tu auto pierde potencia? | DiagnostiCAR Lima
+✓ 57 · 125 · /blog/por-que-un-informe-de-diagnostico-es-clave-para-evitar-estafas-al-comprar-un-vehiculo — Informe de diagnóstico contra estafas | DiagnostiCAR Lima
+✓ 55 ·  98 · /blog/preguntas-esenciales-que-debes-hacer-al-vendedor-de-un-auto-usado — Preguntas para el vendedor del auto | DiagnostiCAR Lima
+✓ 56 ·  91 · /blog/que-componentes-electricos-pueden-fallar-en-un-auto-y-como-diferenciarlos — Fallas eléctricas comunes en un auto | DiagnostiCAR Lima
+✓ 37 · 150 · /cobertura — Cobertura en Lima | DiagnostiCAR Lima
+✓ 44 · 136 · /como-funciona — Cómo funciona la reserva | DiagnostiCAR Lima
+✓ 28 · 108 · /contacto — Contacto | DiagnostiCAR Lima
+✓ 60 · 150 · /guia — Guía 2026: comprar un auto usado en Perú | DiagnostiCAR Lima
+✓ 60 · 146 · /guia/checklist — Checklist antes de comprar un auto usado | DiagnostiCAR Lima
+✓ 55 · 133 · /guia/consulta-placa-gratis — Consulta de placa gratis: SOAT y RT | DiagnostiCAR Lima
+✓ 57 · 131 · /guia/problemas-comunes — Problemas más comunes en autos usados | DiagnostiCAR Lima
+✓ 54 · 155 · / — Diagnóstico pre-compra a domicilio | DiagnostiCAR Lima
+✓ 38 · 145 · /informe-de-ejemplo — Informe de ejemplo | DiagnostiCAR Lima
+✓ 39 ·  79 · /legal/cookies — Política de cookies | DiagnostiCAR Lima
+✓ 42 ·  82 · /legal/privacidad — Política de privacidad | DiagnostiCAR Lima
+✓ 42 · 148 · /legal/terminos-y-condiciones — Términos y condiciones | DiagnostiCAR Lima
+✓ 42 · 130 · /libro-de-reclamaciones — Libro de Reclamaciones | DiagnostiCAR Lima
+✓ 28 · 148 · /nosotros — Nosotros | DiagnostiCAR Lima
+✓ 40 · 141 · /preguntas-frecuentes — Preguntas frecuentes | DiagnostiCAR Lima
+✓ 36 · 143 · /servicios — Planes y precios | DiagnostiCAR Lima
+✓ 47 · 138 · /servicios/antecedentes-basico — Antecedentes Básico · S/ 19 | DiagnostiCAR Lima
+✓ 49 · 128 · /servicios/antecedentes-completo — Antecedentes Completo · S/ 49 | DiagnostiCAR Lima
+✓ 45 · 142 · /servicios/asesoria-precompra-online — Asesoría precompra online | DiagnostiCAR Lima
+✓ 46 · 133 · /servicios/diagnosticar-plus — DiagnostiCAR Plus · S/ 549 | DiagnostiCAR Lima
+✓ 46 · 118 · /servicios/diagnosticar — Plan DiagnostiCAR · S/ 349 | DiagnostiCAR Lima
+✓ 47 · 127 · /servicios/diagnostico-basico — Diagnóstico Básico · S/ 239 | DiagnostiCAR Lima
+✓ 45 · 131 · /tecnologia — Tecnología de diagnóstico | DiagnostiCAR Lima
+✓ 54 · 141 · /vende-tu-auto — Vende tu auto con sello verificado | DiagnostiCAR Lima
+
+AEO
+/guia: resumen 51 palabras · 3 encabezados-pregunta
+/guia/checklist: resumen 48 palabras · 0 encabezados-pregunta
+/guia/consulta-placa-gratis: resumen 51 palabras · 1 encabezados-pregunta
+/guia/problemas-comunes: resumen 46 palabras · 0 encabezados-pregunta
+/servicios: resumen 52 palabras · 1 encabezados-pregunta
+/servicios/antecedentes-basico: resumen 47 palabras · 1 encabezados-pregunta
+/servicios/antecedentes-completo: resumen 46 palabras · 1 encabezados-pregunta
+/servicios/asesoria-precompra-online: resumen 52 palabras · 1 encabezados-pregunta
+/servicios/diagnosticar-plus: resumen 55 palabras · 7 encabezados-pregunta
+/servicios/diagnosticar: resumen 57 palabras · 8 encabezados-pregunta
+/servicios/diagnostico-basico: resumen 55 palabras · 7 encabezados-pregunta
+
+46 páginas · 46 titles únicos · 46 descriptions únicas · sitemap: 46 URLs · 0 duplicados · 0 errores

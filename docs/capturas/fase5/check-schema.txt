@@ -1,0 +1,48 @@
+✓ /blog — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /blog/checklist-de-diagnostico-antes-de-comprar-un-auto-usado — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/como-detectar-problemas-de-alineacion-y-balanceo-del-vehiculo — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/como-revisar-la-presion-de-los-neumaticos-y-por-que-es-importante — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/cuidado-con-el-kilometraje-aprende-a-comprobarlo — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/cuidado-lo-que-suelen-esconder-los-autos-usados — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/diagnostico-del-sistema-de-aire-acondicionado-tips-para-mantenerlo-en-buen-estado — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/diferencias-entre-un-diagnostico-visual-y-uno-computarizado — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/el-futuro-del-mercado-de-coches-usados-por-que-las-consultas-virtuales-y-los-diagnosticos-avanzados-seran-clave — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/elige-bien-5-tendencias-clave-para-el-futuro-del-diagnostico-vehicular — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/es-el-mejor-momento-para-comprar-un-coche-usado — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/ia-y-diagnostico-automotriz-el-futuro-de-los-diagnosticos-de-coche — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/las-herramientas-y-tecnologias-que-utilizamos-en-diagnosticar-peru-para-un-diagnostico-preciso-de-vehiculos-usados — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/las-marcas-de-coches-usados-mas-confiables-para-comprar-este-ano — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/mi-primer-coche-usado-como-evitar-los-errores-comunes-con-la-ayuda-de-un-diagnostico-profesional — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/no-cometas-errores-la-asesoria-virtual-que-todo-comprador-primerizo-necesita — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/no-compres-sin-probarlo-la-importancia-de-la-prueba-de-manejo — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/no-compres-sin-saber-el-valor-del-diagnostico-de-antecedentes — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/por-que-tu-auto-pierde-potencia-claves-para-un-diagnostico-eficiente — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/por-que-un-informe-de-diagnostico-es-clave-para-evitar-estafas-al-comprar-un-vehiculo — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/preguntas-esenciales-que-debes-hacer-al-vendedor-de-un-auto-usado — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /blog/que-componentes-electricos-pueden-fallar-en-un-auto-y-como-diferenciarlos — 3 bloques: BreadcrumbList, BlogPosting, AutomotiveBusiness, Organization, WebSite
+✓ /cobertura — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /como-funciona — 3 bloques: BreadcrumbList, HowTo, AutomotiveBusiness, Organization, WebSite
+✓ /contacto — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /guia — 3 bloques: BreadcrumbList, Article, AutomotiveBusiness, Organization, WebSite
+✓ /guia/checklist — 3 bloques: BreadcrumbList, HowTo, AutomotiveBusiness, Organization, WebSite
+✓ /guia/consulta-placa-gratis — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /guia/problemas-comunes — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ / — 1 bloques: AutomotiveBusiness, Organization, WebSite
+✓ /informe-de-ejemplo — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /legal/cookies — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /legal/privacidad — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /legal/terminos-y-condiciones — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /libro-de-reclamaciones — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /nosotros — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /preguntas-frecuentes — 3 bloques: BreadcrumbList, FAQPage, AutomotiveBusiness, Organization, WebSite
+✓ /servicios — 3 bloques: BreadcrumbList, OfferCatalog, AutomotiveBusiness, Organization, WebSite
+✓ /servicios/antecedentes-basico — 3 bloques: BreadcrumbList, Service, AutomotiveBusiness, Organization, WebSite
+✓ /servicios/antecedentes-completo — 3 bloques: BreadcrumbList, Service, AutomotiveBusiness, Organization, WebSite
+✓ /servicios/asesoria-precompra-online — 3 bloques: BreadcrumbList, Service, AutomotiveBusiness, Organization, WebSite
+✓ /servicios/diagnosticar-plus — 4 bloques: BreadcrumbList, FAQPage, Service, AutomotiveBusiness, Organization, WebSite
+✓ /servicios/diagnosticar — 4 bloques: BreadcrumbList, FAQPage, Service, AutomotiveBusiness, Organization, WebSite
+✓ /servicios/diagnostico-basico — 4 bloques: BreadcrumbList, FAQPage, Service, AutomotiveBusiness, Organization, WebSite
+✓ /tecnologia — 2 bloques: BreadcrumbList, AutomotiveBusiness, Organization, WebSite
+✓ /vende-tu-auto — 4 bloques: BreadcrumbList, FAQPage, Service, AutomotiveBusiness, Organization, WebSite
+
+46 páginas · 0 errores · 0 avisos · nodos: Place 600, ListItem 120, Organization 90, ImageObject 68, City 60, AutomotiveBusiness 46, PostalAddress 46, GeoCoordinates 46, WebSite 46, BreadcrumbList 45, Question 39, Answer 39, BlogPosting 21, Offer 17, Service 14, UnitPriceSpecification 12, HowToStep 11, FAQPage 5, HowTo 2, Article 1, OfferCatalog 1

@@ -1,0 +1,2 @@
+axe-core · 48 URLs × 2 viewports (390, 1280) · violaciones: 0 · overflow horizontal: 0
+✓ 0 violaciones WCAG 2.2 AA + best-practice en todas las páginas, sin desbordes
