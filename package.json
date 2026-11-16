@@ -13,7 +13,9 @@
     "import:content": "tsx scripts/import-content.ts && prettier --write content/*.ts",
     "check:contrast": "tsx scripts/check-contrast.ts",
     "check:datos": "tsx scripts/check-datos.ts",
-    "check": "npm run check:contrast && npm run check:datos && npm run typecheck && npm run lint"
+    "check:paginas": "tsx scripts/check-paginas.ts",
+    "check": "npm run check:contrast && npm run check:datos && npm run typecheck && npm run lint",
+    "check:build": "npm run build && npm run check:paginas"
   },
   "dependencies": {
     "clsx": "^2.1.1",
