@@ -6,9 +6,11 @@
  *   npm run build && npm run check:paginas
  *
  * Excepciones explícitas (no son datos del negocio): numeración editorial 01–15 («Paso 01»,
- * «Plan 03 / 05»), el año del © del footer y los ejemplos de formato de placa («ABC-123»).
+ * «Plan 03 / 05»), el año del © del footer, los ejemplos de formato de placa («ABC-123»), las fechas
+ * en formato «16 de noviembre de 2026» (fechas de artículos —auditadas aparte contra el JSON— y
+ * «Actualizado») y el número de orden de las fichas del blog (`data-num-editorial`).
  */
-import { existsSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const RAIZ = join(process.cwd(), ".next/server/app");
@@ -19,7 +21,14 @@ if (!existsSync(RAIZ)) {
 const fuente = readFileSync(join(process.cwd(), "docs/fuente/contenido.json"), "utf8");
 const fuenteSinComas = fuente.replace(/,/g, "");
 
-// Páginas del sitio público (las de la Fase 4 aún son marcadores sin datos).
+const BLOG = join(RAIZ, "blog");
+const articulosHtml = existsSync(BLOG)
+  ? readdirSync(BLOG)
+      .filter((f) => f.endsWith(".html"))
+      .map((f) => `blog/${f}`)
+  : [];
+
+// Páginas del sitio público (Fases 2–4).
 const PAGINAS = [
   "index.html",
   "servicios.html",
@@ -34,6 +43,19 @@ const PAGINAS = [
   "cobertura.html",
   "informe-de-ejemplo.html",
   "contacto.html",
+  "tecnologia.html",
+  "guia.html",
+  "guia/checklist.html",
+  "guia/problemas-comunes.html",
+  "guia/consulta-placa-gratis.html",
+  "blog.html",
+  ...articulosHtml,
+  "nosotros.html",
+  "preguntas-frecuentes.html",
+  "legal/terminos-y-condiciones.html",
+  "legal/privacidad.html",
+  "legal/cookies.html",
+  "libro-de-reclamaciones.html",
 ];
 
 function textoVisible(html: string): string {
@@ -41,11 +63,14 @@ function textoVisible(html: string): string {
     html
       .replace(/<script[\s\S]*?<\/script>/gi, " ")
       .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<span[^>]*data-num-editorial[^>]*>\d+<\/span>/g, " ")
       .replace(/<[^>]+>/g, " ")
       .replace(/&nbsp;|&#160;/g, " ")
       .replace(/&[a-z#0-9]+;/gi, " ")
       // Ejemplos de formato de placa en ayudas de formulario (ABC-123, A1B-234): no son datos.
       .replace(/\b[A-Z][A-Z0-9]{2}-\d{3}\b/g, " ")
+      // Fechas largas en español (artículos: auditadas contra el JSON en scripts aparte; «Actualizado»).
+      .replace(/\b\d{1,2} de (enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre) de \d{4}\b/gi, " ")
   );
 }
 
