@@ -52,6 +52,11 @@
 - [ ] Fotos reales para «Confianza técnica»: el sitio actual usa 3 imágenes que parecen de banco o generadas (fg-min, gh-1, Diseno-sin-titulo-6); el prototipo usa fotos propias (equipo, videoscopio, informe de ejemplo, unidades móviles).
 - [ ] Certificaciones de los técnicos («Técnicos certificados» se muestra sin detalle).
 - [ ] Ícono oficial del Libro de Reclamaciones (Indecopi) en SVG/PNG.
+- [ ] Fase 3 · Antecedentes en DiagnostiCAR y Plus: el JSON dice «Reporte de antecedentes», pero no si es el básico o el completo (en la tabla comparativa figura «Por confirmar»).
+- [ ] Fase 3 · Plazo de entrega del informe de antecedentes y de la asesoría online (servicios sin visita).
+- [ ] Fase 3 · Destino real de los leads (CRM, correo u hoja de cálculo). En el prototipo se guardan en `.data/leads.jsonl` (local, fuera de git).
+- [ ] Fase 3 · URL pública de verificación del sello «Vehículo verificado» y QR real.
+- [ ] Fase 3 · Copy redactado para las páginas de conversión (resúmenes-respuesta, políticas en lenguaje simple, textos de formularios): validar.
 - [ ] Copy redactado en la Fase 2 (titulares de comparador, consulta por placa, confianza y footer): validar.
 - [ ] Fotos de hallazgos sin subtítulos quemados, en especial choque oculto y problemas documentarios.
 - [ ] Fotos que muestren el hallazgo: hoy «kilometraje bajado» (kilometraje200k.jpg) muestra una llanta y «airbags reventados» (airbag.jpg) no muestra un airbag; sus `alt` originales no describen la imagen y se reemplazaron por descripciones literales.
