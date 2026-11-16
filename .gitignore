@@ -12,3 +12,8 @@ npm-debug.log*
 
 # leads del prototipo (Server Actions)
 .data/
+
+# QA (Fase 6)
+/test-results/
+/playwright-report/
+/.lighthouseci/
