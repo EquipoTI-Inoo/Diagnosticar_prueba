@@ -13,3 +13,13 @@ export function formatPEN(monto: number): string {
 export function esPendiente(valor: string | null | undefined): boolean {
   return !valor || /\[(PENDIENTE|CONFIRMAR) CLIENTE/.test(valor);
 }
+
+/** «Tips mecánicos» → «tips-mecanicos». */
+export function slugify(s: string): string {
+  return s
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}

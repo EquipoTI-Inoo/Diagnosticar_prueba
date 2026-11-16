@@ -527,7 +527,9 @@ const FOTOS_PROBLEMAS: Record<string, FotoProblema> = {
     pie: { tipo: FOTOGRAMA, texto: "Equipo DiagnostiCAR" },
     muestraHallazgo: false,
     alt: "Técnico de DiagnostiCAR hablando a cámara junto a un auto rojo (fotograma de video)",
-    posicion: "50% 15%",
+    // Subtítulo quemado «Este Toyota» en el 85–95 % inferior: zoom desde arriba.
+    posicion: "50% 0%",
+    escala: 1.2,
   },
   "Choques ocultos": {
     slug: "choques-ocultos",
@@ -884,6 +886,122 @@ escribir(
   "paginas-fuente.ts",
   "Textos de las páginas de conversión extraídos de la fuente (venta, informe, contacto, cómo comprar, T&C).",
   `export const paginasFuente = ${json(construirPaginas())} as const;`,
+);
+
+/* ------------------------------------------------------------------ contenido educativo (Fase 4) */
+
+const rawHtml = (archivo: string) => readFileSync(join(ROOT, "docs/fuente/raw", archivo), "utf8");
+/** Texto visible de un tramo de HTML como lista de bloques (separados por etiquetas). */
+function bloquesHtml(html: string): string[] {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/g, "")
+    .replace(/<[^>]+>/g, "|")
+    .replace(/&nbsp;/g, " ")
+    .split("|")
+    .map((x) => x.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+/** Lista de sistemas que aparece en las páginas legacy de tecnología (entre «siguientes sistemas» y «Pulsando»). */
+function sistemas(archivo: string): string[] {
+  const h = rawHtml(archivo);
+  const i = h.indexOf("siguientes sistemas");
+  const j = h.indexOf("Pulsando", i);
+  if (i < 0 || j < 0) fallar(`No encontré la lista de sistemas en ${archivo}`);
+  return bloquesHtml(h.slice(i, j)).slice(1);
+}
+/** Primer párrafo (texto) tras el encabezado «#####» de una página legacy de tecnología. */
+function parrafoTecnologia(slug: string): string {
+  const t = pagina(slug).texto;
+  const i = t.findIndex((l) => l.startsWith("##### "));
+  if (i < 0) fallar(`Sin encabezado en ${slug}`);
+  return t[i + 1]!;
+}
+
+/** Secciones «##### Título» → párrafos de la guía legacy. */
+function seccionesGuia(): Record<string, string[]> {
+  const t = pagina("guia").texto;
+  const out: Record<string, string[]> = {};
+  let actual = "";
+  for (const l of t) {
+    const m = l.match(/^#{2,6} (.+)$/);
+    if (m) {
+      actual = m[1]!.trim();
+      out[actual] = [];
+    } else if (actual) out[actual]!.push(l);
+  }
+  return out;
+}
+
+function construirEducativo() {
+  const tecnologia = {
+    escaneo: { texto: parrafoTecnologia("escaneo"), sistemas: sistemas("escaneo.html") },
+    carroceria: { texto: parrafoTecnologia("detector-de-choques") },
+    videoscopia: { texto: parrafoTecnologia("videoscopo") },
+    revision: { texto: parrafoTecnologia("revision-vehicular"), sistemas: sistemas("revision-vehicular.html") },
+    manejo: { texto: parrafoTecnologia("manejo") },
+  };
+  const checklist = pagina("checklist-precompra")
+    .texto.slice(pagina("checklist-precompra").texto.indexOf("✓") + 1)
+    .filter((l) => /\.$/.test(l));
+  if (checklist.length !== 7) fallar(`Esperaba 7 puntos en el checklist (hay ${checklist.length})`);
+  const puntos = pagina("puntos-importantes").texto.filter((l) => l.startsWith("Ten en cuenta"));
+  if (puntos.length !== 7) fallar("Esperaba 7 «Ten en cuenta» en /puntos-importantes/");
+
+  const nos = pagina("nosotros").texto;
+  const tras = (h: string) => nos[nos.indexOf(h) + 1]!;
+  const about = pagina("about").texto.find((l) => l.startsWith("Nacemos de la necesidad"));
+  if (!about) fallar("No encontré «Nacemos de la necesidad…» en /about/");
+  const nosotros = {
+    titulo: match(/^# (.+?)\s*$/, nos[0]!, "H1 de nosotros")[1]!,
+    bajada: nos[1]!,
+    historia: tras("### Nuestra historia"),
+    mision: tras("### Misión"),
+    vision: tras("### Visión"),
+    porQueExistimos: about,
+  };
+
+  // Libro de Reclamaciones: campos y opciones exactos del formulario original.
+  const hl = rawHtml("libro-de-reclamaciones.html");
+  const opciones = (name: string) => {
+    const m = hl.match(new RegExp(`<select[^>]*name="${name}"[^>]*>([\\s\\S]*?)</select>`));
+    if (!m) fallar(`Sin <select name=${name}> en el libro`);
+    return [...m[1]!.matchAll(/<option[^>]*>([\s\S]*?)<\/option>/g)].map((o) => o[1]!.replace(/\s+/g, " ").trim()).slice(1);
+  };
+  const det = bloquesHtml(hl.slice(hl.indexOf("Detalle del reclamo"), hl.indexOf("He leído y acepto")));
+  const leyenda = (inicio: string) => det.find((b) => b.startsWith(inicio)) ?? fallar(`Sin «${inicio}» en el libro`);
+  const libro = {
+    tiposDocumento: opciones("tipo_doc"),
+    departamentos: opciones("dep"),
+    tiposReclamo: opciones("tipo_reclamo"),
+    tiposConsumo: opciones("tipo_consumo"),
+    definiciones: {
+      reclamo: leyenda("Desacuerdo relacionado"),
+      queja: leyenda("Desacuerdo no relacionado"),
+    },
+    declaraciones: [
+      leyenda("Declaro que soy el dueño"),
+      leyenda("La formulación del reclamo no excluye"),
+      leyenda("El proveedor debe responder"),
+      leyenda("Con la firma de este documento"),
+    ],
+    aceptacion: "He leído y acepto la Política de privacidad y seguridad y la Política de cookies.",
+  };
+
+  // Términos y condiciones: texto LITERAL, por secciones (sin ningún cambio de redacción).
+  const tycTexto = pagina("terminos-y-condiciones").texto;
+  const tyc: { titulo: string; parrafos: string[] }[] = [];
+  for (const l of tycTexto) {
+    if (l.startsWith("## ")) tyc.push({ titulo: l.slice(3), parrafos: [] });
+    else if (tyc.length) tyc[tyc.length - 1]!.parrafos.push(l);
+  }
+
+  return { tecnologia, guia: seccionesGuia(), checklist, puntos, nosotros, libro, tyc };
+}
+
+escribir(
+  "educativo-fuente.ts",
+  "Textos de las páginas educativas extraídos de la fuente (tecnología, guía, checklist, nosotros, libro de reclamaciones y T&C literales).",
+  `export const educativoFuente = ${json(construirEducativo())} as const;`,
 );
 
 // PENDIENTES.md se genera junto con el contenido para que no se desincronice.

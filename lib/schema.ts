@@ -5,6 +5,8 @@
  * referencia por @id.
  */
 import type {
+  Article,
+  BlogPosting,
   BreadcrumbList,
   FAQPage,
   HowTo,
@@ -137,4 +139,30 @@ export function schemaMigas(migas: Miga[]): WithContext<BreadcrumbList> {
       item: url(m.href),
     })),
   };
+}
+
+/** Article / BlogPosting (§8) para la guía y los artículos del blog. */
+export function schemaArticulo(a: {
+  tipo: "Article" | "BlogPosting";
+  titulo: string;
+  descripcion: string;
+  path: string;
+  publicado: string;
+  modificado?: string;
+  seccion?: string;
+}): WithContext<Article | BlogPosting> {
+  return {
+    "@context": "https://schema.org",
+    "@type": a.tipo,
+    headline: a.titulo,
+    description: a.descripcion,
+    url: url(a.path),
+    mainEntityOfPage: url(a.path),
+    datePublished: a.publicado,
+    dateModified: a.modificado ?? a.publicado,
+    inLanguage: "es-PE",
+    ...(a.seccion ? { articleSection: a.seccion } : {}),
+    author: { "@type": "Organization", name: "Equipo DiagnostiCAR", "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
+  } as WithContext<Article | BlogPosting>;
 }
