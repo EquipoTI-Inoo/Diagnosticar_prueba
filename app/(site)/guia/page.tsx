@@ -9,7 +9,7 @@ import { ACTUALIZADO, paginaGuia as p } from "@/content/educativo";
 import { getServicio } from "@/content/servicios";
 import { schemaArticulo } from "@/lib/schema";
 
-export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/guia", ogPropia: true });
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/guia", imagen: "/guia/og.png" });
 
 const SUBPAGINAS = [
   { href: "/guia/checklist", titulo: "Checklist imprimible", texto: "Los 7 puntos a revisar cuando vayas a ver el auto." },
@@ -136,6 +136,7 @@ export default function GuiaPage() {
           titulo: p.h1,
           descripcion: p.resumen,
           path: "/guia",
+          imagen: "/guia/og.png",
           publicado: ACTUALIZADO.iso,
         })}
       />

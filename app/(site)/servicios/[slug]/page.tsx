@@ -33,7 +33,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const f = getFicha((await params).slug);
   if (!f) return {};
-  return metadatos({ ...fichaSeo(f), path: f.servicio.href, ogPropia: true });
+  return metadatos({ ...fichaSeo(f), path: f.servicio.href, imagen: `${f.servicio.href}/og.png` });
 }
 
 export default async function FichaServicio({ params }: { params: Promise<{ slug: string }> }) {

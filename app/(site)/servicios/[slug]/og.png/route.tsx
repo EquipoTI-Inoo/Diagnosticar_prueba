@@ -1,16 +1,16 @@
 import { fichaSlugs, getFicha } from "@/content/conversion";
-import { imagenOg, OG_SIZE, OG_TYPE } from "@/lib/og";
+import { imagenOg } from "@/lib/og";
 import { formatPEN } from "@/lib/utils";
 
-export const alt = "Plan de diagnóstico vehicular de DiagnostiCAR";
-export const size = OG_SIZE;
-export const contentType = OG_TYPE;
+/** Imagen OG de cada ficha en una URL estable (/servicios/{slug}/og.png), generada en build. */
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return fichaSlugs.map((slug) => ({ slug }));
 }
 
-export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
+export async function GET(_req: Request, { params }: { params: Promise<{ slug: string }> }) {
   const f = getFicha((await params).slug)!;
   const s = f.servicio;
   return imagenOg({

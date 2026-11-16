@@ -155,6 +155,7 @@ export function schemaArticulo(a: {
   publicado: string;
   modificado?: string;
   seccion?: string;
+  imagen?: string;
 }): WithContext<Article | BlogPosting> {
   return {
     "@context": "https://schema.org",
@@ -170,8 +171,16 @@ export function schemaArticulo(a: {
     dateModified: a.modificado ?? a.publicado,
     inLanguage: "es-PE",
     ...(a.seccion ? { articleSection: a.seccion } : {}),
-    author: { "@type": "Organization", name: "Equipo DiagnostiCAR", "@id": ORG_ID },
-    publisher: { "@id": ORG_ID },
+    ...(a.imagen ? { image: url(a.imagen) } : {}),
+    author: { "@type": "Organization", name: "Equipo DiagnostiCAR", url: `${SITIO}/nosotros` },
+    // Publisher embebido (además del @id) para validadores que no resuelven referencias entre bloques.
+    publisher: {
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: negocio.marca,
+      url: `${SITIO}/`,
+      logo: { "@type": "ImageObject", url: url("/logos/diagnosticar-logo-light.png") },
+    },
   } as WithContext<Article | BlogPosting>;
 }
 

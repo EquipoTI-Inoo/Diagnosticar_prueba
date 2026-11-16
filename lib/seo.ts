@@ -2,9 +2,9 @@
  * Metadata por página (§8): title «{Tema} | DiagnostiCAR Lima» ≤ 60, description ≤ 155,
  * canonical absoluto (https://diagnosticarperu.com), Open Graph y Twitter.
  * Los límites se validan al construir: una página que no los cumple rompe el build.
- * Imagen OG: por defecto la global (app/opengraph-image.tsx). Las fichas, los artículos y la guía
- * tienen su propio opengraph-image.tsx en el segmento (`ogPropia: true`: no se declara imagen).
- * (Un `openGraph` definido en la página reemplaza al heredado, por eso se declara aquí.)
+ * Imagen OG: por defecto la global (app/opengraph-image.tsx → /opengraph-image). Las fichas, los
+ * artículos y la guía tienen imagen propia en una URL estable (`…/og.png`, route handlers estáticos).
+ * Un `openGraph` definido en la página reemplaza al heredado, por eso la imagen se declara aquí.
  */
 import type { Metadata } from "next";
 import { negocio } from "@/content/negocio";
@@ -25,7 +25,7 @@ export function metadatos({
   tipo = "website",
   publicado,
   modificado,
-  ogPropia = false,
+  imagen,
 }: {
   tema: string;
   descripcion: string;
@@ -33,8 +33,8 @@ export function metadatos({
   tipo?: "website" | "article";
   publicado?: string;
   modificado?: string;
-  /** true si el segmento tiene su propio opengraph-image.tsx (si no, Next usaría este valor). */
-  ogPropia?: boolean;
+  /** Ruta de una imagen OG propia de 1200×630 (p. ej. /blog/{slug}/og.png); si no, la global. */
+  imagen?: string;
 }): Metadata {
   const titulo = `${tema} | ${SUFIJO_TITULO}`;
   if (titulo.length > 60)
@@ -43,6 +43,7 @@ export function metadatos({
     throw new Error(
       `Description de ${path} con ${descripcion.length} caracteres (> 155): «${descripcion}»`,
     );
+  const imagenOg = imagen ? { ...IMAGEN_OG, url: `${SITIO}${imagen}`, alt: titulo } : IMAGEN_OG;
   const url = `${SITIO}${path === "/" ? "" : path}` || SITIO;
   return {
     title: { absolute: titulo },
@@ -55,7 +56,7 @@ export function metadatos({
       url: path === "/" ? `${SITIO}/` : url,
       title: titulo,
       description: descripcion,
-      ...(ogPropia ? {} : { images: [IMAGEN_OG] }),
+      images: [imagenOg],
       ...(tipo === "article" && publicado
         ? {
             publishedTime: publicado,
@@ -68,7 +69,7 @@ export function metadatos({
       card: "summary_large_image",
       title: titulo,
       description: descripcion,
-      ...(ogPropia ? {} : { images: [IMAGEN_OG.url] }),
+      images: [imagenOg.url],
     },
   };
 }

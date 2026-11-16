@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     path: `/blog/${a.slug}`,
     tipo: "article",
     publicado: a.fecha,
-    ogPropia: true,
+    imagen: `/blog/${a.slug}/og.png`,
   });
 }
 
@@ -137,6 +137,7 @@ export default async function ArticuloPage({ params }: { params: Promise<{ slug:
           path: `/blog/${a.slug}`,
           publicado: a.fecha,
           seccion: a.categoria,
+          imagen: `/blog/${a.slug}/og.png`,
         })}
       />
     </>
