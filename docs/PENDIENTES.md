@@ -1,77 +1,63 @@
-# Pendientes del cliente
+# Pendientes del cliente · lista final consolidada (Fase 6)
 
-> Generado por `scripts/import-content.ts` a partir de `contenido.json` (2026-11-15). Lo que figura aquí aparece en el sitio como `[PENDIENTE CLIENTE]` o `[CONFIRMAR CLIENTE]`. **No editar a mano:** los pendientes nuevos se agregan en la sección C del script y se regenera con `npm run import:content`.
+Fecha: 16/11/2026. Todo lo que aparece en el sitio como `[PENDIENTE CLIENTE]` o `[CONFIRMAR CLIENTE]`, más las decisiones provisionales del prototipo que el cliente debe confirmar. En el build de **preview** cada pendiente se ve como un badge amarillo; en **producción** se muestra neutro («Por confirmar»).
 
-## A. Información que falta (`pendiente_cliente`)
+La lista original extraída de `contenido.json` (`pendiente_cliente` + `inconsistencias_detectadas`) está en `docs/PENDIENTES-fuente.md`; aquí se agrupa y se deduplica.
 
-- [ ] Horario exacto de atención
-- [ ] Precio de Asesoría precompra online y de Certifica tu auto
-- [ ] Confirmar precio final del Plus y del Antecedentes Completo; si los precios incluyen IGV
-- [ ] Medios de pago (Yape/Plin/tarjeta/transferencia) y vigencia de la cuenta BCP
-- [ ] Email oficial
-- [ ] URL del grupo de Facebook y @ de TikTok
-- [ ] Lista vigente de distritos sin recargo y tarifa de traslado
-- [ ] Fotos reales del equipo/técnicos (nombres, certificaciones de los técnicos), fotos de equipos
-- [ ] Nota de prensa en Gestión (URL) y detalle de la relación con Rally Caminos del Inca, LAUNCH, Autel
-- [ ] Testimonios con permiso de uso (foto/nombre), reseñas Google vía widget/API
-- [ ] Informe de ejemplo actualizado (el PDF actual es de 2022)
-- [ ] Logo vectorial (SVG) y manual de marca; solo hay webp/png
-- [ ] Política de privacidad y cookies (existe referencia pero no texto propio completo)
-- [ ] Número de técnicos, años exactos de fundación
-- [ ] Cobertura fuera de Lima (provincias) y atención en notarías/concesionarios
+## 1. Datos del negocio
 
-## B. Inconsistencias detectadas en el sitio actual (`inconsistencias_detectadas`)
+- [ ] **Horario de atención** exacto (hoy «Lunes a domingo, [PENDIENTE]»). Sin él no hay `openingHours` en el schema.
+- [ ] **Email oficial**. No se publica `info@diagnosticar.com` (dominio distinto) hasta confirmarlo.
+- [ ] **Redes**: @usuario de TikTok (hoy enlace corto `vt.tiktok.com/ZSPVKqXRd/`, también en `sameAs`), URL del grupo de Facebook «Compra Segura Autos Usados Lima», URL de la ficha de Google Business («Ver reseñas en Google»).
+- [ ] **Lista vigente de distritos sin recargo** (hoy 10) y tarifa de traslado; cobertura fuera de Lima, notarías y concesionarios.
+- [ ] **Cifras**: se usaron las de la home 2026 (+6,000 diagnósticos, +575 reseñas, 4.9★, 4 años, «+200 puntos», 40–70 min). Discrepancias del sitio actual: reseñas +575/+400/450, diagnósticos +6,000/5,000, puntos +200/300/320, duración 40–70 vs 30–40/30–45/50–70/40–50, % de autos con problemas 70/80/90 % sin fuente.
+- [ ] **Landing de venta**: 300–400 leads diarios y +100k seguidores (`[CONFIRMAR CLIENTE]`).
+- [ ] **Equipo**: número de técnicos, nombres, fotos y certificaciones («Técnicos certificados» va sin detalle); año exacto de fundación.
+- [ ] **Medios de pago** (Yape, Plin, tarjeta, transferencia). La cuenta BCP y el CCI del sitio antiguo **no** se publicaron.
+- [ ] **Relaciones y prensa**: URL de la nota en Gestión; alcance de la relación con Rally Caminos del Inca, LAUNCH y Autel; SONAX solo aparece en páginas antiguas (no se muestra como aliado vigente).
+- [ ] **Testimonios**: permiso de uso, nombre y foto (3 del sitio antiguo no tienen nombre); reseñas de Google vía widget o API.
+- [ ] **Copy redactado en el prototipo** para validar: titulares de comparador, consulta por placa, confianza y footer (Fase 2); resúmenes-respuesta, políticas en lenguaje simple y textos de formularios (Fase 3); resúmenes AEO de guía y servicios (Fase 5).
 
-- [ ] Precio Plus: S/ 549 (home 2026) vs S/ 559 (/precios/)
-- [ ] Antecedentes Completo: S/ 49 vs S/ 59 (landings) y '+ IGV' en una landing; ~30 págs vs +25 págs
-- [ ] Duración: 40–70 min (home) vs 30–40 / 30–45 / 50–70 / 40–50 en otras páginas
-- [ ] Reseñas: +575 (home) vs +400 (meta description) vs 450 (landing)
-- [ ] Diagnósticos: +6,000 vs 5,000
-- [ ] Puntos de revisión: +200 (Básico) vs 300 ítems (guía/campaña) vs 320 puntos (legacy)
-- [ ] % de autos con problemas: 70% / 80% / 90% según landing (sin fuente)
-- [ ] Email info@diagnosticar.com (dominio distinto)
-- [ ] Home con robots 'noindex' y meta description genérica repetida en casi todas las páginas
-- [ ] Páginas basura indexables: sample-page, duplicados '[#1505]' '[#1573]', 'borrador', landings boost/campaña, -legacy
-- [ ] El aviso del blog reconoce que las imágenes de artículos son ilustraciones generadas con IA
+## 2. Precios y servicios
 
-## C. Decisiones provisionales tomadas en el prototipo (confirmar)
+- [ ] **Antecedentes Completo S/ 49** (vs S/ 59 en landings, y «+ IGV» en una) y **DiagnostiCAR Plus S/ 549** (vs S/ 559 en /precios/): por confirmar.
+- [ ] **¿Los precios incluyen IGV?** (también en los `Offer` del schema).
+- [ ] **Precio de Asesoría precompra online** (no se muestra el antiguo S/ 99) y de **Certifica tu auto**.
+- [ ] **Antecedentes incluidos en DiagnostiCAR y Plus**: ¿básico o completo? (en la tabla figura «Por confirmar»).
+- [ ] **Plazo de entrega** del informe de antecedentes y de la asesoría online.
+- [ ] **Antecedentes Completo**: ~30 vs +25 páginas.
+- [ ] **Informe de ejemplo actualizado** (el PDF actual es de 2022).
+- [ ] **Sello «Vehículo verificado»**: URL pública de verificación y QR real (el del prototipo es ilustrativo).
 
-- [ ] Precios usados: los de la home 2026 → Antecedentes Completo **S/ 49**, DiagnostiCAR Plus **S/ 549**. Confirmar y aclarar si incluyen IGV.
-- [ ] Cifras usadas: +6,000 diagnósticos, +575 reseñas, 4.9★, 4 años, «+200 puntos» de revisión, duración 40–70 min.
-- [ ] Cifras de la landing de venta marcadas `[CONFIRMAR CLIENTE]`: 300–400 leads diarios y +100k seguidores.
-- [ ] Email: no se publica `info@diagnosticar.com` hasta confirmar el oficial.
-- [ ] Cuenta BCP y CCI del sitio antiguo: **no** se importaron. Confirmar medios de pago (Yape/Plin/tarjeta/transferencia) antes de publicarlos.
-- [ ] Reseñas: 3 testimonios del sitio antiguo no tienen nombre; ninguno tiene permiso de uso confirmado.
-- [ ] Aliado SONAX: solo aparece en páginas antiguas; no se muestra como aliado vigente.
-- [ ] Asesoría precompra online: no se muestra el precio antiguo (S/ 99) hasta confirmar.
-- [ ] Logo vectorial (SVG) y versión oficial para fondo claro: hoy se usan derivados del PNG original 1894×1074 (dark, light con «CAR» recoloreado a ink, isotipo). El laptop gris claro del logo se ve tenue sobre fondos claros.
-- [ ] Sello «Vehículo verificado»: el QR del prototipo es ilustrativo. Falta la URL real de verificación.
-- [ ] Gestión: URL de la nota de prensa. Ficha de Google Business (URL para «Ver reseñas en Google»).
-- [ ] TikTok: el enlace corto es `https://vt.tiktok.com/ZSPVKqXRd/` (de raw/venta-sin-consignar.html); confirmar el @usuario de la cuenta.
-- [ ] IDs de Meta Pixel, TikTok Pixel y GTM (variables `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_TIKTOK_PIXEL_ID`).
-- [ ] Fotos reales para «Confianza técnica»: el sitio actual usa 3 imágenes que parecen de banco o generadas (fg-min, gh-1, Diseno-sin-titulo-6); el prototipo usa fotos propias (equipo, videoscopio, informe de ejemplo, unidades móviles).
-- [ ] Certificaciones de los técnicos («Técnicos certificados» se muestra sin detalle).
-- [ ] Ícono oficial del Libro de Reclamaciones (Indecopi) en SVG/PNG.
-- [ ] Fase 3 · Antecedentes en DiagnostiCAR y Plus: el JSON dice «Reporte de antecedentes», pero no si es el básico o el completo (en la tabla comparativa figura «Por confirmar»).
-- [ ] Fase 3 · Plazo de entrega del informe de antecedentes y de la asesoría online (servicios sin visita).
-- [ ] Fase 3 · Destino real de los leads (CRM, correo u hoja de cálculo). En el prototipo se guardan en `.data/leads.jsonl` (local, fuera de git).
-- [ ] Fase 3 · URL pública de verificación del sello «Vehículo verificado» y QR real.
-- [ ] Fase 3 · Copy redactado para las páginas de conversión (resúmenes-respuesta, políticas en lenguaje simple, textos de formularios): validar.
-- [ ] Copy redactado en la Fase 2 (titulares de comparador, consulta por placa, confianza y footer): validar.
-- [ ] Fotos de hallazgos sin subtítulos quemados, en especial choque oculto y problemas documentarios.
-- [ ] Fotos que muestren el hallazgo: hoy «kilometraje bajado» (kilometraje200k.jpg) muestra una llanta y «airbags reventados» (airbag.jpg) no muestra un airbag; sus `alt` originales no describen la imagen y se reemplazaron por descripciones literales.
-- [ ] Fase 4 · Autor técnico de los artículos con bio y foto (hoy «Equipo DiagnostiCAR»).
-- [ ] Fase 4 · Política de privacidad y política de cookies: textos oficiales (hoy `[PENDIENTE CLIENTE]`).
-- [ ] Fase 4 · Libro de Reclamaciones: sistema real de registro (número de hoja, copia por correo) y listas de provincias y distritos. El texto original dice «quince (15) días naturales»; revisar con asesoría legal si debe actualizarse a la norma vigente de Indecopi.
-- [ ] Fase 4 · `/tecnologia`: el sitio dice «+200 puntos» en 4 lugares y «320 puntos» en 3; se usó «+200 puntos». Confirmar.
-- [ ] Fase 4 · Fotos reales de hallazgos por problema (airbag detonado, kilometraje, choque con masilla); hoy hay fotogramas recortados que no muestran el hallazgo.
-- [ ] Fase 4 · Fechas de los artículos: son de febrero de 2025; validar si se republican o actualizan.
-- [ ] Fase 5 · Horario de atención: falta y por eso no hay `openingHours` en el schema (el footer muestra «Lunes a domingo, [PENDIENTE CLIENTE]»).
-- [ ] Fase 5 · `sameAs` de TikTok usa el enlace corto `vt.tiktok.com/ZSPVKqXRd/`; reemplazar por `https://www.tiktok.com/@usuario` cuando se confirme.
-- [ ] Fase 5 · Área de usuario del sitio antiguo (login, register, password-reset, members, mis-reportes, panel-tecnico) responde **410**: confirmar que ya no se usa (si tiene clientes activos, cambiar a 301).
-- [ ] Fase 5 · Landings de campaña y boost redirigen con 301 a `/servicios` o a la ficha: confirmar si hay anuncios activos que necesiten una landing propia.
-- [ ] Fase 5 · `/gracias-revision-antecedentes/` → ficha Antecedentes Completo: definir la página de gracias y la medición de conversiones (GTM/Pixel) del nuevo sitio.
-- [ ] Fase 5 · Política de bots de IA: el robots de producción los **permite** (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot…). Confirmar con el cliente.
-- [ ] Fase 5 · Validar en Google Rich Results Test y Search Console cuando haya una URL pública (staging con contraseña no sirve). Enviar `sitemap.xml` tras el lanzamiento.
-- [ ] Fase 5 · IGV: los `Offer` publican precio en PEN sin indicar si incluye IGV; confirmar.
-- [ ] Fase 5 · Antes de publicar, construir con `SITE_ENV=production` (si no, el sitio sale con `noindex`).
+## 3. Legales
+
+- [ ] **Política de privacidad** y **política de cookies**: textos oficiales (hoy `[PENDIENTE CLIENTE]`).
+- [ ] **Libro de Reclamaciones**: sistema real de registro (número de hoja, copia por correo), listas de provincias y distritos, e ícono oficial de Indecopi. El texto original dice «quince (15) días naturales»: revisar con asesoría legal la norma vigente.
+- [ ] **Formularios**: destino real de los leads (CRM, correo u hoja de cálculo). En el prototipo se guardan en `.data/leads.jsonl` (local, fuera de git); validar el texto de consentimiento.
+
+## 4. Fotos y medios
+
+- [ ] **Logo vectorial (SVG)**, versión oficial para fondo claro y manual de marca (hoy derivados del PNG 1894×1074; el laptop gris se ve tenue sobre claro).
+- [ ] **Fotos reales de hallazgos** por problema (kilometraje adulterado, airbag detonado, choque con masilla, problemas documentarios), sin subtítulos quemados. Hoy «kilometraje» muestra una llanta y «airbags» un vano motor.
+- [ ] **Fotos para «Confianza técnica»** y de equipos (el sitio actual usa 3 imágenes que parecen de banco o generadas).
+- [ ] **Blog**: autor técnico con bio y foto (hoy «Equipo DiagnostiCAR»); imágenes propias (las actuales son ilustraciones IA y no se usaron; la imagen de cada artículo es una portada tipográfica); ¿se republican o actualizan las fechas de febrero de 2025?
+
+## 5. Medición e integraciones
+
+- [ ] IDs de **GTM**, **Meta Pixel** y **TikTok Pixel** (`NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_TIKTOK_PIXEL_ID`). Solo se cargan con consentimiento.
+- [ ] **Página de gracias** y medición de conversiones (`whatsapp_click`, envíos de formularios) en el nuevo sitio; hoy `/gracias-revision-antecedentes/` redirige a la ficha Antecedentes Completo.
+- [ ] **Hosting y dominio**: dónde se publica (Hostinger u otro con Node 20+ para `next start`) y acceso a DNS para `diagnosticarperu.com`.
+
+## 6. Decisiones de redirección y bots de IA
+
+- [ ] **410 del área de usuario** del WordPress (login, register, password-reset, members, mis-reportes, panel-tecnico): confirmar que nadie la usa; si hay clientes activos, cambiar a 301.
+- [ ] **Landings de campaña y boost** → 301 a `/servicios` o a la ficha: confirmar si hay anuncios activos que necesiten landing propia.
+- [ ] **Bots de IA**: el robots de producción los **permite** (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot). Confirmar la política.
+- [ ] Revisar la tabla completa de `docs/REDIRECTS.md` (85 × 301, 30 × 410).
+
+## 7. Después de publicar (Rich Results y Search Console)
+
+- [ ] Construir siempre con `SITE_ENV=production` (si no, el sitio sale con `noindex` y badges amarillos).
+- [ ] **Google Rich Results Test** en home, una ficha, `/preguntas-frecuentes` y un artículo (en local se validó con el validador oficial de Schema.org: 0 errores).
+- [ ] **Search Console**: verificar la propiedad, enviar `https://diagnosticarperu.com/sitemap.xml`, revisar cobertura y las redirecciones de las URLs antiguas.
+- [ ] Repetir Lighthouse (`npm run lhci`) contra la URL pública y revisar Core Web Vitals reales (CrUX) a las 4 semanas.

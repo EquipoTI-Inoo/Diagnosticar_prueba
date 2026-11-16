@@ -1004,10 +1004,11 @@ escribir(
   `export const educativoFuente = ${json(construirEducativo())} as const;`,
 );
 
-// PENDIENTES.md se genera junto con el contenido para que no se desincronice.
-const pendientes = `# Pendientes del cliente
+// PENDIENTES-fuente.md se genera junto con el contenido para que no se desincronice.
+// La lista final consolidada para el cliente es docs/PENDIENTES.md (curada a mano en la Fase 6).
+const pendientes = `# Pendientes del cliente · lista de la fuente
 
-> Generado por \`scripts/import-content.ts\` a partir de \`contenido.json\` (${fuente.generado}). Lo que figura aquí aparece en el sitio como \`${PENDIENTE}\` o \`${CONFIRMAR}\`. **No editar a mano:** los pendientes nuevos se agregan en la sección C del script y se regenera con \`npm run import:content\`.
+> Generado por \`scripts/import-content.ts\` a partir de \`contenido.json\` (${fuente.generado}). Lo que figura aquí aparece en el sitio como \`${PENDIENTE}\` o \`${CONFIRMAR}\`. **No editar a mano** (se regenera con \`npm run import:content\`). La lista final consolidada, agrupada para el cliente, es \`docs/PENDIENTES.md\`.
 
 ## A. Información que falta (\`pendiente_cliente\`)
 
@@ -1044,5 +1045,5 @@ ${fuente.inconsistencias_detectadas.map((p) => `- [ ] ${p}`).join("\n")}
 - [ ] Fotos de hallazgos sin subtítulos quemados, en especial choque oculto y problemas documentarios.
 - [ ] Fotos que muestren el hallazgo: hoy «kilometraje bajado» (${FOTOS_PROBLEMAS["Kilometraje bajado"]!.archivo}) muestra una llanta y «airbags reventados» (${FOTOS_PROBLEMAS["Airbags reventados"]!.archivo}) no muestra un airbag; sus \`alt\` originales no describen la imagen y se reemplazaron por descripciones literales.
 `;
-writeFileSync(join(ROOT, "docs/PENDIENTES.md"), pendientes);
-console.log("✓ docs/PENDIENTES.md");
+writeFileSync(join(ROOT, "docs/PENDIENTES-fuente.md"), pendientes);
+console.log("✓ docs/PENDIENTES-fuente.md");

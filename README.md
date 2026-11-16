@@ -14,7 +14,7 @@ npm run build          # build estático de producción
 
 | Script | Qué hace |
 |---|---|
-| `npm run import:content` | Regenera `content/*.ts` y `docs/PENDIENTES.md` desde `docs/fuente/contenido.json`. |
+| `npm run import:content` | Regenera `content/*.ts` y `docs/PENDIENTES-fuente.md` desde `docs/fuente/contenido.json`. |
 | `npm run check:contrast` | Verifica el contraste AA de los tokens y su sincronía con `globals.css`. |
 | `npm run check:datos` | Comprueba que toda cifra de `/content` exista en `contenido.json`. |
 | `npm run check` | Contraste + datos + `tsc` + ESLint. |
