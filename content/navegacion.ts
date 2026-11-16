@@ -86,23 +86,3 @@ export const footer = {
   ]),
 };
 
-/**
- * Rutas del mapa del sitio (§4) que aún no existen (Fase 4). Las de la Fase 3 ya son páginas reales.
- * Mientras tanto, app/(site)/[...ruta] muestra un marcador «en construcción» (noindex) para que
- * el prototipo sea navegable y no haya 404 en los enlaces internos. Cada ruta real que se cree
- * en su fase tiene prioridad sobre el marcador.
- */
-export const rutasPlanificadas: { href: string; titulo: string; fase: 4 }[] = [
-  { href: "/tecnologia", titulo: "Tecnología", fase: 4 },
-  { href: "/guia", titulo: "Guía para comprar un auto usado", fase: 4 },
-  { href: "/guia/checklist", titulo: "Checklist precompra", fase: 4 },
-  { href: "/guia/problemas-comunes", titulo: "Problemas más comunes", fase: 4 },
-  { href: "/guia/consulta-placa-gratis", titulo: "Consulta de placa gratis", fase: 4 },
-  { href: "/blog", titulo: "Blog", fase: 4 },
-  { href: "/nosotros", titulo: "Nosotros", fase: 4 },
-  { href: "/preguntas-frecuentes", titulo: "Preguntas frecuentes", fase: 4 },
-  { href: "/legal/terminos-y-condiciones", titulo: "Términos y condiciones", fase: 4 },
-  { href: "/legal/privacidad", titulo: "Política de privacidad", fase: 4 },
-  { href: "/legal/cookies", titulo: "Política de cookies", fase: 4 },
-  { href: "/libro-de-reclamaciones", titulo: "Libro de Reclamaciones", fase: 4 },
-];
