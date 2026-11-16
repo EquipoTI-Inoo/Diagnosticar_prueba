@@ -1,0 +1,63 @@
+# DiagnostiCAR
+
+> DiagnostiCAR (Diagnosticar S.A.C., RUC 20609649420) hace diagnóstico vehicular pre-compra a domicilio en Lima Metropolitana: antecedentes legales del auto e inspección técnica con equipos profesionales. Lema: «Las máquinas no mienten».
+
+Contacto: WhatsApp +51 923 374 470 · oficina administrativa en Av. José Pardo 1167, of. 303, Miraflores, Lima (el servicio es a domicilio). Horario: Lunes a domingo, [PENDIENTE CLIENTE]. Contenido actualizado el 16 de noviembre de 2026.
+
+## Servicios y precios
+
+- [Planes y precios](https://diagnosticarperu.com/servicios): comparativa de los planes en tabla HTML.
+- [Antecedentes Básico](https://diagnosticarperu.com/servicios/antecedentes-basico): S/ 19. Lo esencial para empezar.
+- [Antecedentes Completo](https://diagnosticarperu.com/servicios/antecedentes-completo): S/ 49 (por confirmar). Conoce toda su historia.
+- [Diagnóstico Básico](https://diagnosticarperu.com/servicios/diagnostico-basico): S/ 239 (antes S/ 400). Conoce su estado general.
+- [DiagnostiCAR](https://diagnosticarperu.com/servicios/diagnosticar): S/ 349 (antes S/ 650). Conócelo a fondo.
+- [DiagnostiCAR Plus](https://diagnosticarperu.com/servicios/diagnosticar-plus): S/ 549 (antes S/ 800) (por confirmar). La revisión más completa.
+- [Asesoría precompra online](https://diagnosticarperu.com/servicios/asesoria-precompra-online): [PENDIENTE CLIENTE]. Para quien está lejos o no tiene tiempo.
+- [Certifica tu auto](https://diagnosticarperu.com/vende-tu-auto): [PENDIENTE CLIENTE]. Vehículo verificado por DiagnostiCAR.
+
+## Cobertura
+
+- [Cobertura en Lima](https://diagnosticarperu.com/cobertura): sin recargo de traslado en Magdalena, San Miguel, Jesús María, Pueblo Libre, Lince, San Isidro, Miraflores, Barranco, Surco, San Borja. ¿Otro distrito? Escríbenos y te decimos el costo de traslado.
+
+## Cómo reservar
+
+- [Cómo funciona](https://diagnosticarperu.com/como-funciona): Chatea con nosotros → Programa tu cita → Diagnóstico → Recibes el reporte. Reservas con el 50 % del servicio y pagas el saldo al terminar.
+- [Contacto](https://diagnosticarperu.com/contacto): WhatsApp +51 923 374 470.
+- [Preguntas frecuentes](https://diagnosticarperu.com/preguntas-frecuentes)
+
+## Guías
+
+- [Cómo comprar un auto usado en Perú sin sorpresas (guía 2026)](https://diagnosticarperu.com/guia): qué revisar del estado legal y técnico antes de comprar.
+- [Checklist antes de comprar un auto usado](https://diagnosticarperu.com/guia/checklist)
+- [Problemas más comunes en autos usados](https://diagnosticarperu.com/guia/problemas-comunes): cifras de informes propios 2024-2026.
+- [Consulta de placa gratis](https://diagnosticarperu.com/guia/consulta-placa-gratis): SOAT y Revisión Técnica.
+- [Tecnología](https://diagnosticarperu.com/tecnologia) · [Informe de ejemplo](https://diagnosticarperu.com/informe-de-ejemplo)
+
+## Empresa
+
+- [Nosotros](https://diagnosticarperu.com/nosotros) · [Términos y condiciones](https://diagnosticarperu.com/legal/terminos-y-condiciones) · [Libro de Reclamaciones](https://diagnosticarperu.com/libro-de-reclamaciones)
+- [Texto completo para modelos (llms-full.txt)](https://diagnosticarperu.com/llms-full.txt)
+
+## Optional
+
+- [Cómo Revisar la Presión de los Neumáticos y Por Qué es Importante](https://diagnosticarperu.com/blog/como-revisar-la-presion-de-los-neumaticos-y-por-que-es-importante): Mantén tus neumáticos en óptimas condiciones para una conducción segura y eficiente. Aprende a revisar la presión correctamente y evita problemas en la carretera
+- [El Futuro del Mercado de Coches Usados: ¿Por Qué las Consultas Virtuales y los Diagnósticos Avanzados Serán Clave?](https://diagnosticarperu.com/blog/el-futuro-del-mercado-de-coches-usados-por-que-las-consultas-virtuales-y-los-diagnosticos-avanzados-seran-clave): La compra de autos usados está cambiando. Descubre cómo la tecnología está transformando la forma en que elegimos y evaluamos vehículos de segunda mano.
+- [Las Herramientas y Tecnologías que Utilizamos en Diagnosticar para un Diagnóstico Preciso de Vehículos Usados](https://diagnosticarperu.com/blog/las-herramientas-y-tecnologias-que-utilizamos-en-diagnosticar-peru-para-un-diagnostico-preciso-de-vehiculos-usados): La precisión es clave al evaluar un auto usado. Descubre las tecnologías avanzadas que usamos para brindarte seguridad y confianza en tu compra.
+- [Las Marcas de Coches Usados Más Confiables para Comprar Este Año](https://diagnosticarperu.com/blog/las-marcas-de-coches-usados-mas-confiables-para-comprar-este-ano): Descubre cuáles son los autos usados más confiables y asegúrate de hacer una compra inteligente este año.
+- [Mi Primer Coche Usado: ¿Cómo Evitar los Errores Comunes con la Ayuda de un Diagnóstico Profesional?](https://diagnosticarperu.com/blog/mi-primer-coche-usado-como-evitar-los-errores-comunes-con-la-ayuda-de-un-diagnostico-profesional): Comprar tu primer auto usado puede ser emocionante, pero también un reto. Descubre cómo evitar errores comunes y asegurarte de hacer una compra inteligente.
+- [¿Por Qué Tu Auto Pierde Potencia? Claves para un Diagnóstico Eficiente](https://diagnosticarperu.com/blog/por-que-tu-auto-pierde-potencia-claves-para-un-diagnostico-eficiente): Descubre las causas más comunes de pérdida de potencia en tu vehículo y cómo solucionarlas
+- [Cómo Detectar Problemas de Alineación y Balanceo del Vehículo](https://diagnosticarperu.com/blog/como-detectar-problemas-de-alineacion-y-balanceo-del-vehiculo): Aprende a identificar los síntomas de alineación y balanceo incorrectos para mejorar la seguridad y el rendimiento de tu auto
+- [Diagnóstico del Sistema de Aire Acondicionado: Tips para Mantenerlo en Buen Estado](https://diagnosticarperu.com/blog/diagnostico-del-sistema-de-aire-acondicionado-tips-para-mantenerlo-en-buen-estado): Aprende a identificar fallos y mantener el aire acondicionado de tu auto funcionando de manera óptima
+- [¡Cuidado! Lo Que Suelen Esconder los Autos Usados](https://diagnosticarperu.com/blog/cuidado-lo-que-suelen-esconder-los-autos-usados): Descubre los secretos ocultos que podrían poner en riesgo tu compra de un coche de segunda mano
+- [¿Por Qué un Informe de Diagnóstico es Clave para Evitar Estafas al Comprar un Vehículo?](https://diagnosticarperu.com/blog/por-que-un-informe-de-diagnostico-es-clave-para-evitar-estafas-al-comprar-un-vehiculo): Descubre cómo un informe de diagnóstico puede proteger tu inversión y ayudarte a identificar fraudes al comprar un auto usado
+- [¿Qué Componentes Eléctricos Pueden Fallar en un Auto y Cómo Diferenciarlos?](https://diagnosticarperu.com/blog/que-componentes-electricos-pueden-fallar-en-un-auto-y-como-diferenciarlos): Identifica fallos eléctricos comunes en vehículos usados y aprende a reconocer sus síntomas
+- [Checklist de Diagnóstico Antes de Comprar un Auto Usado](https://diagnosticarperu.com/blog/checklist-de-diagnostico-antes-de-comprar-un-auto-usado): Asegura una compra inteligente con esta guía completa para evaluar un coche de segunda mano sin sorpresas
+- [Diferencias Entre un Diagnóstico Visual y uno Computarizado](https://diagnosticarperu.com/blog/diferencias-entre-un-diagnostico-visual-y-uno-computarizado): Descubre cuál es la mejor opción para evaluar el estado real de un auto usado
+- [Elige Bien! 5 Tendencias Clave para el Futuro del Diagnóstico Vehicular](https://diagnosticarperu.com/blog/elige-bien-5-tendencias-clave-para-el-futuro-del-diagnostico-vehicular): Descubre cómo la tecnología transformará el diagnóstico vehicular en los próximos años para comprar coches de segunda mano sin sorpresas
+- [Preguntas Esenciales que Debes Hacer al Vendedor de un Auto Usado](https://diagnosticarperu.com/blog/preguntas-esenciales-que-debes-hacer-al-vendedor-de-un-auto-usado): Asegúrate de tomar la mejor decisión al comprar un coche de segunda mano con estas preguntas clave
+- [¡Cuidado con el Kilometraje! Aprende a Comprobarlo](https://diagnosticarperu.com/blog/cuidado-con-el-kilometraje-aprende-a-comprobarlo): Descubre cómo verificar el kilometraje real de un coche usado para evitar sorpresas y tomar decisiones informadas
+- [¡No Compres sin Probarlo! La Importancia de la Prueba de Manejo](https://diagnosticarperu.com/blog/no-compres-sin-probarlo-la-importancia-de-la-prueba-de-manejo): Descubre por qué hacer una prueba de manejo es esencial para asegurar una compra inteligente y sin sorpresas
+- [¿Es el Mejor Momento para Comprar un Coche Usado?](https://diagnosticarperu.com/blog/es-el-mejor-momento-para-comprar-un-coche-usado): Descubre cómo el aumento de la demanda está afectando los precios y qué significa para ti como comprador
+- [¡No Cometas Errores! La Asesoría Virtual que Todo Comprador Primerizo Necesita](https://diagnosticarperu.com/blog/no-cometas-errores-la-asesoria-virtual-que-todo-comprador-primerizo-necesita): Conoce por qué la asesoría virtual es la herramienta clave para comprar tu primer coche usado sin sorpresas
+- [IA y Diagnóstico Automotriz: El Futuro de los Diagnósticos de Coche](https://diagnosticarperu.com/blog/ia-y-diagnostico-automotriz-el-futuro-de-los-diagnosticos-de-coche): Descubre cómo la inteligencia artificial está transformando la forma en que diagnosticamos vehículos
+- [No Compres Sin Saber: El Valor del Diagnóstico de Antecedentes](https://diagnosticarperu.com/blog/no-compres-sin-saber-el-valor-del-diagnostico-de-antecedentes): Asegúrate de tomar decisiones inteligentes y sin sorpresas con un historial completo del vehículo.
