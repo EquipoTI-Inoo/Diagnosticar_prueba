@@ -273,7 +273,7 @@ export function SiteHeader({
           className="surface-dark fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink lg:hidden"
         >
           <div className="container-site flex h-16 shrink-0 items-center justify-between">
-            <Logo on="dark" sizes="91px" className="h-12" />
+            <Logo on="dark" sizes="91px" className="h-12 w-auto" />
             <button
               type="button"
               onClick={cerrarMenu}

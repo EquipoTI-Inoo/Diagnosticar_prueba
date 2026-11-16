@@ -138,12 +138,12 @@ export function SiteFooter() {
       </div>
 
       {/* Marca de agua: logo real muy tenue, decorativo */}
-      <div aria-hidden className="pointer-events-none relative mt-4 -mb-[10%] select-none">
+      <div aria-hidden className="pointer-events-none relative mt-6 pb-6 select-none">
         <Logo
           on="dark"
           alt=""
           sizes="100vw"
-          className="mx-auto h-auto w-[86%] max-w-[1000px] opacity-[0.07]"
+          className="mx-auto h-auto w-[78%] max-w-[880px] opacity-[0.07]"
         />
       </div>
     </footer>
