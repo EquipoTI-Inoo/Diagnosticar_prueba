@@ -46,7 +46,7 @@ La lista original extraída de `contenido.json` (`pendiente_cliente` + `inconsis
 
 - [ ] IDs de **GTM**, **Meta Pixel** y **TikTok Pixel** (`NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_TIKTOK_PIXEL_ID`). Solo se cargan con consentimiento.
 - [ ] **Página de gracias** y medición de conversiones (`whatsapp_click`, envíos de formularios) en el nuevo sitio; hoy `/gracias-revision-antecedentes/` redirige a la ficha Antecedentes Completo.
-- [ ] **Hosting y dominio**: dónde se publica (Hostinger u otro con Node 20+ para `next start`) y acceso a DNS para `diagnosticarperu.com`.
+- [ ] **Hosting y dominio**: dónde se publica (Hostinger u otro con Node.js 18.18+ —recomendado 20 LTS— para `next start`) y acceso a DNS para `diagnosticarperu.com`.
 
 ## 6. Decisiones de redirección y bots de IA
 
