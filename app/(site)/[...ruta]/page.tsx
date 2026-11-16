@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ConsultaPlacaForm } from "@/components/forms/consulta-placa-form";
 import { Button } from "@/components/ui/button";
+import { formTextos } from "@/content/conversion";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { rutasPlanificadas } from "@/content/navegacion";
@@ -45,6 +47,24 @@ export default async function EnConstruccion({ params }: { params: Promise<{ rut
             Volver al inicio
           </Button>
         </div>
+        {r.href === "/guia/consulta-placa-gratis" && (
+          <div className="surface-light mt-12 rounded-card p-6">
+            <h2 className="text-h3">Consulta gratis por placa</h2>
+            <p className="mt-1 text-muted">
+              Te decimos si el SOAT y la Revisión Técnica están vigentes, sin costo.
+            </p>
+            <div className="mt-6">
+              <ConsultaPlacaForm
+                textos={{
+                  ...formTextos.placa,
+                  errorFormulario: formTextos.errorFormulario,
+                  otraConsulta: formTextos.otraConsulta,
+                }}
+                ubicacion="guia-consulta-placa"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

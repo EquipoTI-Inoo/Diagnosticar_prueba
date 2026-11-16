@@ -87,21 +87,12 @@ export const footer = {
 };
 
 /**
- * Rutas del mapa del sitio (§4) que aún no existen, con la fase del §10 en que se construyen.
+ * Rutas del mapa del sitio (§4) que aún no existen (Fase 4). Las de la Fase 3 ya son páginas reales.
  * Mientras tanto, app/(site)/[...ruta] muestra un marcador «en construcción» (noindex) para que
  * el prototipo sea navegable y no haya 404 en los enlaces internos. Cada ruta real que se cree
  * en su fase tiene prioridad sobre el marcador.
  */
-export const rutasPlanificadas: { href: string; titulo: string; fase: 3 | 4 }[] = [
-  { href: "/servicios", titulo: "Planes y precios", fase: 3 },
-  ...servicios
-    .filter((s) => s.href.startsWith("/servicios/"))
-    .map((s) => ({ href: s.href, titulo: s.nombre, fase: 3 as const })),
-  { href: "/vende-tu-auto", titulo: "Vende tu auto", fase: 3 },
-  { href: "/como-funciona", titulo: "Cómo funciona", fase: 3 },
-  { href: "/cobertura", titulo: "Cobertura", fase: 3 },
-  { href: "/informe-de-ejemplo", titulo: "Informe de ejemplo", fase: 3 },
-  { href: "/contacto", titulo: "Contacto", fase: 3 },
+export const rutasPlanificadas: { href: string; titulo: string; fase: 4 }[] = [
   { href: "/tecnologia", titulo: "Tecnología", fase: 4 },
   { href: "/guia", titulo: "Guía para comprar un auto usado", fase: 4 },
   { href: "/guia/checklist", titulo: "Checklist precompra", fase: 4 },
