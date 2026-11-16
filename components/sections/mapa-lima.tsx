@@ -18,6 +18,20 @@ const POS: Record<string, [number, number]> = {
   Barranco: [320, 430],
 };
 
+/** Posición de cada etiqueta respecto de su punto (solo tipografía; evita solapes). */
+const ETIQUETA: Record<string, { dx: number; dy: number; anchor: "start" | "middle" | "end" }> = {
+  "San Miguel": { dx: -14, dy: 5, anchor: "end" },
+  "Pueblo Libre": { dx: 0, dy: 26, anchor: "middle" },
+  Magdalena: { dx: 14, dy: 5, anchor: "start" },
+  "Jesús María": { dx: 14, dy: 5, anchor: "start" },
+  Lince: { dx: 14, dy: 5, anchor: "start" },
+  "San Isidro": { dx: -14, dy: 5, anchor: "end" },
+  "San Borja": { dx: 14, dy: 5, anchor: "start" },
+  Miraflores: { dx: 14, dy: 5, anchor: "start" },
+  Surco: { dx: 14, dy: 5, anchor: "start" },
+  Barranco: { dx: 14, dy: 5, anchor: "start" },
+};
+
 export function MapaLima({
   distritos,
   oficina,
@@ -93,6 +107,7 @@ export function MapaLima({
       {puntos.map((d) => {
         const [x, y] = POS[d]!;
         const esOficina = d === oficina;
+        const e = ETIQUETA[d] ?? { dx: 14, dy: 5, anchor: "start" as const };
         return (
           <g key={d}>
             <circle
@@ -104,18 +119,20 @@ export function MapaLima({
               strokeWidth="2"
             />
             <text
-              x={x + 14}
-              y={y + 4}
+              x={x + e.dx}
+              y={y + e.dy}
+              textAnchor={e.anchor}
               fill="#F5F6F3"
               fontFamily="var(--font-inter-tight), sans-serif"
-              fontSize="14"
+              fontSize="16"
             >
               {d}
             </text>
             {esOficina && (
               <text
-                x={x + 14}
-                y={y + 21}
+                x={x + e.dx}
+                y={y + e.dy + 17}
+                textAnchor={e.anchor}
                 fill="#8E9C9A"
                 fontFamily="var(--font-jetbrains), monospace"
                 fontSize="10"
