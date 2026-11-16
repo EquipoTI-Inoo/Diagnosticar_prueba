@@ -21,3 +21,4 @@ export * from "./stepper";
 export * from "./text-field";
 export * from "./verified-seal";
 export * from "./whatsapp-button";
+export * from "./section-heading";

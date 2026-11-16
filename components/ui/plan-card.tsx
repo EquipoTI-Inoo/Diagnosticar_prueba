@@ -17,6 +17,7 @@ export function PlanCard({
   total,
   ubicacion = "plan-card",
   headingLevel = 3,
+  compacta = false,
   className,
 }: {
   servicio: Servicio;
@@ -25,10 +26,13 @@ export function PlanCard({
   total?: number;
   ubicacion?: string;
   headingLevel?: 2 | 3;
+  /** Menos padding y titular más chico (rejilla de 5 columnas). */
+  compacta?: boolean;
   className?: string;
 }) {
   const H = `h${headingLevel}` as const;
   const pad = (n: number) => String(n).padStart(2, "0");
+  const px = compacta ? "px-5" : "px-6";
   return (
     <article
       className={cn(
@@ -40,9 +44,9 @@ export function PlanCard({
       )}
     >
       {/* Cabecera tipo ficha */}
-      <div className="bg-inspeccion px-6 pt-5 pb-5">
-        <div className="flex min-h-6 items-center justify-between gap-3 border-b border-border pb-3 font-mono text-[0.7rem] tracking-[0.14em] text-fg-muted uppercase">
-          <span>
+      <div className={cn("bg-inspeccion pt-5 pb-5", px)}>
+        <div className="flex min-h-6 flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-border pb-3 font-mono text-[0.7rem] tracking-[0.14em] text-fg-muted uppercase">
+          <span className="whitespace-nowrap">
             {indice && total ? (
               <>
                 Plan {pad(indice)} <span aria-hidden>/</span>
@@ -54,13 +58,20 @@ export function PlanCard({
           </span>
           {servicio.badge && <Badge>{servicio.badge}</Badge>}
         </div>
-        <H className="mt-4 text-[1.625rem] leading-[1.1] tracking-[-0.02em]">{servicio.nombre}</H>
+        <H
+          className={cn(
+            "mt-4 leading-[1.1] tracking-[-0.02em]",
+            compacta ? "text-[1.4rem]" : "text-[1.625rem]",
+          )}
+        >
+          {servicio.nombre}
+        </H>
         <p className="mt-1 text-[0.95rem] text-fg-muted">{servicio.tagline}</p>
         <Price precio={servicio.precio} reservarAntes className="mt-5" />
       </div>
 
       {/* Renglones de la hoja de inspección */}
-      <div className="flex flex-1 flex-col px-6 pb-6">
+      <div className={cn("flex flex-1 flex-col pb-6", px)}>
         <p className="border-t border-border-strong pt-3 pb-1 font-mono text-[0.7rem] tracking-[0.14em] text-fg-muted uppercase">
           Incluye
         </p>

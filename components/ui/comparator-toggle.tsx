@@ -39,7 +39,7 @@ export function ComparatorToggle({
         role="tablist"
         aria-label="Comparar comprar con y sin diagnóstico"
         onKeyDown={onKey}
-        className="inline-flex rounded-pill border border-border-strong p-1"
+        className="grid w-full grid-cols-2 rounded-pill border border-border-strong p-1 sm:inline-flex sm:w-auto"
       >
         {lados.map((l, i) => (
           <button
@@ -55,7 +55,7 @@ export function ComparatorToggle({
             tabIndex={activo === i ? 0 : -1}
             onClick={() => setActivo(i as 0 | 1)}
             className={cn(
-              "min-h-11 rounded-pill px-5 text-[0.95rem] font-medium transition-colors duration-200",
+              "min-h-11 rounded-pill px-3 text-[0.9rem] font-medium whitespace-nowrap transition-colors duration-200 sm:px-5 sm:text-[0.95rem]",
               activo === i
                 ? i === 1
                   ? "bg-brand text-ink"

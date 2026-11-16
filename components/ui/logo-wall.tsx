@@ -9,9 +9,24 @@ type Grupo = { titulo: string; logos: { nombre: string; logo: Imagen }[] };
  * Tamaño óptico parejo: los logotipos apaisados se limitan por ancho y los emblemas
  * cuadrados por alto, siempre centrados. Los logos claros van sobre placa oscura.
  */
-export function LogoWall({ grupos, className }: { grupos: Grupo[]; className?: string }) {
+export function LogoWall({
+  grupos,
+  columnas = 4,
+  className,
+}: {
+  grupos: Grupo[];
+  /** Columnas desde 640 px (2 o 4). */
+  columnas?: 2 | 4;
+  className?: string;
+}) {
   return (
-    <div className={cn("grid grid-cols-2 gap-x-3 gap-y-3 sm:grid-cols-4", className)}>
+    <div
+      className={cn(
+        "grid grid-cols-2 gap-x-3 gap-y-3",
+        columnas === 4 && "sm:grid-cols-4",
+        className,
+      )}
+    >
       {grupos.map((g) => (
         <div
           key={g.titulo}
