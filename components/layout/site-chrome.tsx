@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { IconWhatsApp } from "@/components/ui/icons";
 import { TrackedLink } from "@/components/ui/tracked-link";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
-import { PENDIENTE } from "@/content/schema";
 import { megaMenuServicios, navPrincipal } from "@/content/navegacion";
 import { terceros } from "@/lib/site";
 import { formatPEN } from "@/lib/utils";
@@ -35,7 +34,6 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
       <SiteHeader
         nav={navPrincipal}
         servicios={servicios}
-        pendienteLabel={PENDIENTE}
         accionesDesktop={
           <>
             <WhatsAppButton ubicacion="header" variant="secondary" className="px-4">

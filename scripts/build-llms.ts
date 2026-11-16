@@ -15,6 +15,7 @@ import { problemas, problemasFuente } from "../content/problemas";
 import { PENDIENTE } from "../content/schema";
 import { servicios } from "../content/servicios";
 import { articulos } from "../lib/blog";
+import { neutralizar } from "../lib/entorno";
 
 const SITIO = negocio.sitio.replace(/\/$/, "");
 const u = (p: string) => `${SITIO}${p}`;
@@ -129,9 +130,12 @@ const completo = [
   "",
 ];
 
+// En el build de producción las marcas [PENDIENTE CLIENTE] se neutralizan como en el sitio.
+const produccion = process.env.SITE_ENV === "production";
 const escribir = (f: string, lineas: string[]) => {
-  writeFileSync(join(process.cwd(), "public", f), lineas.join("\n"));
-  console.log(`✓ public/${f} (${lineas.join("\n").length} caracteres)`);
+  const texto = produccion ? neutralizar(lineas.join("\n")) : lineas.join("\n");
+  writeFileSync(join(process.cwd(), "public", f), texto);
+  console.log(`✓ public/${f} (${texto.length} caracteres${produccion ? ", producción" : ""})`);
 };
 escribir("llms.txt", corto);
 escribir("llms-full.txt", completo);

@@ -1,3 +1,4 @@
+import { ConPendientes } from "@/components/ui/pendiente";
 import type { Metadata } from "next";
 import { metadatos } from "@/lib/seo";
 import Link from "next/link";
@@ -70,7 +71,9 @@ export default function ServiciosPage() {
                 <span aria-hidden className="font-mono text-brand-deep">
                   *
                 </span>
-                {n}
+                <span>
+                  <ConPendientes>{n}</ConPendientes>
+                </span>
               </li>
             ))}
           </ul>

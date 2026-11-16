@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
+import { Pendiente } from "@/components/ui/pendiente";
 import { cn } from "@/lib/utils";
 
 export type ItemMega = {
@@ -18,7 +19,6 @@ export type ItemMega = {
 type Props = {
   nav: { label: string; href: string }[];
   servicios: ItemMega[];
-  pendienteLabel: string;
   /** CTA doble de escritorio (WhatsApp secundario + Agendar primario), renderizado en servidor. */
   accionesDesktop: React.ReactNode;
   /** Botón compacto de WhatsApp para móvil. */
@@ -35,7 +35,6 @@ type Props = {
 export function SiteHeader({
   nav,
   servicios,
-  pendienteLabel,
   accionesDesktop,
   accionMovil,
   accionesMenu,
@@ -202,11 +201,7 @@ export function SiteHeader({
                                 )}
                               </span>
                               <span className="font-mono text-sm text-fg">
-                                {s.precio ?? (
-                                  <span className="rounded-sm border border-dashed border-border-strong px-1 text-xs text-fg-muted">
-                                    {pendienteLabel}
-                                  </span>
-                                )}
+                                {s.precio ?? <Pendiente className="text-xs" />}
                               </span>
                             </Link>
                           </li>
@@ -298,7 +293,7 @@ export function SiteHeader({
                   >
                     <span>{s.label}</span>
                     <span className="font-mono text-sm text-fg-muted">
-                      {s.precio ?? pendienteLabel}
+                      {s.precio ?? <Pendiente />}
                     </span>
                   </Link>
                 </li>

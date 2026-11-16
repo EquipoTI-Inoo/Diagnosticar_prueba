@@ -62,7 +62,7 @@ export default async function ArticuloPage({ params }: { params: Promise<{ slug:
               <p className="mt-5 max-w-[56ch] text-[1.125rem] text-fg-muted">{a.resumen}</p>
               <p className="mt-6 font-mono text-xs tracking-wide text-fg-muted uppercase">
                 <time dateTime={a.fecha}>{fechaLarga(a.fecha)}</time> · {a.autor}{" "}
-                <Pendiente>[PENDIENTE CLIENTE: autor técnico con bio]</Pendiente>
+                <Pendiente ocultarEnProduccion>[PENDIENTE CLIENTE: autor técnico con bio]</Pendiente>
               </p>
             </div>
             <dl className="self-end rounded-card border border-border p-5 font-mono text-sm lg:col-span-4 lg:col-start-9">

@@ -15,6 +15,8 @@ function variantes(origen: string): string[] {
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Entorno visible también en el cliente (badge [PENDIENTE CLIENTE]): ver lib/entorno.ts.
+  env: { NEXT_PUBLIC_SITE_ENV: process.env.SITE_ENV === "production" ? "production" : "preview" },
   poweredByHeader: false,
   // La barra final se normaliza en middleware.ts con 301 (no 308), después de estas
   // redirecciones: así cada URL antigua responde con un único 301 directo a su destino.

@@ -92,6 +92,7 @@ export const PARES: Par[] = [
     muestra: "texto",
   },
   { fg: "ink", bg: "whatsapp", uso: "Botón WhatsApp (texto ink)", minimo: 4.5, muestra: "texto" },
+  { fg: "ink", bg: "warn", uso: "Badge [PENDIENTE CLIENTE] en preview", minimo: 4.5, muestra: "texto" },
   {
     fg: "paper",
     bg: "brand-deep",

@@ -1,5 +1,6 @@
 "use client";
 
+import { ConPendientes } from "@/components/ui/pendiente";
 import { Plus } from "lucide-react";
 import type { Faq } from "@/content/schema";
 import { track } from "@/lib/analytics";
@@ -38,7 +39,9 @@ export function FaqAccordion({
               <Plus className="size-4" strokeWidth={1.75} />
             </span>
           </summary>
-          <p className="max-w-[62ch] pb-5 text-fg-muted">{f.respuesta}</p>
+          <p className="max-w-[62ch] pb-5 text-fg-muted">
+            <ConPendientes>{f.respuesta}</ConPendientes>
+          </p>
         </details>
       ))}
     </div>

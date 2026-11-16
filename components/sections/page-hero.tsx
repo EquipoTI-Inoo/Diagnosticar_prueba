@@ -1,3 +1,4 @@
+import { ConPendientes } from "@/components/ui/pendiente";
 import { Breadcrumbs } from "@/components/seo/breadcrumbs";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import type { Miga } from "@/lib/schema";
@@ -38,7 +39,9 @@ export function PageHero({
               {titulo}
             </h1>
             {resumen && (
-              <p className="mt-6 max-w-[40rem] text-[1.125rem] text-fg-muted">{resumen}</p>
+              <p className="mt-6 max-w-[40rem] text-[1.125rem] text-fg-muted">
+                <ConPendientes>{resumen}</ConPendientes>
+              </p>
             )}
             {children}
           </div>

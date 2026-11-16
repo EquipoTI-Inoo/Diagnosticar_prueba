@@ -1,3 +1,4 @@
+import { ConPendientes } from "@/components/ui/pendiente";
 import { Check } from "lucide-react";
 import type { Servicio } from "@/content/schema";
 import { cn } from "@/lib/utils";
@@ -107,7 +108,9 @@ export function PlanCard({
               <span aria-hidden className="pt-0.5 font-mono text-xs text-fg-muted">
                 {pad(i + 1)}
               </span>
-              <span>{b}</span>
+              <span>
+                <ConPendientes>{b}</ConPendientes>
+              </span>
               <Check aria-hidden className="mt-1 size-4 text-accent" strokeWidth={2} />
             </li>
           ))}
