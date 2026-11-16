@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PlanCard } from "@/components/ui/plan-card";
+import { PlanesCarrusel } from "./planes-carrusel";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Stepper } from "@/components/ui/stepper";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { home } from "@/content/home";
 import { etapas } from "@/content/navegacion";
 import { proceso } from "@/content/proceso";
-import { escalera } from "@/content/servicios";
 
 /** §5.1.5 Planes + §5.1.6 Etapas + §5.1.7 Pasos. */
 export function HomePlanes() {
@@ -27,30 +26,8 @@ export function HomePlanes() {
             acento={home.planes.tituloAcento}
           />
         </div>
-        {/* Carrusel con snap en móvil/tablet, rejilla de 5 en escritorio */}
-        <div className="container-site mt-10 px-0 lg:px-(--spacing-gutter)">
-          <ul
-            role="list"
-            tabIndex={0}
-            aria-label="Planes (desliza para ver todos)"
-            className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-4 outline-offset-4 lg:grid lg:grid-cols-5 lg:grid-rows-[auto_auto_auto_1fr_auto] lg:gap-y-0 lg:overflow-visible lg:px-0 lg:pb-0"
-          >
-            {escalera.map((s, i) => (
-              <li
-                key={s.slug}
-                className="w-[82%] max-w-[24rem] shrink-0 snap-start sm:w-[46%] lg:row-span-5 lg:grid lg:w-auto lg:max-w-none lg:grid-rows-subgrid"
-              >
-                <PlanCard
-                  servicio={s}
-                  indice={i + 1}
-                  total={escalera.length}
-                  ubicacion="home-planes"
-                  compacta
-                  subgrid
-                />
-              </li>
-            ))}
-          </ul>
+        <div className="mt-10">
+          <PlanesCarrusel ubicacion="home-planes" />
         </div>
         <div className="container-site mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted">{home.planes.nota}</p>
