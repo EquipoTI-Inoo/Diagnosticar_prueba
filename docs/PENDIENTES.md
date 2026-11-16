@@ -60,3 +60,9 @@
 - [ ] Copy redactado en la Fase 2 (titulares de comparador, consulta por placa, confianza y footer): validar.
 - [ ] Fotos de hallazgos sin subtítulos quemados, en especial choque oculto y problemas documentarios.
 - [ ] Fotos que muestren el hallazgo: hoy «kilometraje bajado» (kilometraje200k.jpg) muestra una llanta y «airbags reventados» (airbag.jpg) no muestra un airbag; sus `alt` originales no describen la imagen y se reemplazaron por descripciones literales.
+- [ ] Fase 4 · Autor técnico de los artículos con bio y foto (hoy «Equipo DiagnostiCAR»).
+- [ ] Fase 4 · Política de privacidad y política de cookies: textos oficiales (hoy `[PENDIENTE CLIENTE]`).
+- [ ] Fase 4 · Libro de Reclamaciones: sistema real de registro (número de hoja, copia por correo) y listas de provincias y distritos. El texto original dice «quince (15) días naturales»; revisar con asesoría legal si debe actualizarse a la norma vigente de Indecopi.
+- [ ] Fase 4 · `/tecnologia`: el sitio dice «+200 puntos» en 4 lugares y «320 puntos» en 3; se usó «+200 puntos». Confirmar.
+- [ ] Fase 4 · Fotos reales de hallazgos por problema (airbag detonado, kilometraje, choque con masilla); hoy hay fotogramas recortados que no muestran el hallazgo.
+- [ ] Fase 4 · Fechas de los artículos: son de febrero de 2025; validar si se republican o actualizan.
