@@ -213,7 +213,7 @@ export default function DesignSystemPage() {
               tabIndex={0}
               role="region"
               aria-label="Tabla de contraste (desplazable en horizontal)"
-              className="overflow-x-auto rounded-card border border-line bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-deep"
+              className="relative overflow-x-auto rounded-card border border-line bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-deep"
             >
               <table className="w-full min-w-[640px] text-left text-sm">
                 <caption className="sr-only">Combinaciones de color y su contraste</caption>

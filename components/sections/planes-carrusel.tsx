@@ -18,7 +18,7 @@ export function PlanesCarrusel({
         role="list"
         tabIndex={0}
         aria-label="Planes (desliza para ver todos)"
-        className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-4 outline-offset-4 lg:grid lg:grid-cols-5 lg:grid-rows-[auto_auto_auto_1fr_auto] lg:gap-y-0 lg:overflow-visible lg:px-0 lg:pb-0"
+        className="relative flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-4 outline-offset-4 lg:grid lg:grid-cols-5 lg:grid-rows-[auto_auto_auto_1fr_auto] lg:gap-y-0 lg:overflow-visible lg:px-0 lg:pb-0"
       >
         {escalera.map((s, i) => (
           <li

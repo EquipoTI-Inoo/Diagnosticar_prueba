@@ -38,8 +38,9 @@ function Valor({ celda }: { celda: Celda }) {
 
 /**
  * Tabla comparativa HTML real (§5.2): <caption>, <th scope="col"> por plan y <th scope="row">
- * por característica. Cabecera sticky y primera columna fija dentro de una región desplazable
- * accesible (tabindex=0, role=region, aria-label, foco visible).
+ * por característica. Móvil/tablet: región con scroll horizontal accesible (tabindex=0, role=region,
+ * aria-label, foco visible) y primera columna fija de 144 px. Escritorio (≥1024): la tabla se ve
+ * completa (overflow visible) y la cabecera es sticky respecto de la página, bajo el header compacto.
  */
 export function TablaComparativa() {
   const cols = columnasComparativa.map((c) => getServicio(c as ServicioSlug));
@@ -49,15 +50,15 @@ export function TablaComparativa() {
         tabIndex={0}
         role="region"
         aria-label="Tabla comparativa de planes (desplazable)"
-        className="max-h-[80vh] overflow-auto rounded-card border border-line bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-deep"
+        className="relative overflow-x-auto rounded-card border border-line bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-deep lg:overflow-visible"
       >
-        <table className="w-full min-w-[880px] border-separate border-spacing-0 text-left">
+        <table className="w-full min-w-[42rem] border-separate border-spacing-0 text-left lg:min-w-0">
           <caption className="sr-only">{paginaServicios.tablaCaption}</caption>
           <thead>
             <tr>
               <th
                 scope="col"
-                className="sticky top-0 left-0 z-30 w-[28%] border-b border-line bg-paper p-4 align-bottom font-mono text-[0.7rem] font-medium tracking-[0.14em] text-muted uppercase"
+                className="sticky left-0 z-30 w-36 min-w-36 border-b border-line bg-paper px-3 py-3 align-bottom font-mono text-[0.68rem] font-medium tracking-[0.14em] text-muted uppercase lg:top-16 lg:w-[28%] lg:p-4"
               >
                 Característica
               </th>
@@ -66,7 +67,7 @@ export function TablaComparativa() {
                   key={s.slug}
                   scope="col"
                   className={cn(
-                    "sticky top-0 z-20 border-b border-line p-4 text-center align-bottom",
+                    "z-20 min-w-[6.75rem] border-b border-line px-2 py-3 text-center align-bottom lg:sticky lg:top-16 lg:p-4",
                     s.destacado ? "bg-ink text-paper" : "bg-paper",
                   )}
                 >
@@ -107,7 +108,7 @@ export function TablaComparativa() {
               <tr key={f.id} className="group">
                 <th
                   scope="row"
-                  className="sticky left-0 z-10 border-b border-line bg-white p-4 text-[0.95rem] font-medium group-hover:bg-paper"
+                  className="sticky left-0 z-10 w-36 min-w-36 border-b border-line bg-white px-3 py-3 text-[0.875rem] leading-snug font-medium group-hover:bg-paper lg:p-4 lg:text-[0.95rem]"
                 >
                   {f.caracteristica}
                   {f.nota && (
@@ -118,7 +119,7 @@ export function TablaComparativa() {
                   <td
                     key={s.slug}
                     className={cn(
-                      "border-b border-line p-4 text-center group-hover:bg-paper",
+                      "border-b border-line px-2 py-3 text-center group-hover:bg-paper lg:p-4",
                       s.destacado && "bg-brand/[0.06]",
                     )}
                   >
