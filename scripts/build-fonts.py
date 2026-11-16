@@ -17,10 +17,10 @@ from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import instantiateVariableFont
 from fontTools import subset
 
-# Latín básico + Latin-1 (á é í ó ú ñ ü ¿ ¡ « » ·) + puntuación tipográfica + € → − ★ ✓ ✗ ×
+# Latín básico + Latin-1 (á é í ó ú ñ ü ¿ ¡ « » ·) + puntuación tipográfica + € ← → − ≥ ★ ✓ ✗ ×
 UNICODES = list(range(0x20, 0x7F)) + list(range(0xA0, 0x100)) + [
     0x2013, 0x2014, 0x2018, 0x2019, 0x201C, 0x201D, 0x2022, 0x2026, 0x2032, 0x2033,
-    0x20AC, 0x2192, 0x2212, 0x2605, 0x2713, 0x2717, 0x00D7,
+    0x20AC, 0x2190, 0x2192, 0x2212, 0x2265, 0x2605, 0x2713, 0x2717, 0x00D7,
 ]
 
 
