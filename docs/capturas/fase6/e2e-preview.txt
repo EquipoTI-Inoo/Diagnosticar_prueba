@@ -1,0 +1,52 @@
+
+Running 46 tests using 4 workers
+
+  ✓   1 [movil] › e2e/errores-redirecciones.spec.ts:5:1 › 404 útil: título, noindex, buscador y CTA (670ms)
+  ✓   2 [movil] › e2e/errores-redirecciones.spec.ts:18:1 › 410 para páginas eliminadas (689ms)
+  ✓   5 [movil] › e2e/errores-redirecciones.spec.ts:28:1 › redirecciones 301 de la §4 y del blog: un solo salto al destino correcto (462ms)
+  ✓   7 [movil] › e2e/errores-redirecciones.spec.ts:53:1 › barra final: 301 a la versión sin barra (122ms)
+  ✓   6 [movil] › e2e/errores-redirecciones.spec.ts:39:1 › redirecciones clave llegan a una página 200 (856ms)
+  ✓   8 [movil] › e2e/formularios.spec.ts:12:5 › consulta gratis por placa › valida y envía en / (828ms)
+  ✓   9 [movil] › e2e/formularios.spec.ts:12:5 › consulta gratis por placa › valida y envía en /guia/consulta-placa-gratis (584ms)
+  ✓  10 [movil] › e2e/formularios.spec.ts:34:1 › contacto: valida y envía (671ms)
+  ✓   4 [movil] › e2e/accesibilidad.spec.ts:32:1 › axe: menú móvil abierto (2.9s)
+  ✓  11 [movil] › e2e/formularios.spec.ts:55:3 › Libro de Reclamaciones › valida todos los campos obligatorios y simula el envío (1.0s)
+  ✓  12 [movil] › e2e/formularios.spec.ts:82:5 › Libro de Reclamaciones › sin JavaScript › el servidor valida y devuelve los errores (698ms)
+  -  15 [movil] › e2e/menu-movil.spec.ts:44:3 › mega-menú de escritorio › se abre con el botón Servicios y cierra con Escape
+  ✓  14 [movil] › e2e/menu-movil.spec.ts:31:3 › menú móvil › CTA de WhatsApp del menú y barra inferior visibles (459ms)
+  ✓  17 [movil] › e2e/navegacion.spec.ts:26:1 › menú principal y footer llevan a páginas existentes (620ms)
+  ✓  13 [movil] › e2e/menu-movil.spec.ts:6:3 › menú móvil › abre como diálogo, atrapa el foco, cierra con Escape y navega (1.5s)
+  ✓  18 [movil] › e2e/navegacion.spec.ts:38:1 › migas visibles en páginas internas (660ms)
+  ✓  20 [movil] › e2e/pendientes.spec.ts:53:1 › robots según el entorno (385ms)
+  ✓  21 [movil] › e2e/whatsapp.spec.ts:34:1 › el número de WhatsApp del contenido es el de la §3 (0ms)
+  ✓  19 [movil] › e2e/pendientes.spec.ts:15:1 › badge de pendientes según el entorno del build (3.8s)
+  ✓  23 [movil] › e2e/whatsapp.spec.ts:54:1 › los CTAs de WhatsApp abren en pestaña nueva y registran el evento (504ms)
+  ✓  16 [movil] › e2e/navegacion.spec.ts:4:1 › todas las rutas del sitemap navegan sin errores (6.7s)
+  ✓  22 [movil] › e2e/whatsapp.spec.ts:38:1 › CTAs de WhatsApp: número y texto correctos en todas las páginas (5.4s)
+  -  25 [escritorio] › e2e/accesibilidad.spec.ts:32:1 › axe: menú móvil abierto
+  ✓  26 [escritorio] › e2e/errores-redirecciones.spec.ts:18:1 › 410 para páginas eliminadas (347ms)
+  ✓  28 [escritorio] › e2e/errores-redirecciones.spec.ts:28:1 › redirecciones 301 de la §4 y del blog: un solo salto al destino correcto (420ms)
+  ✓  27 [escritorio] › e2e/errores-redirecciones.spec.ts:5:1 › 404 útil: título, noindex, buscador y CTA (489ms)
+  ✓  30 [escritorio] › e2e/errores-redirecciones.spec.ts:53:1 › barra final: 301 a la versión sin barra (142ms)
+  ✓  29 [escritorio] › e2e/errores-redirecciones.spec.ts:39:1 › redirecciones clave llegan a una página 200 (877ms)
+  ✓  31 [escritorio] › e2e/formularios.spec.ts:12:5 › consulta gratis por placa › valida y envía en / (1.0s)
+  ✓  32 [escritorio] › e2e/formularios.spec.ts:12:5 › consulta gratis por placa › valida y envía en /guia/consulta-placa-gratis (554ms)
+  ✓  33 [escritorio] › e2e/formularios.spec.ts:34:1 › contacto: valida y envía (794ms)
+  ✓  35 [escritorio] › e2e/formularios.spec.ts:82:5 › Libro de Reclamaciones › sin JavaScript › el servidor valida y devuelve los errores (444ms)
+  -  36 [escritorio] › e2e/menu-movil.spec.ts:6:3 › menú móvil › abre como diálogo, atrapa el foco, cierra con Escape y navega
+  -  37 [escritorio] › e2e/menu-movil.spec.ts:31:3 › menú móvil › CTA de WhatsApp del menú y barra inferior visibles
+  ✓  34 [escritorio] › e2e/formularios.spec.ts:55:3 › Libro de Reclamaciones › valida todos los campos obligatorios y simula el envío (1.2s)
+  ✓  38 [escritorio] › e2e/menu-movil.spec.ts:44:3 › mega-menú de escritorio › se abre con el botón Servicios y cierra con Escape (572ms)
+  ✓  40 [escritorio] › e2e/navegacion.spec.ts:26:1 › menú principal y footer llevan a páginas existentes (736ms)
+  ✓  41 [escritorio] › e2e/navegacion.spec.ts:38:1 › migas visibles en páginas internas (718ms)
+  ✓  42 [escritorio] › e2e/pendientes.spec.ts:15:1 › badge de pendientes según el entorno del build (4.1s)
+  ✓  43 [escritorio] › e2e/pendientes.spec.ts:53:1 › robots según el entorno (416ms)
+  ✓  44 [escritorio] › e2e/whatsapp.spec.ts:34:1 › el número de WhatsApp del contenido es el de la §3 (0ms)
+  ✓  39 [escritorio] › e2e/navegacion.spec.ts:4:1 › todas las rutas del sitemap navegan sin errores (8.6s)
+  ✓  46 [escritorio] › e2e/whatsapp.spec.ts:54:1 › los CTAs de WhatsApp abren en pestaña nueva y registran el evento (474ms)
+  ✓  45 [escritorio] › e2e/whatsapp.spec.ts:38:1 › CTAs de WhatsApp: número y texto correctos en todas las páginas (5.6s)
+  ✓   3 [movil] › e2e/accesibilidad.spec.ts:11:1 › axe: sin violaciones serias en ninguna página (43.0s)
+  ✓  24 [escritorio] › e2e/accesibilidad.spec.ts:11:1 › axe: sin violaciones serias en ninguna página (42.4s)
+
+  4 skipped
+  42 passed (52.9s)
