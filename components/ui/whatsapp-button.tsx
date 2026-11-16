@@ -9,7 +9,7 @@ type Props = {
   /** Dónde está el botón (hero, plan-card, footer…), para el evento `whatsapp_click`. */
   ubicacion: string;
   variant?: "whatsapp" | "primary" | "secondary";
-  size?: "md" | "lg";
+  size?: "sm" | "md" | "lg";
   className?: string;
   children?: React.ReactNode;
 };

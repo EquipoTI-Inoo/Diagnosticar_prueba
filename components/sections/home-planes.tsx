@@ -33,12 +33,12 @@ export function HomePlanes() {
             role="list"
             tabIndex={0}
             aria-label="Planes (desliza para ver todos)"
-            className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-6 px-6 pb-4 outline-offset-4 lg:grid lg:grid-cols-5 lg:overflow-visible lg:px-0 lg:pb-0"
+            className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-6 px-6 pb-4 outline-offset-4 lg:grid lg:grid-cols-5 lg:grid-rows-[auto_auto_auto_1fr_auto] lg:gap-y-0 lg:overflow-visible lg:px-0 lg:pb-0"
           >
             {escalera.map((s, i) => (
               <li
                 key={s.slug}
-                className="w-[84%] max-w-[22rem] shrink-0 snap-start sm:w-[46%] lg:w-auto lg:max-w-none"
+                className="w-[84%] max-w-[22rem] shrink-0 snap-start sm:w-[46%] lg:row-span-5 lg:grid lg:w-auto lg:max-w-none lg:grid-rows-subgrid"
               >
                 <PlanCard
                   servicio={s}
@@ -46,6 +46,7 @@ export function HomePlanes() {
                   total={escalera.length}
                   ubicacion="home-planes"
                   compacta
+                  subgrid
                 />
               </li>
             ))}

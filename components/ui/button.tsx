@@ -9,7 +9,7 @@ export type ButtonVariant = "primary" | "secondary" | "whatsapp" | "link";
 
 type Common = {
   variant?: ButtonVariant;
-  size?: "md" | "lg";
+  size?: "sm" | "md" | "lg";
   /** Flecha dentro de un círculo (solo primario). Por defecto: true en primario. */
   arrow?: boolean;
   icon?: "phone";
@@ -39,7 +39,12 @@ const variants: Record<ButtonVariant, string> = {
   link: "min-h-0 rounded-none p-0 text-accent underline decoration-1 underline-offset-4 hover:decoration-2",
 };
 
-const sizes = { md: "px-5 py-2.5 text-[0.95rem]", lg: "px-6 py-3.5 text-base" };
+/** sm: 44 px con o sin flecha (alinea botones en filas de tarjetas). */
+const sizes = {
+  sm: "px-5 py-1.5 text-[0.95rem]",
+  md: "px-5 py-2.5 text-[0.95rem]",
+  lg: "px-6 py-3.5 text-base",
+};
 
 function Contenido({ variant = "primary", arrow, icon, children }: Common) {
   const conFlecha = arrow ?? variant === "primary";

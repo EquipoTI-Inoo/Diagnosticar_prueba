@@ -18,6 +18,7 @@ export function PlanCard({
   ubicacion = "plan-card",
   headingLevel = 3,
   compacta = false,
+  subgrid = false,
   className,
 }: {
   servicio: Servicio;
@@ -28,23 +29,34 @@ export function PlanCard({
   headingLevel?: 2 | 3;
   /** Menos padding y titular más chico (rejilla de 5 columnas). */
   compacta?: boolean;
+  /**
+   * La tarjeta ocupa 5 filas de la rejilla padre (`grid-rows-subgrid`): código, nombre,
+   * precio, «Incluye» y botones quedan a la misma altura en todas las tarjetas de la fila.
+   * Solo desde 1024 px (en el carrusel móvil la tarjeta es flex). El padre debe ser `grid`
+   * con 5 filas por tarjeta (ver home-planes).
+   */
+  subgrid?: boolean;
   className?: string;
 }) {
   const H = `h${headingLevel}` as const;
   const pad = (n: number) => String(n).padStart(2, "0");
   const px = compacta ? "px-5" : "px-6";
+  const fondo = servicio.destacado ? "bg-bg" : "bg-card";
   return (
     <article
       className={cn(
-        "relative flex h-full flex-col overflow-hidden rounded-card border transition-colors duration-200",
-        servicio.destacado
-          ? "surface-dark border-brand"
-          : "border-border bg-card hover:border-accent",
+        "relative overflow-hidden rounded-card border transition-colors duration-200",
+        // Cuadrícula de hoja de inspección en la cabecera; el cuerpo la tapa con su fondo.
+        "bg-inspeccion",
+        fondo,
+        "flex h-full flex-col",
+        subgrid && "lg:row-span-5 lg:grid lg:grid-rows-subgrid",
+        servicio.destacado ? "surface-dark border-brand" : "border-border hover:border-accent",
         className,
       )}
     >
-      {/* Cabecera tipo ficha */}
-      <div className={cn("bg-inspeccion pt-5 pb-5", px)}>
+      {/* 1 · Código del plan */}
+      <div className={cn("pt-5", px)}>
         <div className="flex min-h-6 flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b border-border pb-3 font-mono text-[0.7rem] tracking-[0.14em] text-fg-muted uppercase">
           <span className="whitespace-nowrap">
             {indice && total ? (
@@ -58,6 +70,10 @@ export function PlanCard({
           </span>
           {servicio.badge && <Badge>{servicio.badge}</Badge>}
         </div>
+      </div>
+
+      {/* 2 · Nombre y tagline */}
+      <div className={px}>
         <H
           className={cn(
             "mt-4 leading-[1.1] tracking-[-0.02em]",
@@ -67,15 +83,19 @@ export function PlanCard({
           {servicio.nombre}
         </H>
         <p className="mt-1 text-[0.95rem] text-fg-muted">{servicio.tagline}</p>
-        <Price precio={servicio.precio} reservarAntes className="mt-5" />
       </div>
 
-      {/* Renglones de la hoja de inspección */}
-      <div className={cn("flex flex-1 flex-col pb-6", px)}>
+      {/* 3 · Precio (la fila del tachado se reserva siempre) */}
+      <div className={cn("self-end pt-5 pb-5", px)}>
+        <Price precio={servicio.precio} reservarAntes />
+      </div>
+
+      {/* 4 · Renglones de la hoja de inspección */}
+      <div className={cn("flex flex-1 flex-col", px, fondo)}>
         <p className="border-t border-border-strong pt-3 pb-1 font-mono text-[0.7rem] tracking-[0.14em] text-fg-muted uppercase">
           Incluye
         </p>
-        <ul role="list" className="flex-1 text-[0.95rem]">
+        <ul role="list" className="text-[0.95rem]">
           {servicio.resumen.map((b, i) => (
             <li
               key={b}
@@ -89,6 +109,10 @@ export function PlanCard({
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* 5 · Nota y botones, alineados abajo */}
+      <div className={cn("flex flex-col justify-end pb-6", px, fondo)}>
         {servicio.nota && (
           <p className="mt-3 border-t border-border pt-3 text-sm text-fg-muted">{servicio.nota}</p>
         )}
@@ -96,11 +120,12 @@ export function PlanCard({
           <WhatsAppButton
             servicio={servicio.nombreWhatsapp}
             ubicacion={ubicacion}
+            size="sm"
             variant={servicio.destacado ? "primary" : "whatsapp"}
           >
             Reservar<span className="sr-only"> {servicio.nombre}</span>
           </WhatsAppButton>
-          <Button href={servicio.href} variant="secondary" arrow={false}>
+          <Button href={servicio.href} variant="secondary" size="sm" arrow={false}>
             Ver detalle<span className="sr-only"> de {servicio.nombre}</span>
           </Button>
         </div>
