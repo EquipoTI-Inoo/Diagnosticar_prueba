@@ -10,7 +10,7 @@ export function middleware(req: NextRequest) {
   const ruta = req.nextUrl.pathname.replace(/\/$/, "");
   if (RUTAS_ELIMINADAS.has(ruta)) {
     return new NextResponse(
-      '<!doctype html><html lang="es-PE"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Página eliminada | DiagnostiCAR Lima</title></head><body style="font-family:system-ui;padding:2rem;max-width:40rem;margin:auto"><h1>Esta página ya no existe</h1><p>La retiramos de forma permanente.</p><p><a href="/servicios">Ver planes y precios</a> · <a href="/">Ir al inicio</a></p></body></html>',
+      '<!doctype html><html lang="es-PE"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Página eliminada | DiagnostiCAR Lima</title></head><body style="font-family:system-ui;margin:0"><main style="padding:2rem;max-width:40rem;margin:auto"><h1>Esta página ya no existe</h1><p>La retiramos de forma permanente.</p><p><a href="/servicios">Ver planes y precios</a> · <a href="/">Ir al inicio</a></p></main></body></html>',
       {
         status: 410,
         headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" },
