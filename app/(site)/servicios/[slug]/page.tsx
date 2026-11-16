@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check } from "lucide-react";
@@ -12,7 +13,7 @@ import { Price } from "@/components/ui/price";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Stepper } from "@/components/ui/stepper";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
-import { fichaSlugs, fichaTextos as t, getFicha } from "@/content/conversion";
+import { fichaSeo, fichaSlugs, fichaTextos as t, getFicha } from "@/content/conversion";
 import { proceso } from "@/content/proceso";
 import { getServicio } from "@/content/servicios";
 import type { ServicioSlug } from "@/content/schema";
@@ -32,20 +33,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const f = getFicha((await params).slug);
   if (!f) return {};
-  const s = f.servicio;
-  const precio = s.precio.actual !== null ? ` · ${formatPEN(s.precio.actual)}` : "";
-  return {
-    title: `${s.nombre}${precio}`,
-    description:
-      f.resumen.length > 155 ? `${f.resumen.slice(0, 152).replace(/\s+\S*$/, "")}…` : f.resumen,
-    alternates: { canonical: s.href },
-  };
+  return metadatos({ ...fichaSeo(f), path: f.servicio.href, ogPropia: true });
 }
 
 export default async function FichaServicio({ params }: { params: Promise<{ slug: string }> }) {
   const f = getFicha((await params).slug);
   if (!f) notFound();
   const s = f.servicio;
+  const guia =
+    s.tipo === "antecedentes"
+      ? { href: "/guia#estado-legal", texto: "Estado legal del auto: qué revisar y dónde" }
+      : s.tipo === "asesoria"
+        ? { href: "/guia/checklist", texto: "Checklist antes de comprar un auto usado" }
+        : { href: "/guia/problemas-comunes", texto: "Los problemas más comunes en autos usados" };
   const pasos = f.conVisita ? proceso : proceso.slice(0, 2);
 
   return (
@@ -198,6 +198,13 @@ export default async function FichaServicio({ params }: { params: Promise<{ slug
               Ver tabla comparativa
               <ArrowRight aria-hidden className="size-4" />
             </Link>
+            {/* Enlazado interno (§8): cada servicio enlaza a su guía relacionada. */}
+            <p className="mt-6 text-fg-muted">
+              Guía relacionada:{" "}
+              <Link href={guia.href} className="font-medium text-accent underline underline-offset-4">
+                {guia.texto}
+              </Link>
+            </p>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <h3 className="font-mono text-eyebrow font-medium tracking-[0.12em] text-fg-muted uppercase [font-stretch:100%]">

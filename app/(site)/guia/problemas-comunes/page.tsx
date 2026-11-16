@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
@@ -8,11 +9,7 @@ import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { paginaProblemas as p } from "@/content/educativo";
 import { getServicio } from "@/content/servicios";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/guia/problemas-comunes" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/guia/problemas-comunes" });
 
 const pad = (n: number) => String(n).padStart(2, "0");
 

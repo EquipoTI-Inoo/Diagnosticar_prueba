@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { BotonImprimir } from "@/components/sections/boton-imprimir";
 import { PageHero } from "@/components/sections/page-hero";
@@ -8,11 +9,7 @@ import { ACTUALIZADO, paginaChecklist as p } from "@/content/educativo";
 import { negocio } from "@/content/negocio";
 import { schemaHowTo } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/guia/checklist" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/guia/checklist" });
 
 const pad = (n: number) => String(n).padStart(2, "0");
 

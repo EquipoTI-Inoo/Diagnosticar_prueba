@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { PageHero } from "@/components/sections/page-hero";
 import { paginasLegales } from "@/content/educativo";
 import { educativoFuente } from "@/content/educativo-fuente";
@@ -6,11 +7,7 @@ import { slugify } from "@/lib/utils";
 
 const p = paginasLegales.terminos;
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/legal/terminos-y-condiciones" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/legal/terminos-y-condiciones" });
 
 /**
  * T&C LITERALES (§5.14): cada sección y párrafo sale tal cual de

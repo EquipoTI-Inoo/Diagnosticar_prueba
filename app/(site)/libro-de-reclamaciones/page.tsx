@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { LibroForm } from "@/components/forms/libro-form";
 import { PageHero } from "@/components/sections/page-hero";
 import { paginaLibro as p } from "@/content/educativo";
 import { negocio } from "@/content/negocio";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/libro-de-reclamaciones" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/libro-de-reclamaciones" });
 
 export default function LibroPage() {
   const hoy = new Date().toISOString().slice(0, 10);

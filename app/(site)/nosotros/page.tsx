@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { PageHero } from "@/components/sections/page-hero";
 import { Counter } from "@/components/ui/counter";
 import { LogoWall } from "@/components/ui/logo-wall";
@@ -10,11 +11,7 @@ import { paginaNosotros as p } from "@/content/educativo";
 import { medios } from "@/content/medios";
 import { negocio } from "@/content/negocio";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/nosotros" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/nosotros" });
 
 export default function NosotrosPage() {
   // Única aparición de la foto del equipo en las páginas de la Fase 4.

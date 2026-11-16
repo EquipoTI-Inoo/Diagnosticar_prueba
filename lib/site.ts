@@ -1,7 +1,7 @@
 /**
  * Configuración por entorno.
  * - `SITE_ENV=production` → el sitio se indexa. Cualquier otro valor (por defecto) → noindex.
- *   La versión definitiva con robots.ts por entorno llega en la Fase 5.
+   *   app/robots.ts aplica la misma regla a robots.txt.
  * - IDs de terceros: vacíos hasta que el cliente los entregue ([PENDIENTE CLIENTE]).
  */
 export const indexable = process.env.SITE_ENV === "production";

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, Search } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
@@ -8,11 +9,7 @@ import { ACTUALIZADO, paginaGuia as p } from "@/content/educativo";
 import { getServicio } from "@/content/servicios";
 import { schemaArticulo } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/guia" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/guia", ogPropia: true });
 
 const SUBPAGINAS = [
   { href: "/guia/checklist", titulo: "Checklist imprimible", texto: "Los 7 puntos a revisar cuando vayas a ver el auto." },

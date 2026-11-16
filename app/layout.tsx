@@ -12,8 +12,16 @@ export const metadata: Metadata = {
   },
   description:
     "Revisamos la historia legal y el estado real del auto usado que quieres comprar, a domicilio en Lima, con equipos profesionales.",
-  // Solo se indexa con SITE_ENV=production (ver lib/site.ts). La Fase 5 añade robots.ts.
-  robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
+  // Solo se indexa con SITE_ENV=production (lib/site.ts); robots.txt sigue la misma regla (app/robots.ts).
+  robots: indexable
+    ? {
+        index: true,
+        follow: true,
+        googleBot: { index: true, follow: true, "max-image-preview": "large" },
+      }
+    : { index: false, follow: false },
+  openGraph: { type: "website", locale: "es_PE", siteName: negocio.marca },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
@@ -11,11 +12,7 @@ import { paginaComoFunciona as p } from "@/content/conversion";
 import { proceso } from "@/content/proceso";
 import { schemaHowTo } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/como-funciona" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/como-funciona" });
 
 const pad = (n: number) => String(n).padStart(2, "0");
 

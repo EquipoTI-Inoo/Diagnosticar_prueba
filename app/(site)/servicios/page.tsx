@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, Ban } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
@@ -12,11 +13,7 @@ import { paginaServicios as p, paginaVende } from "@/content/conversion";
 import { escalera, getServicio } from "@/content/servicios";
 import { schemaCatalogo } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/servicios" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/servicios" });
 
 export default function ServiciosPage() {
   return (

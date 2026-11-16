@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { ConsultaPlacaForm } from "@/components/forms/consulta-placa-form";
 import { PageHero } from "@/components/sections/page-hero";
 import { formTextos } from "@/content/conversion";
+import { paginaConsultaPlaca } from "@/content/educativo";
 import { home } from "@/content/home";
 
-export const metadata: Metadata = {
-  title: "Consulta de placa gratis",
-  description: "Te decimos gratis si el SOAT y la Revisión Técnica del auto que quieres comprar están vigentes. Solo necesitas la placa y tu celular.",
-  alternates: { canonical: "/guia/consulta-placa-gratis" },
-};
+export const metadata: Metadata = metadatos({
+  tema: "Consulta de placa gratis: SOAT y RT",
+  descripcion:
+    "Te decimos gratis si el SOAT y la Revisión Técnica del auto que quieres comprar están vigentes. Solo necesitas la placa y tu celular.",
+  path: "/guia/consulta-placa-gratis",
+});
 
 export default function ConsultaPlacaPage() {
   return (
@@ -22,7 +25,7 @@ export default function ConsultaPlacaPage() {
         ]}
         eyebrow="Gratis"
         titulo={home.consultaPlaca.titulo}
-        resumen={home.consultaPlaca.texto}
+        resumen={paginaConsultaPlaca.resumen}
       />
       <section aria-label="Formulario de consulta" className="surface-light py-(--spacing-section)">
         <div className="container-site max-w-5xl">

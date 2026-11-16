@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { ContactoForm } from "@/components/forms/contacto-form";
 import { PageHero } from "@/components/sections/page-hero";
 import { Pendiente } from "@/components/ui/pendiente";
@@ -9,11 +10,7 @@ import { formTextos, paginaContacto as p } from "@/content/conversion";
 import { negocio } from "@/content/negocio";
 import { esPendiente } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/contacto" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/contacto" });
 
 export default function ContactoPage() {
   const { redes } = negocio;

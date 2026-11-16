@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { seoBlog } from "@/content/seo-blog";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
@@ -23,12 +25,15 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const a = articulo((await params).slug);
   if (!a) return {};
-  const titulo = a.titulo.length > 40 ? `${a.titulo.slice(0, 39).replace(/\s+\S*$/, "")}…` : a.titulo;
-  return {
-    title: titulo,
-    description: a.resumen.length > 155 ? `${a.resumen.slice(0, 152).replace(/\s+\S*$/, "")}…` : a.resumen,
-    alternates: { canonical: `/blog/${a.slug}` },
-  };
+  const seo = seoBlog[a.slug] ?? {};
+  return metadatos({
+    tema: seo.titulo ?? a.titulo,
+    descripcion: seo.descripcion ?? a.resumen,
+    path: `/blog/${a.slug}`,
+    tipo: "article",
+    publicado: a.fecha,
+    ogPropia: true,
+  });
 }
 
 export default async function ArticuloPage({ params }: { params: Promise<{ slug: string }> }) {

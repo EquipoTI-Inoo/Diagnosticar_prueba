@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
@@ -11,11 +12,7 @@ import { problemas } from "@/content/problemas";
 import type { Imagen } from "@/content/schema";
 import { getServicio } from "@/content/servicios";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/tecnologia" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/tecnologia" });
 
 const informe = (n: 2 | 3, tema: string, alt: string): Imagen => ({
   src: `/img/informe/informe-pagina-0${n}.webp`,

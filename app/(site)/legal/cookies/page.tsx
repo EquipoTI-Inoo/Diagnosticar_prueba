@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { CookiePrefsButton } from "@/components/layout/cookie-prefs-button";
 import { PageHero } from "@/components/sections/page-hero";
 import { Pendiente } from "@/components/ui/pendiente";
@@ -6,11 +7,7 @@ import { paginasLegales } from "@/content/educativo";
 
 const p = paginasLegales.cookies;
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/legal/cookies" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/legal/cookies" });
 
 export default function CookiesPage() {
   return (

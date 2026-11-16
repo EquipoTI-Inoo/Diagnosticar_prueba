@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { Check } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -13,11 +14,7 @@ import { faqs } from "@/content/faqs";
 import { getServicio } from "@/content/servicios";
 import { schemaFaq, schemaServicio } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/vende-tu-auto" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/vende-tu-auto" });
 
 const pad = (n: number) => String(n).padStart(2, "0");
 

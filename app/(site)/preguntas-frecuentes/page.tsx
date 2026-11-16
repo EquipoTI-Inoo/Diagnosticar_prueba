@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { PageHero } from "@/components/sections/page-hero";
 import { JsonLd } from "@/components/seo/json-ld";
 import { FaqAccordion } from "@/components/ui/faq-accordion";
@@ -8,11 +9,7 @@ import { faqCategoriaLabel, faqs } from "@/content/faqs";
 import { faqCategorias } from "@/content/schema";
 import { schemaFaq } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/preguntas-frecuentes" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/preguntas-frecuentes" });
 
 export default function PreguntasFrecuentesPage() {
   const grupos = faqCategorias.map((c) => ({ id: c, titulo: faqCategoriaLabel[c], faqs: faqs.filter((f) => f.categoria === c) })).filter((g) => g.faqs.length);

@@ -369,6 +369,31 @@ export const fichas: Ficha[] = fichaSlugs.map((slug) => {
   return { ...ficha, servicio: s };
 });
 
+/** Metadata (§8) de cada ficha: tema ≤ 40 caracteres y description ≤ 155 (validados en lib/seo.ts). */
+const SEO_DESCRIPCION: Record<Exclude<ServicioSlug, "certifica-tu-auto">, () => string> = {
+  "antecedentes-basico": () =>
+    `El Antecedentes Básico cuesta ${pen(getServicio("antecedentes-basico").precio.actual!)}: revisa la historia legal del auto usado con solo la placa. Pídelo por WhatsApp y reserva con el ${ADELANTO}.`,
+  "antecedentes-completo": () =>
+    `Antecedentes Completo por ${pen(getServicio("antecedentes-completo").precio.actual!)}: propietarios, gravámenes, multas en todo el Perú, orden de captura y Boleta Informativa SUNARP.`,
+  "diagnostico-basico": () =>
+    `Diagnóstico Básico por ${pen(getServicio("diagnostico-basico").precio.actual!)}: inspección técnica a domicilio del auto usado en Lima Metropolitana. Toma ${DURACION}.`,
+  diagnosticar: () =>
+    `DiagnostiCAR por ${pen(getServicio("diagnosticar").precio.actual!)}, el plan más elegido: inspección a domicilio en Lima con escáner, antecedentes y especialista.`,
+  "diagnosticar-plus": () =>
+    `DiagnostiCAR Plus por ${pen(getServicio("diagnosticar-plus").precio.actual!)}: la revisión más completa del auto usado, a domicilio en Lima Metropolitana. Toma ${DURACION}.`,
+  "asesoria-precompra-online": () =>
+    "Asesoría precompra online: resolvemos tus dudas e interpretamos informes, incluso de terceros, antes de comprar. Sirve si estás fuera de Lima.",
+};
+
+export function fichaSeo(f: Ficha): { tema: string; descripcion: string } {
+  const s = f.servicio;
+  return {
+    // «Plan DiagnostiCAR» evita repetir la marca: «DiagnostiCAR · S/ 349 | DiagnostiCAR Lima».
+    tema: `${s.nombre === negocio.marca ? `Plan ${s.nombre}` : s.nombre}${s.precio.actual !== null ? ` · ${pen(s.precio.actual)}` : ""}`,
+    descripcion: SEO_DESCRIPCION[f.slug as keyof typeof SEO_DESCRIPCION](),
+  };
+}
+
 export function getFicha(slug: string): Ficha | undefined {
   return fichas.find((f) => f.slug === slug);
 }
@@ -419,7 +444,7 @@ function tycContiene(seccion: string, fragmento: string) {
 export const paginaComoFunciona = {
   seo: {
     title: "Cómo funciona la reserva",
-    description: `Así se agenda un diagnóstico DiagnostiCAR: escribes por WhatsApp, reservas con el ${ADELANTO}, vamos a donde está el auto y recibes el reporte. Qué necesitamos y políticas.`,
+    description: `Así se agenda un diagnóstico DiagnostiCAR: escribes por WhatsApp, reservas con el ${ADELANTO}, vamos a donde está el auto y recibes el reporte.`,
   },
   h1: "Cómo funciona",
   resumen: `Escribes por WhatsApp y eliges el servicio, reservas tu cita con el ${ADELANTO} del servicio, vamos a donde está el auto en Lima Metropolitana y te entregamos el reporte apenas terminamos. La revisión toma ${DURACION}. Para agendar necesitamos el nombre y celular del comprador, la placa y la dirección.`,
@@ -478,7 +503,7 @@ export const paginaComoFunciona = {
 export const paginaCobertura = {
   seo: {
     title: "Cobertura en Lima",
-    description: `Vamos a domicilio en Lima Metropolitana, sin recargo en ${cobertura.sinRecargo.length} distritos: ${cobertura.sinRecargo.slice(0, 4).join(", ")} y más. Para otros distritos te decimos el costo de traslado.`,
+    description: `Vamos a domicilio en Lima Metropolitana, sin recargo en ${cobertura.sinRecargo.length} distritos: ${cobertura.sinRecargo.slice(0, 3).join(", ")} y más. Para otros, te decimos el costo antes.`,
   },
   h1: "Cobertura",
   resumen: `Hacemos el diagnóstico a domicilio, donde esté el auto, dentro de Lima Metropolitana. No cobramos recargo de traslado en estos distritos; para cualquier otro distrito te decimos el costo antes de agendar. La lista vigente está por confirmar ${CONFIRMAR}.`,
@@ -493,7 +518,7 @@ export const paginaInforme = {
   seo: {
     title: "Informe de ejemplo",
     description:
-      "Mira cómo es un informe DiagnostiCAR real: antecedentes (SOAT, papeletas, gravámenes, dueños previos) y la revisión técnica sistema por sistema. Descarga el PDF.",
+      "Mira cómo es un informe DiagnostiCAR real: antecedentes (SOAT, papeletas, gravámenes, dueños) y la revisión técnica por sistema. Descarga el PDF.",
   },
   h1: paginasFuente.informe.titulo,
   texto: paginasFuente.informe.texto,

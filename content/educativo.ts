@@ -31,7 +31,7 @@ export const paginaTecnologia = {
   seo: {
     title: "Tecnología de diagnóstico",
     description:
-      "Escáneres LAUNCH y Autel, escaneo electromagnético de carrocería, videoscopía y revisión de +200 puntos: qué hace cada herramienta en un diagnóstico pre-compra.",
+      "Escáneres LAUNCH y Autel, escaneo electromagnético de carrocería, videoscopía y revisión de +200 puntos: qué hace cada herramienta.",
   },
   h1: "Un solo escáner no puede detectarlo todo.",
   resumen: aeo.parse(
@@ -281,9 +281,16 @@ const inspeccion: SeccionGuia[] = [
 ];
 
 const fugas = problemas.find((p) => p.slug === "fugas-de-aceite")!;
+/** /guia/consulta-placa-gratis: resumen-respuesta (§8 AEO) con datos de recursos_gratis y el Antecedentes Completo. */
+export const paginaConsultaPlaca = {
+  resumen: aeo.parse(
+    "Te decimos gratis si el SOAT y la Revisión Técnica del auto que quieres comprar están vigentes, y cuántos dueños ha tenido. Solo necesitas la placa y tu celular: te respondemos por WhatsApp con el resultado. Papeletas en provincias, gravámenes u órdenes de captura se revisan en el informe Antecedentes Completo.",
+  ),
+};
+
 export const paginaGuia = {
   seo: {
-    title: "Cómo comprar un auto usado en Perú (guía 2026)",
+    title: "Guía 2026: comprar un auto usado en Perú",
     description:
       "Guía para comprar un auto usado en Perú sin sorpresas: qué revisar del estado legal (SUNARP, SAT, ATU, MTC) y de la inspección técnica antes de pagar.",
   },
@@ -421,7 +428,7 @@ export const paginaFaq = {
   seo: {
     title: "Preguntas frecuentes",
     description:
-      "Respuestas cortas sobre el diagnóstico pre-compra de DiagnostiCAR: dónde lo hacemos, cuánto dura, reserva y reprogramación, certificación y alcances técnicos.",
+      "Respuestas cortas sobre el diagnóstico pre-compra de DiagnostiCAR: dónde lo hacemos, cuánto dura, reserva, certificación y alcances técnicos.",
   },
   h1: "Preguntas frecuentes",
   resumen: aeo.parse(

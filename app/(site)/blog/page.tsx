@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Link from "next/link";
 import { PortadaArticulo } from "@/components/blog/portada";
 import { TarjetaArticulo } from "@/components/blog/tarjeta-articulo";
@@ -6,12 +7,12 @@ import { PageHero } from "@/components/sections/page-hero";
 import { articulos, CATEGORIAS, fechaLarga } from "@/lib/blog";
 import { slugify } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
+export const metadata: Metadata = metadatos({
+  tema: "Blog de diagnóstico vehicular",
+  descripcion:
     "Artículos de DiagnostiCAR sobre diagnóstico vehicular, tips mecánicos y novedades para comprar un auto usado con información.",
-  alternates: { canonical: "/blog" },
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   const todos = articulos();

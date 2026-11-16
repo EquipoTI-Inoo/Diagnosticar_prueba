@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import { MapaLima } from "@/components/sections/mapa-lima";
 import { PageHero } from "@/components/sections/page-hero";
 import { DistrictList } from "@/components/ui/district-chip";
@@ -8,11 +9,7 @@ import { cobertura } from "@/content/cobertura";
 import { paginaCobertura as p } from "@/content/conversion";
 import { negocio } from "@/content/negocio";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/cobertura" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/cobertura" });
 
 export default function CoberturaPage() {
   return (

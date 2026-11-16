@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metadatos } from "@/lib/seo";
 import Image from "next/image";
 import { Download, TriangleAlert } from "lucide-react";
 import { PageHero } from "@/components/sections/page-hero";
@@ -7,11 +8,7 @@ import { TrackedLink } from "@/components/ui/tracked-link";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { paginaInforme as p } from "@/content/conversion";
 
-export const metadata: Metadata = {
-  title: p.seo.title,
-  description: p.seo.description,
-  alternates: { canonical: "/informe-de-ejemplo" },
-};
+export const metadata: Metadata = metadatos({ tema: p.seo.title, descripcion: p.seo.description, path: "/informe-de-ejemplo" });
 
 function Descargar({ ubicacion }: { ubicacion: string }) {
   return (
