@@ -92,7 +92,8 @@ export default function ContactoPage() {
       >
         <div className="mt-8">
           <WhatsAppButton ubicacion="contacto-hero" size="lg">
-            Escribir por WhatsApp · {negocio.whatsapp.display}
+            Escribir por WhatsApp{" "}
+            <span className="whitespace-nowrap">· {negocio.whatsapp.display}</span>
           </WhatsAppButton>
         </div>
       </PageHero>
