@@ -1,4 +1,5 @@
 import { negocio } from "@/content/negocio";
+import { mensajeConsultaPlaca, waUrl } from "./wa";
 
 /** Mensaje base del §3: «Hola, quiero reservar mi diagnóstico {Servicio}». */
 export function mensajeReserva(servicio?: string): string {
@@ -9,7 +10,7 @@ export function mensajeReserva(servicio?: string): string {
 
 /** Enlace `wa.me` con texto prellenado (codificado). */
 export function waHref(texto: string = mensajeReserva()): string {
-  return `https://wa.me/${negocio.whatsapp.numero}?text=${encodeURIComponent(texto)}`;
+  return waUrl(negocio.whatsapp.numero, texto);
 }
 
 export function waReserva(servicio?: string): string {
@@ -17,5 +18,5 @@ export function waReserva(servicio?: string): string {
 }
 
 export function waConsultaPlaca(placa: string): string {
-  return waHref(`Hola, quiero consultar gratis el SOAT y la Revisión Técnica de la placa ${placa}`);
+  return waHref(mensajeConsultaPlaca(placa));
 }
