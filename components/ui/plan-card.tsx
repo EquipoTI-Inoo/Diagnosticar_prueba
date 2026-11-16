@@ -86,7 +86,7 @@ export function PlanCard({
       </div>
 
       {/* 3 · Precio (la fila del tachado se reserva siempre) */}
-      <div className={cn("self-end pt-5 pb-5", px)}>
+      <div className={cn("pt-5 pb-5", subgrid && "lg:self-end", px)}>
         <Price precio={servicio.precio} reservarAntes />
       </div>
 
