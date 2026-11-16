@@ -7,7 +7,7 @@ import { FaqAccordion } from "@/components/ui/faq-accordion";
 import { Highlight } from "@/components/ui/highlight";
 import { LogoWall } from "@/components/ui/logo-wall";
 import { Pendiente } from "@/components/ui/pendiente";
-import { PhotoFigure } from "@/components/ui/photo-figure";
+import { estiloRecorte, PhotoFigure } from "@/components/ui/photo-figure";
 import { ReviewCard } from "@/components/ui/review-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { TrackedLink } from "@/components/ui/tracked-link";
@@ -217,7 +217,8 @@ export function HomeCierre() {
                       alt=""
                       fill
                       sizes="(min-width: 640px) 33vw, 100vw"
-                      className="foto-real object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      style={estiloRecorte(v.miniatura)}
+                      className="foto-real object-cover"
                     />
                     <span className="absolute bottom-4 left-4 grid size-12 place-items-center rounded-full bg-brand text-ink">
                       <Play aria-hidden className="size-4 fill-current" strokeWidth={0} />

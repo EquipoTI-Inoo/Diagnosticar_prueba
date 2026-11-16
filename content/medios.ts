@@ -26,6 +26,8 @@ export const medios = z
           alt: "Sus respuestas nos hicieron dudar",
           alto: 598,
           ancho: 414,
+          posicion: "0% 0%",
+          escala: 1.4,
           pie: {
             tipo: "Reel de Instagram",
           },
@@ -39,6 +41,8 @@ export const medios = z
           alt: "La facilidad de bajar el kilometraje",
           alto: 598,
           ancho: 414,
+          posicion: "0% 0%",
+          escala: 1.4,
           pie: {
             tipo: "Reel de Instagram",
           },
@@ -83,6 +87,7 @@ export const medios = z
           texto: "Inspección con videoscopio",
         },
         posicion: "50% 0%",
+        escala: 1.25,
       },
       informes: {
         src: "/img/informe/informe_ejemplo_pag-02.png",

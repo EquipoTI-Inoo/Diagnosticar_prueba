@@ -116,6 +116,7 @@ export const problemas: Problema[] = z.array(problemaSchema).parse([
         texto: "Inspección con videoscopio",
       },
       posicion: "50% 0%",
+      escala: 1.25,
     },
     muestraHallazgo: true,
   },

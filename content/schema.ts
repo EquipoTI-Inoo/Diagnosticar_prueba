@@ -30,6 +30,11 @@ export const imagenSchema = z.object({
   pie: z.object({ tipo: z.string().min(1), texto: z.string().optional() }).optional(),
   /** `object-position` para recortar (p. ej. ocultar subtítulos quemados abajo). */
   posicion: z.string().optional(),
+  /**
+   * Zoom de recorte (≥ 1) con origen en `posicion`: deja fuera bordes con texto quemado
+   * (subtítulos, captions) sin editar el archivo. 1.25 = se ve el 80 % del encuadre.
+   */
+  escala: z.number().min(1).max(2).optional(),
 });
 export type Imagen = z.infer<typeof imagenSchema>;
 

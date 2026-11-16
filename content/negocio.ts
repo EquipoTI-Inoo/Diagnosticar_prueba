@@ -55,7 +55,7 @@ export const negocio: Negocio = negocioSchema.parse({
       url: "https://www.facebook.com/profile.php?id=100083559722874",
     },
     tiktok: {
-      url: "https://www.tiktok.com/ZSPVKqXRd/",
+      url: "https://vt.tiktok.com/ZSPVKqXRd/",
       usuario: "[PENDIENTE CLIENTE]",
     },
     grupoFacebook: {

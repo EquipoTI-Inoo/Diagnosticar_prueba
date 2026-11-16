@@ -177,7 +177,17 @@ function construirNegocio() {
   const redes = n.redes;
   const ig = redes.instagram!;
   const yt = redes.youtube!;
-  const tt = match(/^(\S+)/, redes.tiktok!, "tiktok")[1]!;
+  // El JSON normaliza el enlace corto a www.tiktok.com; la fuente real (raw/venta-sin-consignar.html)
+  // usa vt.tiktok.com. Se toma el de la fuente y se verifica que el código coincida.
+  const ttJson = match(/^(\S+)/, redes.tiktok!, "tiktok")[1]!;
+  const ttRaw = match(
+    /https:\/\/vt\.tiktok\.com\/[\w-]+\//,
+    readFileSync(join(ROOT, "docs/fuente/raw/venta-sin-consignar.html"), "utf8"),
+    "enlace de TikTok en raw/venta-sin-consignar.html",
+  )[0];
+  const codigo = (u: string) => u.split("/").filter(Boolean).pop();
+  if (codigo(ttJson) !== codigo(ttRaw)) fallar(`TikTok no coincide: ${ttJson} vs ${ttRaw}`);
+  const tt = ttRaw;
   const grupo = match(/^(.+?) \(URL/, redes.grupo_facebook!, "grupo FB")[1]!;
 
   const met = n.metricas;
@@ -492,6 +502,7 @@ function construirTestimonios() {
  * una descripción literal y se anota en PENDIENTES.
  */
 type FotoProblema = {
+  escala?: number;
   slug: string;
   archivo: string;
   pie: { tipo: string; texto?: string };
@@ -547,7 +558,9 @@ const FOTOS_PROBLEMAS: Record<string, FotoProblema> = {
     archivo: "motor-reparado.jpg",
     pie: { tipo: "Hallazgo real", texto: "Inspección con videoscopio" },
     muestraHallazgo: true,
+    // Subtítulo quemado «especializados, pueden…» en el 86–100 % inferior: zoom desde arriba.
     posicion: "50% 0%",
+    escala: 1.25,
   },
   "Carros clonados": {
     slug: "carros-clonados",
@@ -573,6 +586,7 @@ function construirProblemas() {
         ...imagen(`/img/clave/${meta.archivo}`, meta.alt),
         pie: meta.pie,
         ...(meta.posicion ? { posicion: meta.posicion } : {}),
+        ...(meta.escala ? { escala: meta.escala } : {}),
       },
       muestraHallazgo: meta.muestraHallazgo,
     });
@@ -691,10 +705,14 @@ function construirMedios() {
   const tips = reels.map((r) => {
     if (!home.redes.includes(r.url)) fallar(`El reel ${r.url} no está en paginas[home].redes`);
     const miniatura = imagen(`/img/clave/${r.archivo}`, r.titulo);
+    // Los reels verticales (reco1, reco2) traen subtítulo quemado (~66–78 % del alto), el caption
+    // de Instagram abajo y una franja negra a la derecha: zoom desde la esquina superior izquierda.
+    const vertical = miniatura.alto > miniatura.ancho;
+    const recorte = vertical ? { posicion: "0% 0%", escala: 1.4 } : {};
     return {
       titulo: r.titulo,
       url: r.url,
-      miniatura: { ...miniatura, pie: { tipo: "Reel de Instagram" } },
+      miniatura: { ...miniatura, ...recorte, pie: { tipo: "Reel de Instagram" } },
     };
   });
 
@@ -720,6 +738,7 @@ function construirMedios() {
       ...imagen("/img/clave/motor-reparado.jpg"),
       pie: { tipo: "Hallazgo real", texto: "Inspección con videoscopio" },
       posicion: "50% 0%",
+      escala: 1.25,
     },
     informes: {
       ...imagen(
@@ -768,9 +787,10 @@ ${fuente.inconsistencias_detectadas.map((p) => `- [ ] ${p}`).join("\n")}
 - [ ] Reseñas: ${construirTestimonios().filter((t) => !t.autor).length} testimonios del sitio antiguo no tienen nombre; ninguno tiene permiso de uso confirmado.
 - [ ] Aliado SONAX: solo aparece en páginas antiguas; no se muestra como aliado vigente.
 - [ ] Asesoría precompra online: no se muestra el precio antiguo (S/ 99) hasta confirmar.
-- [ ] Logo: el PNG tiene «CAR» en blanco (solo funciona sobre fondo oscuro). Se necesita SVG en versiones para fondo claro y oscuro.
+- [ ] Logo vectorial (SVG) y versión oficial para fondo claro: hoy se usan derivados del PNG original 1894×1074 (dark, light con «CAR» recoloreado a ink, isotipo). El laptop gris claro del logo se ve tenue sobre fondos claros.
 - [ ] Sello «Vehículo verificado»: el QR del prototipo es ilustrativo. Falta la URL real de verificación.
 - [ ] Gestión: URL de la nota de prensa. Ficha de Google Business (URL para «Ver reseñas en Google»).
+- [ ] TikTok: el enlace corto es ${'`'}https://vt.tiktok.com/ZSPVKqXRd/${'`'} (de raw/venta-sin-consignar.html); confirmar el @usuario de la cuenta.
 - [ ] IDs de Meta Pixel, TikTok Pixel y GTM (variables \`NEXT_PUBLIC_GTM_ID\`, \`NEXT_PUBLIC_META_PIXEL_ID\`, \`NEXT_PUBLIC_TIKTOK_PIXEL_ID\`).
 - [ ] Fotos reales para «Confianza técnica»: el sitio actual usa 3 imágenes que parecen de banco o generadas (fg-min, gh-1, Diseno-sin-titulo-6); el prototipo usa fotos propias (equipo, videoscopio, informe de ejemplo, unidades móviles).
 - [ ] Certificaciones de los técnicos («Técnicos certificados» se muestra sin detalle).

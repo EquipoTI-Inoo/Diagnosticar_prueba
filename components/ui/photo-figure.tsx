@@ -2,6 +2,17 @@ import Image from "next/image";
 import type { Imagen } from "@/content/schema";
 import { cn } from "@/lib/utils";
 
+/** object-position + zoom de recorte definidos por imagen en /content. */
+export function estiloRecorte(imagen: Imagen): React.CSSProperties | undefined {
+  if (!imagen.posicion && !imagen.escala) return undefined;
+  return {
+    ...(imagen.posicion ? { objectPosition: imagen.posicion } : {}),
+    ...(imagen.escala
+      ? { transform: `scale(${imagen.escala})`, transformOrigin: imagen.posicion ?? "50% 50%" }
+      : {}),
+  };
+}
+
 /**
  * Foto real con tratamiento editorial (recorte, leve desaturación) y pie en mono.
  * El pie sale de `imagen.pie` (definido en /content): nunca se afirma «hallazgo real»
@@ -30,7 +41,7 @@ export function PhotoFigure({
           sizes={sizes}
           priority={priority}
           className="foto-real object-cover"
-          style={imagen.posicion ? { objectPosition: imagen.posicion } : undefined}
+          style={estiloRecorte(imagen)}
         />
       </div>
       {imagen.pie && (
