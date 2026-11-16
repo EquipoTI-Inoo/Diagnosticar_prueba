@@ -140,7 +140,15 @@ export function SiteHeader({
           className="inline-flex min-h-11 items-center"
           aria-label="DiagnostiCAR, ir al inicio"
         >
-          <Logo on="dark" wordmark className="text-[1.6rem]" />
+          <Logo
+            on="dark"
+            eager
+            sizes="(min-width: 1024px) 106px, 91px"
+            className={cn(
+              "w-auto transition-[height] duration-300",
+              compacto ? "h-12" : "h-12 lg:h-14",
+            )}
+          />
         </Link>
 
         {/* Navegación de escritorio */}
@@ -265,7 +273,7 @@ export function SiteHeader({
           className="surface-dark fixed inset-0 z-50 flex flex-col overflow-y-auto bg-ink lg:hidden"
         >
           <div className="container-site flex h-16 shrink-0 items-center justify-between">
-            <Logo on="dark" wordmark className="text-[1.6rem]" />
+            <Logo on="dark" sizes="91px" className="h-12" />
             <button
               type="button"
               onClick={cerrarMenu}

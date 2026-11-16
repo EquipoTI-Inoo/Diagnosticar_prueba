@@ -105,7 +105,7 @@ export default function DesignSystemPage() {
     <div className="surface-light min-h-dvh">
       <header className="surface-dark bg-inspeccion">
         <div className="container-site py-16 sm:py-20">
-          <Logo on="dark" className="h-16" />
+          <Logo on="dark" eager sizes="120px" className="h-16 w-auto" />
           <p className="mt-8 font-mono text-eyebrow tracking-[0.12em] text-fg-muted uppercase">
             Fase 1 · Fundaciones · uso interno (noindex)
           </p>
@@ -576,11 +576,26 @@ export default function DesignSystemPage() {
             id="logos"
             numero="15"
             titulo="Logo y muro de logos"
-            descripcion="El PNG del logo tiene «CAR» en blanco: solo sirve sobre oscuro. Sobre claro se usa un logotipo tipográfico provisional hasta tener el SVG."
+            descripcion="Logo real, derivado del PNG original (1894×1074) sin redibujar: «dark» es el original recortado; «light» solo recolorea a ink los píxeles blancos de «CAR»; el isotipo es el auto + laptop para tamaños chicos. El laptop gris claro (#E4E3E2) se ve tenue sobre paper: es así en el original, por eso se prioriza sobre fondos oscuros. SVG: [PENDIENTE CLIENTE]."
           >
-            <Specimen dark={<Logo on="dark" className="h-20" />}>
-              <Logo on="light" className="text-4xl" />
-            </Specimen>
+            <div className="grid gap-4 md:grid-cols-3">
+              {(
+                [
+                  { t: "Logo dark · sobre ink", on: "dark", mark: "full", s: "surface-dark" },
+                  { t: "Logo light · sobre paper", on: "light", mark: "full", s: "surface-light" },
+                  { t: "Isotipo · tamaños chicos", on: "dark", mark: "isotipo", s: "surface-dark" },
+                ] as const
+              ).map((v) => (
+                <figure key={v.t} className={`${v.s} rounded-card border border-line p-6`}>
+                  <div className="grid h-36 place-items-center">
+                    <Logo on={v.on} mark={v.mark} sizes="240px" className="h-24 w-auto" />
+                  </div>
+                  <figcaption className="mt-4 font-mono text-xs text-fg-muted uppercase">
+                    {v.t}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
             <Specimen stack>
               <LogoWall
                 grupos={[

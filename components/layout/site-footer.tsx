@@ -44,7 +44,7 @@ export function SiteFooter() {
       <div className="container-site relative z-10 pt-16 pb-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1.2fr]">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Logo on="dark" wordmark className="text-3xl" />
+            <Logo on="dark" sizes="136px" className="h-[4.5rem] w-auto" />
             <p className="mt-3 max-w-[30ch] text-fg-muted">{negocio.lema}.</p>
             <p className="mt-6 font-mono text-xs leading-relaxed text-fg-muted">
               Diagnóstico vehicular pre-compra
@@ -137,27 +137,15 @@ export function SiteFooter() {
         </div>
       </div>
 
-      {/* Marca de agua: SVG decorativo (aria-hidden), escala al ancho de la ventana */}
-      <svg
-        aria-hidden
-        focusable="false"
-        viewBox="0 0 1000 170"
-        className="pointer-events-none relative -mt-4 block w-full select-none"
-      >
-        <text
-          x="500"
-          y="150"
-          textAnchor="middle"
-          textLength="980"
-          lengthAdjust="spacingAndGlyphs"
-          className="font-display"
-          fontSize="190"
-          fontWeight="800"
-        >
-          <tspan fill="rgb(245 246 243 / 0.05)">Diagnosti</tspan>
-          <tspan fill="rgb(4 173 191 / 0.12)">CAR</tspan>
-        </text>
-      </svg>
+      {/* Marca de agua: logo real muy tenue, decorativo */}
+      <div aria-hidden className="pointer-events-none relative mt-4 -mb-[10%] select-none">
+        <Logo
+          on="dark"
+          alt=""
+          sizes="100vw"
+          className="mx-auto h-auto w-[86%] max-w-[1000px] opacity-[0.07]"
+        />
+      </div>
     </footer>
   );
 }
