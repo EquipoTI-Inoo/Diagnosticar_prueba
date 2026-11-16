@@ -7,7 +7,8 @@ import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { home } from "@/content/home";
 import { medios } from "@/content/medios";
 import { negocio } from "@/content/negocio";
-import { PlateLeadForm } from "./plate-lead-form";
+import { ConsultaPlacaForm } from "@/components/forms/consulta-placa-form";
+import { formTextos } from "@/content/conversion";
 import { VideoFacade } from "./video-facade";
 
 /** §5.1.1 Hero + §5.1.2 barra «Consulta gratis por placa». */
@@ -110,9 +111,12 @@ export function HomeHero() {
               <p className="mt-2 text-fg-muted">{home.consultaPlaca.texto}</p>
             </div>
             <div className="lg:col-span-8">
-              <PlateLeadForm
-                textos={home.consultaPlaca}
-                whatsappNumero={negocio.whatsapp.numero}
+              <ConsultaPlacaForm
+                textos={{
+                  ...formTextos.placa,
+                  errorFormulario: formTextos.errorFormulario,
+                  otraConsulta: formTextos.otraConsulta,
+                }}
                 ubicacion="home-placa"
               />
             </div>

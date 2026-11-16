@@ -9,3 +9,6 @@ next-env.d.ts
 npm-debug.log*
 # salidas del orquestador (no forman parte del proyecto)
 .claude-*
+
+# leads del prototipo (Server Actions)
+.data/

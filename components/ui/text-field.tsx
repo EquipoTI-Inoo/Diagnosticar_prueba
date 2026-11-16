@@ -31,7 +31,7 @@ export function TextField({ id, label, hint, error, className, ...rest }: Props)
         </p>
       )}
       {error && (
-        <p id={`${id}-error`} className="text-sm text-error" role="alert">
+        <p id={`${id}-error`} className="text-sm text-error">
           {error}
         </p>
       )}

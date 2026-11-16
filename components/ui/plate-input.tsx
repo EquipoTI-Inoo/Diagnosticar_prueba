@@ -75,7 +75,7 @@ export function PlateInput({
         Formato ABC-123
       </p>
       {error && (
-        <p id={`${id}-error`} role="alert" className="text-sm text-error">
+        <p id={`${id}-error`} className="text-sm text-error">
           {error}
         </p>
       )}
