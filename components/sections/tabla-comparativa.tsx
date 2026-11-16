@@ -52,8 +52,15 @@ export function TablaComparativa() {
         aria-label="Tabla comparativa de planes (desplazable)"
         className="relative overflow-x-auto rounded-card border border-line bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-deep lg:overflow-visible"
       >
-        <table className="w-full min-w-[42rem] border-separate border-spacing-0 text-left lg:min-w-0">
+        <table className="w-[46.5rem] table-fixed border-separate border-spacing-0 text-left lg:w-full lg:table-auto">
           <caption className="sr-only">{paginaServicios.tablaCaption}</caption>
+          {/* Móvil: 144 px la característica + 120 px por plan (se ven ~1,6 planes). Escritorio: automático. */}
+          <colgroup>
+            <col className="w-36 lg:w-[28%]" />
+            {cols.map((s) => (
+              <col key={s.slug} className="w-[7.5rem] lg:w-auto" />
+            ))}
+          </colgroup>
           <thead>
             <tr>
               <th
@@ -67,7 +74,7 @@ export function TablaComparativa() {
                   key={s.slug}
                   scope="col"
                   className={cn(
-                    "z-20 min-w-[6.75rem] border-b border-line px-2 py-3 text-center align-bottom lg:sticky lg:top-16 lg:p-4",
+                    "z-20 border-b border-line px-2 py-3 text-center align-bottom lg:sticky lg:top-16 lg:p-4",
                     s.destacado ? "bg-ink text-paper" : "bg-paper",
                   )}
                 >
