@@ -54,6 +54,7 @@ export function CookieBanner() {
       tabIndex={-1}
       role="region"
       aria-labelledby={titulo}
+      data-no-print
       className="surface-dark fixed inset-x-3 bottom-[5.25rem] z-50 rounded-card border border-border-strong p-4 sm:p-5 shadow-[0_8px_30px_rgb(0_0_0/0.35)] outline-none sm:inset-x-auto sm:left-6 sm:max-w-md lg:bottom-6"
     >
       <p id={titulo} className="font-medium">

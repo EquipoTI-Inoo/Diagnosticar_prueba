@@ -191,3 +191,46 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Impresión (§5.9 checklist imprimible): sin cromo del sitio, tinta negra sobre blanco. */
+@media print {
+  @page {
+    margin: 14mm;
+  }
+  header,
+  footer,
+  [data-no-print],
+  nav[aria-label="Acciones rápidas"],
+  aside[aria-label="Contacto rápido"],
+  nav[aria-label="Migas de pan"] {
+    display: none !important;
+  }
+  html,
+  body,
+  .surface-dark,
+  .surface-light {
+    --s-bg: #fff;
+    --s-card: #fff;
+    --s-fg: #000;
+    --s-fg-muted: #333;
+    --s-border: #999;
+    --s-border-strong: #333;
+    --s-accent: #000;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .bg-inspeccion {
+    background-image: none !important;
+  }
+  section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  li,
+  dl > div {
+    break-inside: avoid;
+  }
+}
