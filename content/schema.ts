@@ -186,5 +186,7 @@ export const navItemSchema = z.object({
   label: texto,
   href: z.string().startsWith("/"),
   descripcion: z.string().optional(),
+  /** El enlace es un CTA de WhatsApp (reserva) en vez de una página. */
+  whatsapp: z.boolean().optional(),
 });
 export type NavItem = z.infer<typeof navItemSchema>;

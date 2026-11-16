@@ -55,7 +55,7 @@ export const etapas = z
     {
       titulo: "Ya encontré el auto",
       texto: "Tengo la placa de un auto puntual y quiero revisarlo antes de comprar.",
-      enlaces: [{ label: "Agendar diagnóstico", href: "/servicios/diagnosticar" }],
+      enlaces: [{ label: "Agendar diagnóstico", href: "/servicios/diagnosticar", whatsapp: true }],
     },
     {
       titulo: "Quiero vender mi auto",
@@ -85,3 +85,33 @@ export const footer = {
     { label: "Cookies", href: "/legal/cookies" },
   ]),
 };
+
+/**
+ * Rutas del mapa del sitio (§4) que aún no existen, con la fase del §10 en que se construyen.
+ * Mientras tanto, app/(site)/[...ruta] muestra un marcador «en construcción» (noindex) para que
+ * el prototipo sea navegable y no haya 404 en los enlaces internos. Cada ruta real que se cree
+ * en su fase tiene prioridad sobre el marcador.
+ */
+export const rutasPlanificadas: { href: string; titulo: string; fase: 3 | 4 }[] = [
+  { href: "/servicios", titulo: "Planes y precios", fase: 3 },
+  ...servicios
+    .filter((s) => s.href.startsWith("/servicios/"))
+    .map((s) => ({ href: s.href, titulo: s.nombre, fase: 3 as const })),
+  { href: "/vende-tu-auto", titulo: "Vende tu auto", fase: 3 },
+  { href: "/como-funciona", titulo: "Cómo funciona", fase: 3 },
+  { href: "/cobertura", titulo: "Cobertura", fase: 3 },
+  { href: "/informe-de-ejemplo", titulo: "Informe de ejemplo", fase: 3 },
+  { href: "/contacto", titulo: "Contacto", fase: 3 },
+  { href: "/tecnologia", titulo: "Tecnología", fase: 4 },
+  { href: "/guia", titulo: "Guía para comprar un auto usado", fase: 4 },
+  { href: "/guia/checklist", titulo: "Checklist precompra", fase: 4 },
+  { href: "/guia/problemas-comunes", titulo: "Problemas más comunes", fase: 4 },
+  { href: "/guia/consulta-placa-gratis", titulo: "Consulta de placa gratis", fase: 4 },
+  { href: "/blog", titulo: "Blog", fase: 4 },
+  { href: "/nosotros", titulo: "Nosotros", fase: 4 },
+  { href: "/preguntas-frecuentes", titulo: "Preguntas frecuentes", fase: 4 },
+  { href: "/legal/terminos-y-condiciones", titulo: "Términos y condiciones", fase: 4 },
+  { href: "/legal/privacidad", titulo: "Política de privacidad", fase: 4 },
+  { href: "/legal/cookies", titulo: "Política de cookies", fase: 4 },
+  { href: "/libro-de-reclamaciones", titulo: "Libro de Reclamaciones", fase: 4 },
+];

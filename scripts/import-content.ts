@@ -669,6 +669,82 @@ escribir(
   )});`,
 );
 
+/* ------------------------------------------------------------------ medios (Fase 2) */
+
+/**
+ * Videos «Tips antes de comprar» de la home: las URLs están en paginas[home].redes del JSON;
+ * el ORDEN y el título de cada reel se leen del HTML original (raw/home.html), y la miniatura
+ * es reco{n}-frame.jpg (alt original = título del reel).
+ */
+function construirMedios() {
+  const home = pagina("home") as Pagina & { redes: string[] };
+  const html = readFileSync(join(ROOT, "docs/fuente/raw/home.html"), "utf8");
+  const ini = html.indexOf("Tips antes de comprar");
+  if (ini < 0) fallar("No encontré «Tips antes de comprar» en raw/home.html");
+  const tramo = html.slice(ini, ini + 8000);
+  const reels = [
+    ...tramo.matchAll(
+      /href="(https:\/\/www\.instagram\.com\/reel\/[^"]+)"[^>]*>\s*<img[^>]*src="[^"]*\/(reco\d-frame\.jpg)"[^>]*alt="([^"]+)"/g,
+    ),
+  ].map((m) => ({ url: m[1]!, archivo: m[2]!, titulo: m[3]!.trim() }));
+  if (reels.length !== 3) fallar("Esperaba 3 reels en «Tips antes de comprar»");
+  const tips = reels.map((r) => {
+    if (!home.redes.includes(r.url)) fallar(`El reel ${r.url} no está en paginas[home].redes`);
+    const miniatura = imagen(`/img/clave/${r.archivo}`, r.titulo);
+    return {
+      titulo: r.titulo,
+      url: r.url,
+      miniatura: { ...miniatura, pie: { tipo: "Reel de Instagram" } },
+    };
+  });
+
+  // Video explicativo (§5.1): solo aparece en raw/servicio-diagnosticar.html.
+  const htmlServicio = readFileSync(
+    join(ROOT, "docs/fuente/raw/servicio-diagnosticar.html"),
+    "utf8",
+  );
+  const [, youtubeId, youtubeTitulo] = match(
+    /youtube\.com\/embed\/([\w-]{11})" title="([^"]+)"/,
+    htmlServicio,
+    "video de YouTube",
+  );
+
+  // Fotos REALES para «Confianza técnica». Las 3 imágenes que usaba el sitio actual para esta
+  // sección (fg-min, gh-1, Diseno-sin-titulo-6) parecen de banco o generadas: no se usan (§6).
+  const confianza = {
+    tecnicos: {
+      ...imagen("/img/clave/asi-trabajamos-frame2.jpg"),
+      pie: { tipo: "Fotograma de video", texto: "Equipo DiagnostiCAR" },
+    },
+    equipos: {
+      ...imagen("/img/clave/motor-reparado.jpg"),
+      pie: { tipo: "Hallazgo real", texto: "Inspección con videoscopio" },
+      posicion: "50% 0%",
+    },
+    informes: {
+      ...imagen(
+        "/img/informe/informe_ejemplo_pag-02.png",
+        "Página de un informe DiagnostiCAR con el puntaje por sistema: seguridad, frenos, motor, escaneo, suspensión y más (placa de ejemplo)",
+      ),
+      pie: { tipo: "Informe de ejemplo", texto: "2022 · placa de ejemplo" },
+    },
+    atencion: {
+      ...imagen(
+        "/img/clave/IMG_5446.webp",
+        "Dos camionetas con la marca DiagnostiCAR estacionadas en la calle",
+      ),
+      pie: { tipo: "Foto", texto: "Unidades móviles DiagnostiCAR" },
+    },
+  };
+  return { tips, youtube: { id: youtubeId!, titulo: youtubeTitulo! }, confianza };
+}
+
+escribir(
+  "medios.ts",
+  "Videos y fotos de la home (tips, video explicativo, fotos de confianza).",
+  `import { z } from "zod";\nimport { imagenSchema } from "./schema";\n\nexport const medios = z\n  .object({\n    tips: z.array(z.object({ titulo: z.string(), url: z.url(), miniatura: imagenSchema })).length(3),\n    youtube: z.object({ id: z.string().regex(/^[\\w-]{11}$/), titulo: z.string() }),\n    confianza: z.record(z.enum(["tecnicos", "equipos", "informes", "atencion"]), imagenSchema),\n  })\n  .parse(${json(construirMedios())});`,
+);
+
 // PENDIENTES.md se genera junto con el contenido para que no se desincronice.
 const pendientes = `# Pendientes del cliente
 
@@ -695,7 +771,11 @@ ${fuente.inconsistencias_detectadas.map((p) => `- [ ] ${p}`).join("\n")}
 - [ ] Logo: el PNG tiene «CAR» en blanco (solo funciona sobre fondo oscuro). Se necesita SVG en versiones para fondo claro y oscuro.
 - [ ] Sello «Vehículo verificado»: el QR del prototipo es ilustrativo. Falta la URL real de verificación.
 - [ ] Gestión: URL de la nota de prensa. Ficha de Google Business (URL para «Ver reseñas en Google»).
-- [ ] IDs de Meta Pixel, TikTok Pixel y GTM.
+- [ ] IDs de Meta Pixel, TikTok Pixel y GTM (variables \`NEXT_PUBLIC_GTM_ID\`, \`NEXT_PUBLIC_META_PIXEL_ID\`, \`NEXT_PUBLIC_TIKTOK_PIXEL_ID\`).
+- [ ] Fotos reales para «Confianza técnica»: el sitio actual usa 3 imágenes que parecen de banco o generadas (fg-min, gh-1, Diseno-sin-titulo-6); el prototipo usa fotos propias (equipo, videoscopio, informe de ejemplo, unidades móviles).
+- [ ] Certificaciones de los técnicos («Técnicos certificados» se muestra sin detalle).
+- [ ] Ícono oficial del Libro de Reclamaciones (Indecopi) en SVG/PNG.
+- [ ] Copy redactado en la Fase 2 (titulares de comparador, consulta por placa, confianza y footer): validar.
 - [ ] Fotos de hallazgos sin subtítulos quemados, en especial choque oculto y problemas documentarios.
 - [ ] Fotos que muestren el hallazgo: hoy «kilometraje bajado» (${FOTOS_PROBLEMAS["Kilometraje bajado"]!.archivo}) muestra una llanta y «airbags reventados» (${FOTOS_PROBLEMAS["Airbags reventados"]!.archivo}) no muestra un airbag; sus \`alt\` originales no describen la imagen y se reemplazaron por descripciones literales.
 `;

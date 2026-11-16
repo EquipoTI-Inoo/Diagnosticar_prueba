@@ -47,6 +47,10 @@
 - [ ] Logo: el PNG tiene «CAR» en blanco (solo funciona sobre fondo oscuro). Se necesita SVG en versiones para fondo claro y oscuro.
 - [ ] Sello «Vehículo verificado»: el QR del prototipo es ilustrativo. Falta la URL real de verificación.
 - [ ] Gestión: URL de la nota de prensa. Ficha de Google Business (URL para «Ver reseñas en Google»).
-- [ ] IDs de Meta Pixel, TikTok Pixel y GTM.
+- [ ] IDs de Meta Pixel, TikTok Pixel y GTM (variables `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_TIKTOK_PIXEL_ID`).
+- [ ] Fotos reales para «Confianza técnica»: el sitio actual usa 3 imágenes que parecen de banco o generadas (fg-min, gh-1, Diseno-sin-titulo-6); el prototipo usa fotos propias (equipo, videoscopio, informe de ejemplo, unidades móviles).
+- [ ] Certificaciones de los técnicos («Técnicos certificados» se muestra sin detalle).
+- [ ] Ícono oficial del Libro de Reclamaciones (Indecopi) en SVG/PNG.
+- [ ] Copy redactado en la Fase 2 (titulares de comparador, consulta por placa, confianza y footer): validar.
 - [ ] Fotos de hallazgos sin subtítulos quemados, en especial choque oculto y problemas documentarios.
 - [ ] Fotos que muestren el hallazgo: hoy «kilometraje bajado» (kilometraje200k.jpg) muestra una llanta y «airbags reventados» (airbag.jpg) no muestra un airbag; sus `alt` originales no describen la imagen y se reemplazaron por descripciones literales.
