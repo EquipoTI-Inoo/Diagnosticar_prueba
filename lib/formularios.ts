@@ -4,22 +4,21 @@
  * empieza por 9 (lib/validacion.ts).
  */
 import { z } from "zod";
+import { MSG, type CampoError } from "./formularios-tipos";
 import { CELULAR_RE, mascaraPlaca, PLACA_RE } from "./validacion";
+
+export type { CampoError, EstadoFormulario } from "./formularios-tipos";
+export { estadoInicial } from "./formularios-tipos";
 
 const celular = z
   .string()
   .transform((v) => v.replace(/\D/g, ""))
-  .pipe(
-    z
-      .string()
-      .min(1, "Ingresa tu celular.")
-      .regex(CELULAR_RE, "El celular debe tener 9 dígitos y empezar con 9."),
-  );
+  .pipe(z.string().min(1, MSG.celularVacio).regex(CELULAR_RE, MSG.celularFormato));
 
 const acepta = z
   .string()
   .optional()
-  .refine((v) => v === "on" || v === "true", "Acepta la política de privacidad para continuar.");
+  .refine((v) => v === "on" || v === "true", MSG.acepta);
 
 /** Honeypot: debe llegar vacío (los bots lo rellenan). */
 const honeypot = z.string().optional();
@@ -28,12 +27,7 @@ export const consultaPlacaSchema = z.object({
   placa: z
     .string()
     .transform((v) => mascaraPlaca(v))
-    .pipe(
-      z
-        .string()
-        .min(1, "Ingresa la placa del auto.")
-        .regex(PLACA_RE, "Revisa la placa: debe tener el formato ABC-123."),
-    ),
+    .pipe(z.string().min(1, MSG.placaVacia).regex(PLACA_RE, MSG.placaFormato)),
   celular,
   acepta,
   empresa: honeypot,
@@ -41,38 +35,14 @@ export const consultaPlacaSchema = z.object({
 export type ConsultaPlaca = z.infer<typeof consultaPlacaSchema>;
 
 export const contactoSchema = z.object({
-  nombre: z.string().trim().min(2, "Ingresa tu nombre.").max(80, "El nombre es muy largo."),
+  nombre: z.string().trim().min(2, MSG.nombre).max(80, MSG.nombreLargo),
   celular,
-  correo: z
-    .string()
-    .trim()
-    .min(1, "Ingresa tu correo.")
-    .pipe(z.email("Revisa el correo: debe tener el formato nombre@dominio.com.")),
-  mensaje: z
-    .string()
-    .trim()
-    .min(10, "Cuéntanos un poco más (mínimo 10 caracteres).")
-    .max(1000, "El mensaje es muy largo (máximo 1000 caracteres)."),
+  correo: z.string().trim().min(1, MSG.correoVacio).pipe(z.email(MSG.correoFormato)),
+  mensaje: z.string().trim().min(10, MSG.mensajeCorto).max(1000, MSG.mensajeLargo),
   acepta,
   empresa: honeypot,
 });
 export type Contacto = z.infer<typeof contactoSchema>;
-
-export type CampoError = Record<string, string>;
-
-export type EstadoFormulario = {
-  estado: "inicial" | "ok" | "error";
-  /** Errores por campo (solo en «error» de validación). */
-  errores?: CampoError;
-  /** Error general (fallo al guardar). */
-  mensaje?: string;
-  /** Enlace a WhatsApp prellenado (éxito o fallback). */
-  whatsapp?: string;
-  /** Valores enviados, para repoblar el formulario sin JS. */
-  valores?: Record<string, string>;
-};
-
-export const estadoInicial: EstadoFormulario = { estado: "inicial" };
 
 /** Convierte un ZodError en { campo: primer mensaje }. */
 export function erroresDe(error: z.ZodError): CampoError {

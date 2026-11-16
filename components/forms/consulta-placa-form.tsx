@@ -5,7 +5,8 @@ import { enviarConsultaPlaca } from "@/app/(site)/acciones";
 import { PlateInput } from "@/components/ui/plate-input";
 import { TextField } from "@/components/ui/text-field";
 import { track } from "@/lib/analytics";
-import { consultaPlacaSchema, erroresDe, estadoInicial, type CampoError } from "@/lib/formularios";
+import { estadoInicial, type CampoError } from "@/lib/formularios-tipos";
+import { validarConsultaPlaca } from "@/lib/validacion-cliente";
 import {
   BotonEnviar,
   Consentimiento,
@@ -53,15 +54,9 @@ export function ConsultaPlacaForm({ textos, ubicacion }: { textos: Textos; ubica
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     const fd = new FormData(e.currentTarget);
-    const r = consultaPlacaSchema.safeParse({
-      placa: fd.get("placa") ?? "",
-      celular: fd.get("celular") ?? "",
-      acepta: fd.get("acepta") ?? undefined,
-      empresa: fd.get("empresa") ?? "",
-    });
-    if (!r.success) {
+    const errs = validarConsultaPlaca(fd);
+    if (errs) {
       e.preventDefault();
-      const errs = erroresDe(r.error);
       setErroresCliente(errs);
       enfocarPrimerError(e.currentTarget, errs);
       return;

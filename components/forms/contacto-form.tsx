@@ -4,7 +4,8 @@ import { useActionState, useEffect, useId, useRef, useState } from "react";
 import { enviarContacto } from "@/app/(site)/acciones";
 import { TextField, inputBase } from "@/components/ui/text-field";
 import { track } from "@/lib/analytics";
-import { contactoSchema, erroresDe, estadoInicial, type CampoError } from "@/lib/formularios";
+import { estadoInicial, type CampoError } from "@/lib/formularios-tipos";
+import { validarContacto } from "@/lib/validacion-cliente";
 import { cn } from "@/lib/utils";
 import {
   BotonEnviar,
@@ -54,17 +55,9 @@ export function ContactoForm({
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     const fd = new FormData(e.currentTarget);
-    const r = contactoSchema.safeParse({
-      nombre: fd.get("nombre") ?? "",
-      celular: fd.get("celular") ?? "",
-      correo: fd.get("correo") ?? "",
-      mensaje: fd.get("mensaje") ?? "",
-      acepta: fd.get("acepta") ?? undefined,
-      empresa: fd.get("empresa") ?? "",
-    });
-    if (!r.success) {
+    const errs = validarContacto(fd);
+    if (errs) {
       e.preventDefault();
-      const errs = erroresDe(r.error);
       setErroresCliente(errs);
       enfocarPrimerError(e.currentTarget, errs);
       return;
