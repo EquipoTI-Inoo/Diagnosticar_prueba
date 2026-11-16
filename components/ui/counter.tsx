@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 import { prefiereMenosMovimiento, useInViewOnce } from "./use-in-view";
 
 /**
- * Contador que sube una sola vez al entrar en viewport.
+ * Contador que sube una sola vez al entrar en viewport. Solo anima enteros: las cifras
+ * con decimales (calificación 4.9) se muestran fijas.
  * Se renderiza con el valor final (SEO / sin JS) y solo anima si aún no estaba visible.
  */
 export function Counter({ display, className }: { display: string; className?: string }) {
@@ -22,7 +23,8 @@ export function Counter({ display, className }: { display: string; className?: s
   // Al montar: si no está visible aún y se permite movimiento, arranca desde 0.
   useEffect(() => {
     const el = ref.current;
-    if (!el || !numTxt || prefiereMenosMovimiento()) return;
+    // Solo se animan enteros (+6,000, +575, 100 %); un rating como 4.9 no «sube».
+    if (!el || !numTxt || decimales > 0 || prefiereMenosMovimiento()) return;
     const r = el.getBoundingClientRect();
     if (r.top > window.innerHeight || r.bottom < 0) {
       setValor(0);
