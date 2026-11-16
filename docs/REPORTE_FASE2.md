@@ -143,3 +143,74 @@ Más el commit de este reporte. Verifiqué el build y los checks en el último c
 4. **«Desde S/ x» en el mega-menú:** el documento lo pide así, pero los precios son fijos y no tarifas que arrancan en ese monto. ¿Prefieres mostrar solo «S/ x»?
 5. **Datos que siguen pendientes y se ven en la Home o el footer:** horario, email, URL de la ficha de Google, URL del grupo de Facebook, @ de TikTok, certificaciones de los técnicos, IDs de GTM y de los pixels, logo en SVG e ícono oficial del Libro de Reclamaciones.
 6. El formulario de placa pide el celular, pero hoy solo se usa dentro del mensaje de WhatsApp. ¿Mantenemos el campo, como pide el §5.1, o lo quitamos hasta tener endpoint?
+
+---
+
+## Ronda de corrección 1
+
+Fecha: 16/11/2026. Sigo en la Fase 2: no empecé la Fase 3, no desplegué, no publiqué ni hice push. No toqué `docs/capturas/fase1/`.
+
+### Qué cambió
+
+| # | Pedido | Cambio | Verificación |
+|---|---|---|---|
+| 1 | **Logo real (obligatorio)** | `components/ui/logo.tsx` reescrito: props `on="dark"\|"light"` y `mark="full"\|"isotipo"`, `next/image` con el ancho y alto reales de cada archivo, alt «DiagnostiCAR» y `sizes` ajustado; ya no existe la prop `wordmark` ni ningún texto tipográfico. **Header** (escritorio, móvil y diálogo del menú): logo completo `dark`, de 56 px de alto con el header de 80 px y de 48 px compacto y en móvil. **Footer**: logo completo `dark` de 72 px. **Marca de agua**: el logo real completo, al 7 % de opacidad, grande (78 % del ancho, máx. 880 px), decorativo y `aria-hidden`. **/design-system**: las 3 variantes (dark sobre ink, light sobre paper, isotipo). Borré `public/logos/logosaaa-02-2.*`. No modifiqué los archivos que preparaste ni los íconos de `app/`. | `rg -n "wordmark\|Diagnosti</\|tspan" app components` no devuelve nada. Revisé las capturas `home-1280-04-header-logo`, `-05-mega-menu`, `-06-footer`, `home-390-01` y `home-390-04`. En móvil el logo completo se lee a 48 px, así que no hizo falta el isotipo. |
+| 1 · docs | DECISIONES, ENTENDIMIENTO, REPORTE_FASE1, PENDIENTES | Eliminé S9 y F5 y añadí **F21 «Logo real»**: fuente, resolución, las 3 variantes, cómo se generaron, dónde se usa cada una y que el SVG sigue `[PENDIENTE CLIENTE]`. En ENTENDIMIENTO (línea 27) y REPORTE_FASE1 dejé una nota de que el logotipo tipográfico fue reemplazado. En PENDIENTES, el logo SVG y la versión oficial para fondo claro siguen pendientes. | — |
+| 2 | Fotos con texto quemado | Nuevo campo `imagen.escala` en `/content`: un zoom con origen en `posicion`, declarado por el script sin editar los archivos. **Videoscopio** (en Problemas y en Confianza 02): el subtítulo ocupa el 86–100 % inferior; con zoom 1.25 desde arriba se ve el 80 % superior. **Reels 1 y 2** (Tips): tenían el subtítulo a ~66–78 % de alto, el caption de Instagram y una franja negra a la derecha; con zoom 1.4 desde la esquina superior izquierda quedan fuera. Revisé el resto de fotos de la Home (fuga, equipo, informe, camionetas y reel 3): no tienen texto quemado. | Medí la posición del texto en cada imagen y revisé las capturas. |
+| 3 | Precios desalineados | `PlanCard` con `grid-rows-subgrid` desde 1024 px: el código, el nombre, el precio (con la fila del tachado siempre reservada), «Incluye» y los botones caen a la misma altura en las 5 tarjetas. Los botones usan el tamaño nuevo `sm` (44 px con o sin flecha). También corregí un efecto colateral: en el carrusel móvil el precio quedaba alineado a la derecha. | Medido con Playwright: «Incluye» en y = 342 y los botones en y = 903 y 957 en las 5 tarjetas a 1280 px; a 1024 px, 274, 981 y 1035. |
+| 4 | Contadores | Solo se animan los enteros (+6,000, +575, 100 %). La calificación 4.9 se muestra fija en el hero y en reseñas. | Muestreé 14 veces durante la animación: siempre «4.9». |
+| 5 | TikTok | `https://vt.tiktok.com/ZSPVKqXRd/`, leído de `raw/venta-sin-consignar.html`. El script verifica que el código coincida con el del JSON. El @usuario sigue en PENDIENTES. | `content/negocio.ts` y PENDIENTES actualizados. |
+| 6 | LCP < 2.0 s | Ver la siguiente sección. | — |
+
+### LCP: qué probé
+
+| Medición (móvil, Lighthouse 12) | Perf. | Acc. | BP | SEO | LCP | CLS | TBT |
+|---|---|---|---|---|---|---|---|
+| Preview, throttling **simulado**, corrida 1 | 98 | 100 | 100 | 66* | 2.4 s | 0 | 30 ms |
+| Preview, simulado, corrida 2 | 96 | 100 | 100 | 66* | 2.7 s | 0 | 20 ms |
+| Preview, simulado, corrida 3 | 98 | 100 | 100 | 66* | 2.3 s | 0 | 30 ms |
+| `SITE_ENV=production`, simulado (3 corridas) | 98 · 98 · 98 | 100 | 100 | 100 | 2.3 · 2.3 · 2.3 s | 0 | 20–40 ms |
+| `SITE_ENV=production`, throttling **real** (`--throttling-method=devtools`, 2 corridas) | 98 · 98 | 100 | 100 | 100 | **1.7 · 1.7 s** | 0.002 | 90–100 ms |
+| Tras los últimos ajustes, preview simulado (2 corridas) | 96 · 98 | 100 | 100 | 66* | 2.7 · 2.3 s | 0 | 20–30 ms |
+
+\* En preview el `noindex` es intencional; con `SITE_ENV=production` el SEO es 100.
+
+- **Ya estaba hecho:** Archivo estática de 11.7 KB, que es la **única** fuente precargada (comprobado en el `<head>`). Sin preload de Inter Tight ni JetBrains Mono, foto del hero sin preload, favicon.
+- **Diagnóstico:** el elemento LCP es el H1, que es texto. En la carga real el primer pintado ocurre a ~200 ms, *después* de que ya se descargaron el CSS (10 KB) y todo el JS de Next y React (~120 KB). Por eso el modelo simulado de Lighthouse los suma al LCP. Con throttling real el LCP es **1.7 s**: el objetivo se cumple en una carga real limitada, pero no en la simulación.
+- **Probado y descartado:** `experimental.inlineCss` (F20): no mejoró y el HTML creció.
+- **Lo que queda no es un cambio acotado:** el HTML pesa 39 KB comprimidos, la mitad es el payload RSC de Next. Habría que recortarlo y convertir el header en un componente de servidor con islas de cliente. **Lo dejo para la Fase 6**, como pediste para este caso (DECISIONES F26).
+
+### Verificación final
+
+- `npm run check` (contraste, datos, `tsc` y ESLint) y `npm run build`: ✅ sin errores ni advertencias.
+- axe-core 4.14 (`wcag2a/aa`, `wcag21a/aa`, `wcag22aa`, `best-practice`): **0 violaciones** en `/` a 360, 768 y 1280 px, con el banner visible y sin él, y en `/design-system` a 390 y 1280 px.
+- Pruebas funcionales: 19/19 en verde. Incluyen WhatsApp con mensaje en los 16 enlaces, el consentimiento, el mega-menú y el menú móvil con teclado, y el formulario de placa.
+- **Capturas regeneradas** en `docs/capturas/fase2/` (19 archivos):
+  - 360, 390, 768 y 1280 px: primera pantalla con banner, página completa y planes con el header compacto.
+  - Menú móvil a 360, 390 y 768 px.
+  - Banner en «Configurar» a 360 px.
+  - A 1280 px, además: `home-1280-04-header-logo`, `home-1280-05-mega-menu` y `home-1280-06-footer`.
+
+  En las capturas de página completa oculté la barra móvil y el botón flotante para que no se repitan. En la del footer oculté también el header fijo.
+
+### Commits de esta ronda
+
+```
+f33646f docs: capturas de la Fase 2 (ronda 1) en 360/390/768/1280
+0f883a7 fix(planes): precio alineado a la izquierda en el carrusel móvil
+b0b2e7a fix(logo): marca de agua del footer completa y logo del menú móvil sin deformar
+d635509 docs: logo real (F21) en lugar del logotipo tipográfico y decisiones F22–F26
+ce9d560 fix(contador): no anima cifras con decimales (calificación 4.9)
+9c8a470 fix(planes): precio, «Incluye» y botones alineados entre tarjetas con subgrid
+cc46a96 fix(check): check:datos ignora el zoom de recorte de imágenes
+5db9378 fix(fotos): recorte sin subtítulos quemados (videoscopio y reels) y TikTok vt.tiktok.com de la fuente
+3dad0d8 fix(logo): usa solo el logo real (dark, light e isotipo) y elimina el logotipo tipográfico
+```
+
+Más un commit de formato y el de esta sección. Nota sobre la autoría: desde `d635509` los commits salen como `asesoria <prototipo@localhost>`. Un hook de privacidad de este entorno bloqueó el uso del email de la cuenta en la línea de comandos. Si quieres unificar la autoría, se puede reescribir antes de subir el repo.
+
+### Pendientes y dudas
+
+1. **LCP en la simulación de Lighthouse:** queda para la Fase 6 (header como componente de servidor y recorte del payload RSC). ¿De acuerdo?
+2. **Logo SVG** y versión oficial para fondo claro: siguen `[PENDIENTE CLIENTE]`. El laptop gris claro (#E4E3E2) del original se ve tenue sobre `paper`.
+3. Siguen abiertas las dudas 2–6 de la entrega anterior: fotos de «Confianza», copy provisional, «desde S/ x» en el mega-menú y el celular en el formulario de placa.
