@@ -90,10 +90,10 @@ export const medios = z
         escala: 1.25,
       },
       informes: {
-        src: "/img/informe/informe_ejemplo_pag-02.png",
+        src: "/img/informe/informe-pagina-02.webp",
         alt: "Página de un informe DiagnostiCAR con el puntaje por sistema: seguridad, frenos, motor, escaneo, suspensión y más (placa de ejemplo)",
-        ancho: 585,
-        alto: 414,
+        ancho: 1287,
+        alto: 910,
         pie: {
           tipo: "Informe de ejemplo",
           texto: "2022 · placa de ejemplo",

@@ -20,13 +20,8 @@ export const home = z
       fotoPie: texto,
       verVideo: texto,
     }),
-    consultaPlaca: z.object({
-      titulo: texto,
-      texto: texto,
-      boton: texto,
-      ayuda: texto,
-      exito: texto,
-    }),
+    // Textos del formulario en conversion.ts (formTextos.placa), compartidos con /guia/consulta-placa-gratis.
+    consultaPlaca: z.object({ titulo: texto, texto: texto }),
     problemas: z.object({ titulo: texto, subtitulo: texto, cta: texto }),
     comparador: z.object({ eyebrow: texto, titulo: texto, tituloAcento: texto, texto: texto }),
     planes: z.object({
@@ -97,10 +92,6 @@ export const home = z
     consultaPlaca: {
       titulo: "Consulta gratis por placa",
       texto: "Te decimos si el SOAT y la Revisión Técnica están vigentes, sin costo.",
-      boton: "Consultar gratis SOAT y Revisión Técnica",
-      // provisional: aún no hay endpoint, la consulta sigue por WhatsApp (§5.1).
-      ayuda: "Te respondemos por WhatsApp con el resultado.",
-      exito: "Listo. Abrimos WhatsApp con tu placa para enviarte el resultado.",
     },
     problemas: {
       titulo: "Los problemas más comunes que encontramos",

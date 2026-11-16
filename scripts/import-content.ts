@@ -742,7 +742,7 @@ function construirMedios() {
     },
     informes: {
       ...imagen(
-        "/img/informe/informe_ejemplo_pag-02.png",
+        "/img/informe/informe-pagina-02.webp",
         "Página de un informe DiagnostiCAR con el puntaje por sistema: seguridad, frenos, motor, escaneo, suspensión y más (placa de ejemplo)",
       ),
       pie: { tipo: "Informe de ejemplo", texto: "2022 · placa de ejemplo" },
@@ -762,6 +762,124 @@ escribir(
   "medios.ts",
   "Videos y fotos de la home (tips, video explicativo, fotos de confianza).",
   `import { z } from "zod";\nimport { imagenSchema } from "./schema";\n\nexport const medios = z\n  .object({\n    tips: z.array(z.object({ titulo: z.string(), url: z.url(), miniatura: imagenSchema })).length(3),\n    youtube: z.object({ id: z.string().regex(/^[\\w-]{11}$/), titulo: z.string() }),\n    confianza: z.record(z.enum(["tecnicos", "equipos", "informes", "atencion"]), imagenSchema),\n  })\n  .parse(${json(construirMedios())});`,
+);
+
+/* ------------------------------------------------------------------ páginas de conversión (Fase 3) */
+
+/** Texto entre dos líneas (excluyentes) de una página. */
+function tramo(t: string[], desde: string, hasta?: string): string[] {
+  const i = t.indexOf(desde);
+  if (i < 0) fallar(`No encontré «${desde}»`);
+  const j = hasta ? t.indexOf(hasta, i + 1) : t.length;
+  if (hasta && j < 0) fallar(`No encontré «${hasta}»`);
+  return t.slice(i + 1, j);
+}
+const sinViñeta = (l: string) => l.replace(/^[-–]\s*/, "").trim();
+
+/** Pares «### Título» + texto. */
+function pares(lineas: string[]): { titulo: string; texto: string }[] {
+  const out: { titulo: string; texto: string }[] = [];
+  for (let k = 0; k < lineas.length; k++) {
+    const l = lineas[k]!;
+    if (l.startsWith("### ")) out.push({ titulo: l.slice(4).trim(), texto: lineas[k + 1] ?? "" });
+  }
+  return out;
+}
+
+const REDACCION_VENTA: Record<string, string> = {
+  "Pagas solo el Diagnóstico, no porcentajes por venta.":
+    "Pagas solo el diagnóstico, no porcentajes por venta.",
+  "Contacto Directo": "Contacto directo",
+  "Sigues usandolo": "Sigues usándolo",
+  "Te contactamos con clientes que buscan autos como el tuyo":
+    "Te contactamos con clientes que buscan autos como el tuyo.",
+  "Tu auto certificado genera + confianza y menos regateo":
+    "Tu auto certificado genera más confianza y menos regateo.",
+  "Chequeo Documentario": "Chequeo documentario",
+  "Chequeo Visual Completo": "Chequeo visual completo",
+  "Escaneo OBD Certificado": "Escaneo OBD certificado",
+  "Revisión de Suspensión": "Revisión de suspensión",
+  "Escaneo Profesional (motor, transmisión, ABS/ESP, Airbags, inmovilizador, dirección, BCM, etc.)":
+    "Escaneo profesional (motor, transmisión, ABS/ESP, airbags, inmovilizador, dirección, BCM, etc.)",
+  "Conectamos tu auto con nuestros 300–400 leads diarios.": `Conectamos tu auto con nuestros 300–400 leads diarios ${CONFIRMAR}.`,
+};
+const rv = (x: string) => REDACCION_VENTA[x] ?? x;
+
+function construirPaginas() {
+  const v = pagina("venta-sin-consignar").texto;
+  const grupos = [
+    "## Chequeo Documentario",
+    "## Chequeo Visual Completo",
+    "## Escaneo OBD Certificado",
+    "## Entregables",
+  ];
+  const incluye = grupos.map((g, i) => ({
+    titulo: rv(g.slice(3)),
+    items: tramo(v, g, grupos[i + 1] ?? "Contactar ahora")
+      .filter((l) => l.startsWith("- "))
+      .map((l) => rv(sinViñeta(l))),
+  }));
+  const venta = {
+    beneficios: pares(tramo(v, "## Beneficios Clave", "## ¿Qué hacemos por ti como vendedor?")).map(
+      (b) => ({
+        titulo: rv(b.titulo),
+        texto: rv(b.texto),
+      }),
+    ),
+    queHacemos: pares(tramo(v, "## ¿Qué hacemos por ti como vendedor?", "Reservar cita")).map(
+      (b) => ({
+        titulo: rv(b.titulo),
+        texto: rv(b.texto),
+      }),
+    ),
+    pasos: tramo(v, "## ¿Cómo funciona?", "## ¿Qué incluye la certificación?"),
+    incluye,
+    sello: tramo(
+      v,
+      "Al certificar tu auto, recibirás un sello digital oficial con:",
+      "## ¿Por qué importa?",
+    ).map(sinViñeta),
+    importa: tramo(
+      v,
+      "## ¿Por qué importa?",
+      "Cada QR es único y vinculado a nuestra base de datos.",
+    ).map(sinViñeta),
+    notaQr: "Cada QR es único y vinculado a nuestra base de datos.",
+  };
+  if (venta.beneficios.length !== 4 || venta.pasos.length !== 4)
+    fallar("Estructura inesperada en venta-sin-consignar");
+
+  const inf = pagina("informe-ejemplo").texto;
+  const informe = {
+    titulo: match(/^# (.+)$/, inf[0]!, "H1 del informe")[1]!,
+    texto: inf[1]!,
+    aviso: inf[2]!,
+  };
+
+  const con = pagina("contacto").texto;
+  const contacto = { titulo: "Contáctanos", texto: con[1]! };
+
+  const cc = pagina("como-comprar").texto;
+  const necesitamos = cc.filter((l) => l.startsWith("– ")).map(sinViñeta);
+  if (necesitamos.length !== 3) fallar("Esperaba 3 datos en /como-comprar/");
+
+  // Términos y condiciones: párrafos por sección (texto literal, para citar y resumir).
+  const tyc = pagina("terminos-y-condiciones").texto;
+  const secciones: Record<string, string[]> = {};
+  let actual = "";
+  for (const l of tyc) {
+    if (l.startsWith("## ")) {
+      actual = l.slice(3).trim();
+      secciones[actual] = [];
+    } else if (actual) secciones[actual]!.push(l);
+  }
+  return { venta, informe, contacto, necesitamos, tyc: secciones };
+}
+
+escribir(
+  "paginas-fuente.ts",
+  "Textos de las páginas de conversión extraídos de la fuente (venta, informe, contacto, cómo comprar, T&C).",
+  `export const paginasFuente = ${json(construirPaginas())} as const;`,
 );
 
 // PENDIENTES.md se genera junto con el contenido para que no se desincronice.
