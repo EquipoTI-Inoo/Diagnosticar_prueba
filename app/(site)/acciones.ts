@@ -8,6 +8,8 @@ import {
   type EstadoFormulario,
 } from "@/lib/formularios";
 import { guardarLead } from "@/lib/leads";
+import { CAMPOS_LIBRO } from "@/lib/libro";
+import { libroSchema } from "@/lib/libro-servidor";
 import { mensajeConsultaPlaca } from "@/lib/wa";
 import { waHref } from "@/lib/whatsapp";
 
@@ -53,4 +55,19 @@ export async function enviarContacto(
   } catch {
     return { estado: "error", mensaje: "guardar", whatsapp, valores };
   }
+}
+
+/**
+ * Libro de Reclamaciones: valida con Zod y SIMULA el envío (prototipo). No guarda ni envía datos
+ * a terceros; solo registra en el log del servidor que hubo un envío simulado, sin datos personales.
+ */
+export async function enviarReclamo(_prev: EstadoFormulario, fd: FormData): Promise<EstadoFormulario> {
+  const entrada = Object.fromEntries(
+    [...CAMPOS_LIBRO, "declaro", "acepto", "empresa"].map((k) => [k, fd.get(k) === null ? undefined : String(fd.get(k))]),
+  );
+  const valores = Object.fromEntries(CAMPOS_LIBRO.map((k) => [k, String(fd.get(k) ?? "")]));
+  const r = libroSchema.safeParse(entrada);
+  if (!r.success) return { estado: "error", errores: erroresDe(r.error), valores };
+  if (!r.data.empresa) console.info("[libro-de-reclamaciones] envío simulado:", r.data.tipo_reclamo, r.data.tipo_consumo);
+  return { estado: "ok", valores: { tipo_reclamo: r.data.tipo_reclamo, fecha: new Date().toISOString().slice(0, 10) } };
 }
