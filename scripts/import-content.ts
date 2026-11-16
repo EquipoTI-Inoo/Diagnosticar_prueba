@@ -790,7 +790,7 @@ ${fuente.inconsistencias_detectadas.map((p) => `- [ ] ${p}`).join("\n")}
 - [ ] Logo vectorial (SVG) y versión oficial para fondo claro: hoy se usan derivados del PNG original 1894×1074 (dark, light con «CAR» recoloreado a ink, isotipo). El laptop gris claro del logo se ve tenue sobre fondos claros.
 - [ ] Sello «Vehículo verificado»: el QR del prototipo es ilustrativo. Falta la URL real de verificación.
 - [ ] Gestión: URL de la nota de prensa. Ficha de Google Business (URL para «Ver reseñas en Google»).
-- [ ] TikTok: el enlace corto es ${'`'}https://vt.tiktok.com/ZSPVKqXRd/${'`'} (de raw/venta-sin-consignar.html); confirmar el @usuario de la cuenta.
+- [ ] TikTok: el enlace corto es ${"`"}https://vt.tiktok.com/ZSPVKqXRd/${"`"} (de raw/venta-sin-consignar.html); confirmar el @usuario de la cuenta.
 - [ ] IDs de Meta Pixel, TikTok Pixel y GTM (variables \`NEXT_PUBLIC_GTM_ID\`, \`NEXT_PUBLIC_META_PIXEL_ID\`, \`NEXT_PUBLIC_TIKTOK_PIXEL_ID\`).
 - [ ] Fotos reales para «Confianza técnica»: el sitio actual usa 3 imágenes que parecen de banco o generadas (fg-min, gh-1, Diseno-sin-titulo-6); el prototipo usa fotos propias (equipo, videoscopio, informe de ejemplo, unidades móviles).
 - [ ] Certificaciones de los técnicos («Técnicos certificados» se muestra sin detalle).
