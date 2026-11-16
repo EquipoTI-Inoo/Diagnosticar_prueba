@@ -124,7 +124,7 @@ export const paginasFuente = {
       "Escríbenos por WhatsApp para la atención más rápida, o déjanos tus datos y te contactamos.",
   },
   necesitamos: [
-    "Nombre y número de contacto del Comprador",
+    "Nombre y número de contacto del comprador",
     "Placa del vehículo a revisar",
     "Dirección en la que se efectuará la revisión.",
   ],

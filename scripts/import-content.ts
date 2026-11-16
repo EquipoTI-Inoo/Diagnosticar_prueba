@@ -860,7 +860,11 @@ function construirPaginas() {
   const contacto = { titulo: "Contáctanos", texto: con[1]! };
 
   const cc = pagina("como-comprar").texto;
-  const necesitamos = cc.filter((l) => l.startsWith("– ")).map(sinViñeta);
+  // Regla 2 (ortografía): «Comprador» con mayúscula en la fuente → minúscula; no es una cita literal.
+  const necesitamos = cc
+    .filter((l) => l.startsWith("– "))
+    .map(sinViñeta)
+    .map((l) => l.replace(/del Comprador$/, "del comprador"));
   if (necesitamos.length !== 3) fallar("Esperaba 3 datos en /como-comprar/");
 
   // Términos y condiciones: párrafos por sección (texto literal, para citar y resumir).

@@ -103,15 +103,16 @@ export default function ComoFuncionaPage() {
             {p.politicas.map((x, i) => (
               <div
                 key={x.titulo}
-                className="grid grid-cols-[2.5rem_1fr] gap-2 border-b border-line py-5 md:pr-8 md:odd:border-r md:even:pl-8"
+                className="grid grid-cols-[2.5rem_1fr] gap-x-2 border-b border-line py-5 md:pr-8 md:odd:border-r md:even:pl-8"
               >
-                <span aria-hidden className="font-mono text-xs text-muted">
-                  {pad(i + 1)}
-                </span>
-                <div>
-                  <dt className="font-medium">{x.titulo}</dt>
-                  <dd className="mt-1 text-muted">{x.texto}</dd>
-                </div>
+                {/* Solo dt/dd dentro del div (estructura válida de <dl>); el número va dentro del dt. */}
+                <dt className="col-span-2 grid grid-cols-subgrid font-medium">
+                  <span aria-hidden className="pt-0.5 font-mono text-xs font-normal text-muted">
+                    {pad(i + 1)}
+                  </span>
+                  <span>{x.titulo}</span>
+                </dt>
+                <dd className="col-start-2 mt-1 text-muted">{x.texto}</dd>
               </div>
             ))}
           </dl>
