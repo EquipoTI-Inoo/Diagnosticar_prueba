@@ -7,9 +7,19 @@
 import { z } from "zod";
 import { cobertura } from "./cobertura";
 import { faqs } from "./faqs";
+import { medios } from "./medios";
+import { problemas } from "./problemas";
 import { negocio } from "./negocio";
 import { paginasFuente } from "./paginas-fuente";
-import { CONFIRMAR, PENDIENTE, type Faq, type Servicio, type ServicioSlug } from "./schema";
+import {
+  CONFIRMAR,
+  PENDIENTE,
+  imagenSchema,
+  type Faq,
+  type Imagen,
+  type Servicio,
+  type ServicioSlug,
+} from "./schema";
 import { escalera, getServicio, servicios } from "./servicios";
 
 /* ------------------------------------------------------------------ utilidades */
@@ -280,6 +290,39 @@ const RECIBES: Record<Exclude<ServicioSlug, "certifica-tu-auto">, string[]> = {
   ],
 };
 
+/**
+ * Evidencia visual por ficha (§6: fotos reales). Solo fotos de docs/fuente/assets/_clave (sin las
+ * 3 de banco/IA descartadas, F12) o páginas reales del informe de ejemplo. Pies honestos.
+ */
+function imagenInforme(n: 1 | 2 | 3, tema: string, alt: string): Imagen {
+  return {
+    src: `/img/informe/informe-pagina-0${n}.webp`,
+    alt,
+    ancho: 1287,
+    alto: 910,
+    pie: { tipo: "Informe de ejemplo", texto: `2022 · placa de ejemplo · ${tema}` },
+  };
+}
+const fotoVideoscopio = problemas.find((x) => x.slug === "motor-o-caja-reparados")!.imagen;
+const ALT_ANTECEDENTES =
+  "Página de antecedentes de un informe DiagnostiCAR de ejemplo: deudas tributarias, dueños previos, multas electorales, boleta informativa, papeletas de Lima y Callao y órdenes de captura.";
+const FOTO: Record<Exclude<ServicioSlug, "certifica-tu-auto">, Imagen> = {
+  "antecedentes-basico": imagenInforme(1, "antecedentes", ALT_ANTECEDENTES),
+  "antecedentes-completo": imagenInforme(1, "antecedentes", ALT_ANTECEDENTES),
+  "diagnostico-basico": medios.confianza.tecnicos!,
+  diagnosticar: fotoVideoscopio,
+  "diagnosticar-plus": imagenInforme(
+    3,
+    "detalle de motor y escape",
+    "Página de un informe DiagnostiCAR de ejemplo con el detalle de motor y escape: porcentaje por ítem y observaciones del técnico.",
+  ),
+  "asesoria-precompra-online": imagenInforme(
+    2,
+    "puntaje por sistema",
+    "Página de un informe DiagnostiCAR de ejemplo con el puntaje por sistema: seguridad, frenos, motor, escaneo, suspensión, dirección y más.",
+  ),
+};
+
 const fichaSchema = z.object({
   slug: z.string(),
   resumen: z.string().superRefine((t, ctx) => {
@@ -295,6 +338,7 @@ const fichaSchema = z.object({
   relacionados: z.array(z.string()),
   /** Las fichas de inspección muestran el proceso de 4 pasos (visita a domicilio). */
   conVisita: z.boolean(),
+  foto: imagenSchema,
 });
 export type Ficha = z.infer<typeof fichaSchema> & { servicio: Servicio };
 
@@ -320,6 +364,7 @@ export const fichas: Ficha[] = fichaSlugs.map((slug) => {
     }),
     relacionados,
     conVisita: s.tipo === "inspeccion",
+    foto: FOTO[slug],
   });
   return { ...ficha, servicio: s };
 });

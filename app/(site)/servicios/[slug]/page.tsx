@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Badge } from "@/components/ui/badge";
 import { FaqAccordion } from "@/components/ui/faq-accordion";
 import { Pendiente } from "@/components/ui/pendiente";
+import { PhotoFigure } from "@/components/ui/photo-figure";
 import { Price } from "@/components/ui/price";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Stepper } from "@/components/ui/stepper";
@@ -114,6 +115,12 @@ export default async function FichaServicio({ params }: { params: Promise<{ slug
             </ol>
           </div>
           <div className="lg:col-span-4 lg:col-start-9">
+            <PhotoFigure
+              imagen={f.foto}
+              aspect={f.foto.src.startsWith("/img/informe/") ? "aspect-[1287/910]" : "aspect-[4/3]"}
+              sizes="(min-width: 1024px) 380px, 100vw"
+              className="mb-10"
+            />
             <h2 className="font-mono text-eyebrow font-medium tracking-[0.12em] text-muted uppercase [font-stretch:100%]">
               Qué recibes
             </h2>
