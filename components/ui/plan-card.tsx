@@ -19,6 +19,7 @@ export function PlanCard({
   headingLevel = 3,
   compacta = false,
   subgrid = false,
+  mensajeWhatsapp,
   className,
 }: {
   servicio: Servicio;
@@ -36,6 +37,8 @@ export function PlanCard({
    * con 5 filas por tarjeta (ver home-planes).
    */
   subgrid?: boolean;
+  /** Mensaje de WhatsApp propio (p. ej. certificación) en lugar de «quiero reservar mi diagnóstico…». */
+  mensajeWhatsapp?: string;
   className?: string;
 }) {
   const H = `h${headingLevel}` as const;
@@ -119,6 +122,7 @@ export function PlanCard({
         <div className="mt-5 flex flex-col gap-2.5">
           <WhatsAppButton
             servicio={servicio.nombreWhatsapp}
+            mensaje={mensajeWhatsapp}
             ubicacion={ubicacion}
             size="sm"
             variant={servicio.destacado ? "primary" : "whatsapp"}

@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { PlanCard } from "@/components/ui/plan-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
-import { paginaServicios as p } from "@/content/conversion";
+import { paginaServicios as p, paginaVende } from "@/content/conversion";
 import { escalera, getServicio } from "@/content/servicios";
 import { schemaCatalogo } from "@/lib/schema";
 
@@ -93,7 +93,13 @@ export default function ServiciosPage() {
           <ul role="list" className="mt-10 grid gap-4 md:grid-cols-2">
             {p.otros.map((slug) => (
               <li key={slug}>
-                <PlanCard servicio={getServicio(slug)} ubicacion="servicios-otros" />
+                <PlanCard
+                  servicio={getServicio(slug)}
+                  ubicacion="servicios-otros"
+                  mensajeWhatsapp={
+                    slug === "certifica-tu-auto" ? paginaVende.mensajeWhatsapp : undefined
+                  }
+                />
               </li>
             ))}
           </ul>
